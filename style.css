@@ -1,13 +1,16 @@
-nav{
+nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
     background-color: #333;
     color: white;
-    padding: 10px;  
+    padding: 0 20px;
     height: 8vh;
-    display: flex;
-    justify-content: space-between;
 }
 
-.logo img{
-    height: 100%;
+.logo img {
+    height: 48px;
+    width: 48px;
+    object-fit: cover;
     border-radius: 50%;
 }
