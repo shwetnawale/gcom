@@ -69,6 +69,7 @@ main {
     align-items: center;
     justify-content: center;
     min-height: calc(100vh - 80px);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.3);
 }
 
 .welcome-section {
@@ -97,4 +98,53 @@ main {
     color: #000000;
     line-height: 1.6;
     margin-top: 0;
+}
+headersub {
+    width: 100vw;
+    background: #fff;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.03);
+}
+.content{
+    height: 100vh;
+    width: 100vw;
+}
+footer {
+    background: #fff;
+    box-shadow: 0 -2px 8px rgba(0,0,0,0.03);
+    padding: 24px 0;
+    width: 100%;
+}
+
+.footer-content {
+    max-width: 1000px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+}
+
+.footer-content p {
+    color: #888;
+    font-size: 1rem;
+    margin: 0;
+}
+
+.social-links {
+    display: flex;
+    gap: 24px;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.social-links a {
+    color: #222;
+    text-decoration: none;
+    font-size: 1.1rem;
+    transition: color 0.2s;
+}
+
+.social-links a:hover {
+    color: #0077ff;
 }
