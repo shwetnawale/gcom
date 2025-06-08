@@ -5,7 +5,7 @@ nav {
     /* background-color: #333; */
     color: white;
     padding: 0 20px;
-    height: 8vh;
+    height: 10vh;
 }
 div h1 {
     font-size: 2rem;
@@ -45,7 +45,14 @@ body {
 .welcome {
     color: black;
     font-size: 1.2rem;
+    height: 90vh;
 }
 .links a{
     color: black;
+}
+h2 {
+    text-align: center;
+    margin-top: 32px;
+    color: black;
+    text-align: center;
 }
