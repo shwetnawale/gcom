@@ -5,6 +5,10 @@
     font-family: 'Open Sans', sans-serif;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     background: #f7f9fa;
     color: #222;
@@ -12,7 +16,7 @@ body {
 }
 
 header {
-    width: 100vw;
+    width: 100%;
     background: #fff;
     box-shadow: 0 2px 8px rgba(0,0,0,0.03);
 }
@@ -104,14 +108,14 @@ headersub {
     position: sticky;
     top: 0;
     z-index: 1000;
-    width: 100vw;
+    width: 100%;
     box-shadow: 0 2px 8px rgba(0,0,0,0.3);
     display: block; /* Ensure it behaves like a block element */
 
 }
 .content{
     height: 100vh;
-    width: 100vw;
+    width: 100%;
 }
 footer {
     background: #fff;
