@@ -7,7 +7,11 @@ nav {
     padding: 0 20px;
     height: 8vh;
 }
-
+.logo{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
 .logo img {
     height: 48px;
     width: 48px;
