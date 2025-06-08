@@ -1,48 +1,100 @@
-nav {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    /* background-color: #333; */
-    color: white;
-    padding: 0 20px;
-    height: 8vh;
-}
-div h1 {
-    font-size: 2rem;
-    color: black;
-}
-.logo{
-    display: flex;
-    align-items: center;
-    gap: 10px;
-}
-.logo img {
-    height: 48px;
-    width: 48px;
-    object-fit: cover;
-    border-radius: 50%;
-}
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: 'Open Sans', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Open Sans', sans-serif;
 }
 
 body {
-    background-size: cover;
-  /* background-image: url('https://images.unsplash.com/photo-1485470733090-0aae1788d5af?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1517&q=80'); */
+    background: #f7f9fa;
+    color: #222;
+    min-height: 100vh;
+}
+
+header {
+    width: 100vw;
+    background: #fff;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.03);
+}
+
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 40px;
+    height: 80px;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.logo img {
+    width: 48px;
+    height: 48px;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+.brand {
+    font-size: 2rem;
+    font-family: 'Oswald', Arial, sans-serif;
+    color: #222;
+    font-weight: bold;
+    letter-spacing: 2px;
 }
 
 .links {
     display: flex;
-    gap: 20px;
+    gap: 32px;
     list-style: none;
-
-    color: white;
-    font-size: 1.2rem;
 }
 
-.links a{
-    color: black;
+.links a {
+    color: #222;
+    text-decoration: none;
+    font-size: 1.1rem;
+    font-weight: 500;
+    transition: color 0.2s;
+}
+
+.links a:hover {
+    color: #0077ff;
+}
+
+main {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: calc(100vh - 80px);
+}
+
+.welcome-section {
+    text-align: center;
+    /* max-width: 600px; */
+    padding: 48px 24px;
+    margin-bottom: 30vh;
+}
+
+.welcome-title {
+    letter-spacing: 0.3em;
+    font-family: 'Oswald', Arial, sans-serif;
+    /* font-size: 3.5rem;        Make the title bigger */
+    margin-bottom: 20px;
+    font-size: 4.5rem;        /* Adjusted to make the title smaller */
+    text-transform: uppercase;
+
+    color: #5f5e5e;
+    /* font-weight: 700; */
+    text-transform: uppercase;
+}
+
+.welcome-description {
+    font-size: 1rem;  
+    font-weight: 600;         /* Make the description smaller */
+    color: #000000;
+    line-height: 1.6;
+    margin-top: 0;
 }
