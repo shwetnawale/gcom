@@ -6,19 +6,23 @@ nav {
     color: white;
     padding: 0 20px;
     height: 10vh;
+    width: 100vw;
 }
 div h1 {
     font-size: 2rem;
     color: black;
+    width: auto;
+    height: auto;
 }
 .logo{
     display: flex;
     align-items: center;
     gap: 10px;
+    width: 20%;
 }
 .logo img {
-    height: 48px;
-    width: 48px;
+    height: auto;
+    width: 50%;
     object-fit: cover;
     border-radius: 50%;
 }
@@ -38,23 +42,41 @@ body {
     display: flex;
     gap: 20px;
     list-style: none;
-
     color: white;
     font-size: 1.2rem;
-}
-.welcome {
-    color: black;
-    font-size: 1.2rem;
-    height: 100vh;
 }
 .links a{
     color: black;
     text-decoration: none;
     margin-left: 50px;
 }
-.welcome h2 {
+.welcome {
+    color: black;
+    font-size: 1.2rem;
+    height: 90vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Oswald', Arial, sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 0.5em;
+}
+header{
+    height: 100vh;
+    width: 100vw;
+}
+
+.welcome h2{
+    margin-bottom: 30vh;
+
+}
+/* .welcome h2 {
+    justify-content: space-around;
+    
     font-size: 60px;
     display: flex;
+    align-content: center;
+    text-align: center;
     align-items: center;
     justify-content: center;
     text-align: center;
@@ -62,4 +84,4 @@ body {
     color: black;
     text-align: center;
 
-}
+} */
