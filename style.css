@@ -10,7 +10,7 @@ html {
 }
 
 body {
-    background: #f7f9fa;
+    background: #e9e9e9;
     color: #222;
     min-height: 100vh;
 }
@@ -65,7 +65,7 @@ header {
 }
 
 .links a:hover {
-    color: #0077ff;
+    color: #0278ff;
 }
 
 main {
@@ -103,7 +103,7 @@ main {
     line-height: 1.6;
     margin-top: 0;
 }
-headersub {
+.header-sub {
     /* box-shadow: 0 2px 8px rgba(0,0,0,0.03); */
     position: sticky;
     top: 0;
@@ -115,7 +115,36 @@ headersub {
 }
 .content{
     height: 100vh;
-    width: 100%;
+    width: 100%;    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: calc(100vh - 80px);
+}
+button{
+    border: 2px solid #4CAF50; /* Example border */
+    transition: border-color 0.3s ease;
+    padding: 20px 40px;
+    font-size: 1.2rem;
+    border-radius: 25PX;
+    border-color: rgb(0, 0, 0);
+    background-color: #00eb08;
+    transition: -webkit-transform 0.3s ease;
+    transition: transform 0.8s ease;
+    
+}
+.header-sub {
+    transition: background-color 0.3s ease, color 0.3s ease; /* Adjust the duration (0.3s) as desired */
+}
+
+button:hover {
+    -webkit-transform: scale(1.3);
+    transform: scale(1.1);
+    border-color: #ffffff; /* Change border color */
+}
+.body-sub{
+    /* height: 100vh; */
+    width: 100%;    
 }
 footer {
     background: #fff;
@@ -156,4 +185,29 @@ footer {
 
 .social-links a:hover {
     color: #0077ff;
+}
+
+.get-started-container {
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+}
+
+button {
+    background-color: #4CAF50; /* Green */
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 50px; /* Increased radius for a rounder look */
+    transition: transform 0.3s ease; /* Add a transition for the animation */
+}
+
+button:hover {
+    transform: scale(1.1); /* Scale the button up slightly on hover */
 }
