@@ -73,7 +73,7 @@ main {
     align-items: center;
     justify-content: center;
     min-height: calc(100vh - 80px);
-    box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+    /* box-shadow: 0 2px 8px rgba(0,0,0,0.3); */
 }
 
 .welcome-section {
@@ -104,12 +104,12 @@ main {
     margin-top: 0;
 }
 headersub {
-    box-shadow: 0 2px 8px rgba(0,0,0,0.03);
+    /* box-shadow: 0 2px 8px rgba(0,0,0,0.03); */
     position: sticky;
     top: 0;
     z-index: 1000;
     width: 100%;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+    /* box-shadow: 0 2px 8px rgba(0,0,0,0.3); */
     display: block; /* Ensure it behaves like a block element */
 
 }
