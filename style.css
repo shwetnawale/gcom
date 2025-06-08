@@ -100,9 +100,14 @@ main {
     margin-top: 0;
 }
 headersub {
-    width: 100vw;
-    background: #fff;
     box-shadow: 0 2px 8px rgba(0,0,0,0.03);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    width: 100vw;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+    display: block; /* Ensure it behaves like a block element */
+
 }
 .content{
     height: 100vh;
