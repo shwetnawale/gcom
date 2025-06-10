@@ -29,13 +29,13 @@
     --header-bg-dark: #4b4b4b;
     --header-shadow-dark: rgba(255,255,255,0.05);
     --brand-text-dark: #e0e0e0;
-    --link-text-dark: #e0e0e0;
+    --link-text-dark: #000000;
     --link-hover-text-dark: #64b5f6;
     --welcome-title-text-dark: linear-gradient(to right, #ff4400 0%, #d141a1 50%, #8a2be2 100%);
     --welcome-desc-text-dark: #e0e0e0;
-    --sticky-header-bg-dark: #1a1a1a;
-    --sticky-header-text-dark: #e0e0e0;
-    --sticky-header-text-gradient-dark: #fff;
+    --sticky-header-bg-dark: #000000; 
+    --sticky-header-text-dark: #000000;
+    --sticky-header-text-gradient-dark: #000000; /* Changed to black for text on dark mode gradient */
     --button-bg-dark: #4a9b4a; /* Slightly adjusted green for dark mode */
     --button-text-dark: white;
     --footer-bg-dark: #222222;
@@ -43,7 +43,7 @@
     --footer-link-text-dark: #e0e0e0;
     --footer-link-hover-text-dark: #64b5f6;
     --icon-color-dark: #e0e0e0;
-    --gradient-overlay-dark: linear-gradient(90deg, #e1f549, #a6ff00, #a8f489, #85f39f, #57f1b3, #16edc2, #33e5c9, #44ddd0, #50d5d6, #5acddc, #62c4e2, #69bce8, #7eb0ec, #95a1ef, #a892f2, #b781f4, #c776e4, #da72ba, #ec698d, #ff5959);
+    --gradient-overlay-dark: white;
 }
 
 * {
@@ -86,7 +86,7 @@ header { /* Main header */
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 1rem; /* 16px, uncommented and made responsive */
+    /* gap: 1rem;  */
 }
 
 .logo-text {
