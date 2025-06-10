@@ -90,19 +90,19 @@ header { /* Main header */
 }
 
 .logo-text {
-    height: 50px; /* Adjusted to match logo height */
-    width: 50px;
+    height: 60px;
+    width: 60px;
     font-family: "Audiowide", sans-serif;
     font-weight: 400;
+    font-size: 47px;
     font-style: normal;
     color: white;
     background-color: black;
-    margin-top: 2px; /* This margin helps align the circular G with the "G-COM" text */
-    border-radius: 50%; /* Make it a full circle */
-    display: flex; /* Enable flexbox for centering */
-    align-items: center; /* Vertically center the text */
-    justify-content: center; /* Horizontally center the text */
-    /* text-align: center; /* No longer needed due to flexbox */
+    margin-top: 2px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 /* Styles for .brand in the main header */
 header > .navbar .brand {
@@ -208,6 +208,7 @@ body.dark-theme .gradient-overlay {
 .header-sub .navbar { /* Navbar within the sticky header */
     position: relative;
     z-index: 2; /* Above gradient overlay */
+    height: 60px; /* Added to decrease height from default 80px */
     background: transparent; /* Ensure it doesn't obscure the gradient or header-sub bg */
 }
 
