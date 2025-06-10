@@ -84,26 +84,38 @@ header { /* Main header */
 
 .logo {
     display: flex;
+    justify-content: center;
     align-items: center;
-    gap: 16px;
+    /* gap: 16px;  */
 }
 
-.logo img {
-    width: 48px;
-    height: 48px;
-    object-fit: cover;
-    border-radius: 50%;
+.logo-text {
+    height: 50px; /* Adjusted to match logo height */
+    width: 50px;
+    font-family: "Audiowide", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    color: white;
+    background-color: black;
+    margin-top: 2px; /* This margin helps align the circular G with the "G-COM" text */
+    border-radius: 50%; /* Make it a full circle */
+    display: flex; /* Enable flexbox for centering */
+    align-items: center; /* Vertically center the text */
+    justify-content: center; /* Horizontally center the text */
+    /* text-align: center; /* No longer needed due to flexbox */
 }
-
 /* Styles for .brand in the main header */
 header > .navbar .brand {
     font-size: 2rem;
-    font-family: 'Oswald', Arial, sans-serif;
     color: var(--brand-text);
-    font-weight: bold;
     letter-spacing: 2px;
 }
+.brand{
+    font-family: "Audiowide", sans-serif;
+    font-weight: 400;
+    font-style: normal;
 
+}
 .theam {
     cursor: pointer;
     display: flex;
@@ -203,8 +215,6 @@ body.dark-theme .gradient-overlay {
 .header-sub .navbar .brand,
 .header-sub .navbar .links a {
     font-size: 2rem; /* Copied from main header .brand for consistency */
-    font-family: 'Oswald', Arial, sans-serif; /* Copied */
-    font-weight: bold; /* Copied */
     letter-spacing: 2px; /* Copied */
     color: var(--sticky-header-text);
     text-decoration: none; /* For links */
