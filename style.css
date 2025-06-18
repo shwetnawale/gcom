@@ -29,13 +29,13 @@
     --header-bg-dark: #4b4b4b;
     --header-shadow-dark: rgba(255,255,255,0.05);
     --brand-text-dark: #e0e0e0;
-    --link-text-dark: #e0e0e0;
+    --link-text-dark: #000000;
     --link-hover-text-dark: #64b5f6;
     --welcome-title-text-dark: linear-gradient(to right, #ff4400 0%, #d141a1 50%, #8a2be2 100%);
     --welcome-desc-text-dark: #e0e0e0;
-    --sticky-header-bg-dark: #1a1a1a;
-    --sticky-header-text-dark: #e0e0e0;
-    --sticky-header-text-gradient-dark: #fff;
+    --sticky-header-bg-dark: #000000; 
+    --sticky-header-text-dark: #000000;
+    --sticky-header-text-gradient-dark: #000000; /* Changed to black for text on dark mode gradient */
     --button-bg-dark: #4a9b4a; /* Slightly adjusted green for dark mode */
     --button-text-dark: white;
     --footer-bg-dark: #222222;
@@ -43,7 +43,7 @@
     --footer-link-text-dark: #e0e0e0;
     --footer-link-hover-text-dark: #64b5f6;
     --icon-color-dark: #e0e0e0;
-    --gradient-overlay-dark: linear-gradient(90deg, #e1f549, #a6ff00, #a8f489, #85f39f, #57f1b3, #16edc2, #33e5c9, #44ddd0, #50d5d6, #5acddc, #62c4e2, #69bce8, #7eb0ec, #95a1ef, #a892f2, #b781f4, #c776e4, #da72ba, #ec698d, #ff5959);
+    --gradient-overlay-dark: white;
 }
 
 * {
@@ -78,32 +78,48 @@ header { /* Main header */
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 0 40px;
-    height: 80px;
+    padding: 0 2.5rem; /* 40px */
+    height: 5rem; /* 80px */
 }
 
 .logo {
     display: flex;
+    justify-content: center;
     align-items: center;
-    gap: 16px;
+    /* gap: 1rem;  */
 }
 
-.logo img {
-    width: 48px;
-    height: 48px;
-    object-fit: cover;
+.logo-text {
+    /* height: 60px -> 3.75rem */
+    /* width: 60px -> 3.75rem */
+    /* font-size: 47px -> 2.9375rem */
+    /* margin-top: 2px -> 0.125rem */
+    height: 3.75rem; 
+    width: 3.75rem; 
+    font-family: "Audiowide", sans-serif;
+    font-weight: 400;
+    font-size: 2.9375rem; 
+    font-style: normal;
+    color: white;
+    background-color: black;
+    margin-top: 0.125rem; 
     border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
-
 /* Styles for .brand in the main header */
 header > .navbar .brand {
-    font-size: 2rem;
-    font-family: 'Oswald', Arial, sans-serif;
+    font-size: 2rem; /* 32px */
     color: var(--brand-text);
-    font-weight: bold;
-    letter-spacing: 2px;
+    letter-spacing: 0.125rem; /* 2px */
 }
+.brand{
+    font-family: "Audiowide", sans-serif;
+    font-weight: 400;
+    font-style: normal;
 
+}
 .theam {
     cursor: pointer;
     display: flex;
@@ -138,7 +154,7 @@ main {
     display: flex;
     align-items: center;
     justify-content: center;
-    min-height: calc(100vh - 80px); /* Adjust if main header height changes */
+    min-height: calc(100vh - 5rem); /* 80px -> 5rem */
 }
 
 .welcome-section {
@@ -196,22 +212,31 @@ body.dark-theme .gradient-overlay {
 .header-sub .navbar { /* Navbar within the sticky header */
     position: relative;
     z-index: 2; /* Above gradient overlay */
+    height: 3.75rem; /* 60px (75% of main navbar height 5rem) */
     background: transparent; /* Ensure it doesn't obscure the gradient or header-sub bg */
+}
+
+/* Scaled down logo for sticky header */
+.header-sub .navbar .logo-text {
+    height: calc(3.75rem * 0.75); /* 2.8125rem (45px) */
+    width: calc(3.75rem * 0.75);  /* 2.8125rem (45px) */
+    font-size: calc(2.9375rem * 0.75); /* 2.203125rem (approx 35.25px) */
+    margin-top: calc(0.125rem * 0.75); /* 0.09375rem (1.5px) */
 }
 
 /* Text color for .brand and .links a inside .header-sub .navbar */
 .header-sub .navbar .brand,
 .header-sub .navbar .links a {
-    font-size: 2rem; /* Copied from main header .brand for consistency */
-    font-family: 'Oswald', Arial, sans-serif; /* Copied */
-    font-weight: bold; /* Copied */
-    letter-spacing: 2px; /* Copied */
     color: var(--sticky-header-text);
     text-decoration: none; /* For links */
     /* transition for color change is on '*' or can be specified here */
 }
+.header-sub .navbar .brand {
+    font-size: calc(2rem * 0.75); /* 1.5rem (24px) */
+    letter-spacing: calc(0.125rem * 0.75); /* 0.09375rem (1.5px) */
+}
 .header-sub .navbar .links a { /* Override for links if needed, e.g., font-size */
-    font-size: 1.1rem;
+    font-size: 1.1rem; /* Kept as is, or could be scaled: calc(1.1rem * 0.75) */
     font-weight: 500;
     font-family: "Roboto", sans-serif; /* Revert to Roboto for links if Oswald is too bold */
     letter-spacing: normal;
