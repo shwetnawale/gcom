@@ -3,117 +3,82 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>G-COM</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Audiowide&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&family=Oswald:wght@400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <link rel="stylesheet" href="style.css">
+    <title>Loading Animation</title>
+    <style>
+        /* Basic page setup */
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: #f4f7f6;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Loader container - covers the whole page */
+        #loader-wrapper {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: #fff; /* White background */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999; /* Ensures it's on top of other content */
+            transition: opacity 0.5s;
+        }
+
+        /* The spinner element */
+        .spinner {
+            border: 8px solid #e3e3e3; /* Light grey circle */
+            border-top: 8px solid #3498db; /* Blue spinning part */
+            border-radius: 50%;
+            width: 60px;
+            height: 60px;
+            animation: spin 1.2s linear infinite;
+        }
+
+        /* The spin animation using keyframes */
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        /* The content that appears after loading */
+        #content {
+            display: none; /* Hidden by default */
+            text-align: center;
+            padding: 50px;
+        }
+        
+        h1 {
+            color: #333;
+        }
+    </style>
 </head>
 <body>
-    <section class="mainpage">
 
-        <header>
-            <nav class="navbar">
-                <div class="logo">
-                    <h1 class="logo-text">G</h1>
-                    <span class="brand">-COM</span>
-                </div>
-                <div class="theam" id="theme-toggle">
-                    <!-- Sun Icon (initially hidden in light mode) -->
-                    <svg id="sun-icon" style="display: none;" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <circle cx="12" cy="12" r="5" fill="currentColor"/>
-                        <path d="M12 1V3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                        <path d="M12 21V23" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                        <path d="M4.22 4.22L5.64 5.64" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                        <path d="M18.36 18.36L19.78 19.78" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                        <path d="M1 12H3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                        <path d="M21 12H23" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                        <path d="M4.22 19.78L5.64 18.36" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                        <path d="M18.36 5.64L19.78 4.22" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                    </svg>
-                    <!-- Moon Icon (initially visible in light mode) -->
-                    <svg id="moon-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79Z" fill="currentColor"/>
-                    </svg>
-                </div>
-                <ul class="links">
-                    <li><a href="#">Join</a></li>
-                    <li><a href="#">Create</a></li>
-                    <li><a href="#">Add</a></li>
-                    <li><a href="#">About</a></li>
-                </ul>
-            </nav>
-        </header>
-        <main>
-            <section class="welcome-section">
-                <h2 class="welcome-title hover-underline">Welcome to G-COM</h2>
-                <p class="welcome-description">
-                    G-COM is your gateway to innovative solutions and collaborative growth. Join us to create, connect, and achieve more together.
-                </p>
-                <button id="wel-explore-btn">Explore Communities</button>
-                <button id="wel-explore-animation-btn">Animated Explore</button>
-                <button id="home3-animation-btn">Animated Explore</button>
-           
-        </main>
-    </section>
-    <section class="body-sub">
-        <header class="header-sub">
-            <div class="gradient-overlay"></div>
-            <nav class="navbar"> <!-- Navbar inside header-sub -->
-                <div class="logo">
-                <h1 class="logo-text">G</h1>
-                <span class="brand">-COM</span>
-                </div>
-                <div class="img">
-                </div>
-                <ul class="links">
-                    <li><a href="#">Join</a></li>
-                    <li><a href="#">Create</a></li>
-                    <li><a href="#">Add</a></li>
-                    <li><a href="#">About</a></li>
-                </ul>
-            </nav>
-        </header>
-    </section>
-        <div class="content">
-            <section class="features-section">
-                <div class="feature-card">
-                    <i class="fas fa-bolt"></i>
-                    <h3>Fast & Reliable</h3>
-                    <p>Experience seamless communication with our high-performance infrastructure.</p>
-                </div>
-                <div class="feature-card">
-                    <i class="fas fa-shield-alt"></i>
-                    <h3>Secure & Private</h3>
-                    <p>Your conversations are end-to-end encrypted. Your privacy is our priority.</p>
-                </div>
-                <div class="feature-card">
-                    <i class="fas fa-cloud"></i>
-                    <h3>Cloud Synced</h3>
-                    <p>Access your chats and files from any device, anywhere in the world.</p>
-                </div>
-            </section>
-            <!-- <section>
-                <button>Get Started</button>
-            </section> -->
-        </div>
-        <!-- Add your long content here to enable scrolling -->
-        <div style="height: 2000px; background: transparent;"></div> <!-- Made background transparent for testing -->
-    </section>
-    <footer>
-        <div class="footer-content">
-            <p>&copy; 2023 G-COM. All rights reserved.</p>
-            <ul class="social-links">
-                <li><a href="#">Facebook</a></li>
-                <li><a href="#">Twitter</a></li>
-                <li><a href="#">Instagram</a></li>
-            </ul>
-        </div>
-    </footer>
-    <script src="script.js"></script>
+    <!-- The loader element -->
+    <div id="loader-wrapper">
+        <div class="spinner"></div>
+    </div>
+
+    <!-- The main content of your page -->
+    <div id="content">
+        <h1>Page Loaded!</h1>
+        <p>Welcome to the main content.</p>
+    </div>
+
+    <script>
+        // Wait for 5 seconds, then hide the loader and show the content
+        setTimeout(function() {
+            const loader = document.getElementById('loader-wrapper');
+            const content = document.getElementById('content');
+
+            loader.style.display = 'none'; // Hide the loader
+            content.style.display = 'block'; // Show the content
+        }, 5000); // 5000 milliseconds = 5 seconds
+    </script>
+
 </body>
 </html>
