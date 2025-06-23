@@ -1,0 +1,499 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+:root {
+    --primary-blue: #007bff; /* A general blue, adjust if needed for specific elements */
+    --light-blue-gradient-start: #3B82F6;
+    --dark-blue-gradient-end: #1E40AF;
+    --text-color-dark: #333;
+    --text-color-light: #555;
+    --text-color-grey: #777;
+    --bg-light-grey: #F4F6F8;
+    --border-grey: #E0E0E0;
+    --white: #fff;
+    --sidebar-bg: #FFFFFF;
+    --sidebar-link-hover: #F0F2F5;
+    --active-link-bg: #EAF2FE; /* A lighter blue for active sidebar link */
+    --active-link-color: #0056b3; /* Darker blue for active link text */
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: var(--bg-light-grey);
+    color: var(--text-color-dark);
+    line-height: 1.6;
+}
+
+/* Header Styling */
+.main-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 30px;
+    background-color: var(--white);
+    border-bottom: 1px solid var(--border-grey);
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.header-left {
+    display: flex;
+    align-items: center;
+}
+
+.logo {
+    font-weight: 600;
+    font-size: 1.2rem;
+    color: var(--primary-blue);
+    margin-right: 10px;
+}
+
+.header-left .fa-chevron-down {
+    color: var(--text-color-grey);
+    font-size: 0.8rem;
+}
+
+.header-nav {
+    display: flex;
+    gap: 25px;
+}
+
+.header-nav a {
+    text-decoration: none;
+    color: var(--text-color-light);
+    font-weight: 500;
+    padding: 5px 0;
+    position: relative;
+}
+
+.header-nav a.active {
+    color: var(--primary-blue);
+}
+
+.header-nav a.active::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -8px; /* Adjust to align with the bottom of the text */
+    width: 100%;
+    height: 2px;
+    background-color: var(--primary-blue);
+    border-radius: 2px;
+}
+
+
+.header-right {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.header-right i {
+    color: var(--text-color-light);
+    font-size: 1.1rem;
+    cursor: pointer;
+}
+
+.user-info {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    margin-left: 10px;
+}
+
+.user-avatar-small {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    background-color: #A0C4FF; /* Example background for LC, TV */
+    color: var(--white);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 0.7rem;
+    font-weight: 600;
+    border: 2px solid var(--white);
+    box-shadow: 0 0 0 1px var(--border-grey);
+}
+
+.user-avatar-small:nth-child(2) {
+    background-color: #8D9EFF; /* Different color for TV */
+    margin-left: -10px; /* Overlap effect */
+}
+
+
+.user-info span {
+    font-size: 0.85rem;
+    color: var(--text-color-light);
+}
+
+.new-post-btn {
+    background-color: var(--primary-blue);
+    color: var(--white);
+    border: none;
+    padding: 8px 15px;
+    border-radius: 20px;
+    font-weight: 500;
+    cursor: pointer;
+    font-size: 0.9rem;
+    transition: background-color 0.2s ease;
+}
+
+.new-post-btn:hover {
+    background-color: #0056b3;
+}
+
+/* Main Container */
+.main-container {
+    display: flex;
+    padding: 20px 30px;
+    gap: 20px;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+/* Sidebar Styling */
+.sidebar {
+    flex: 0 0 250px; /* Fixed width sidebar */
+    background-color: var(--sidebar-bg);
+    border-radius: 10px;
+    padding: 20px 0;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    height: fit-content; /* Adjust height based on content */
+    position: sticky;
+    top: 90px; /* Position below the header */
+}
+
+.sidebar-nav {
+    padding: 0 15px;
+}
+
+.sidebar-section {
+    margin-bottom: 20px;
+}
+
+.sidebar-section h4 {
+    color: var(--text-color-grey);
+    font-size: 0.9rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+    padding: 0 10px; /* Indent headings slightly */
+}
+
+.sidebar-link {
+    display: flex;
+    align-items: center;
+    padding: 10px 10px;
+    text-decoration: none;
+    color: var(--text-color-dark);
+    font-size: 0.95rem;
+    border-radius: 8px;
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.sidebar-link i {
+    margin-right: 10px;
+    font-size: 1.1rem;
+    color: var(--text-color-light);
+}
+
+.sidebar-link:hover {
+    background-color: var(--sidebar-link-hover);
+}
+
+.sidebar-link.active-link {
+    background-color: var(--active-link-bg);
+    color: var(--active-link-color);
+    font-weight: 600;
+}
+
+.sidebar-link.active-link i {
+    color: var(--active-link-color);
+}
+
+
+.go-live-btn {
+    width: calc(100% - 30px); /* Account for padding */
+    margin: 20px 15px 0;
+    background-color: var(--primary-blue);
+    color: var(--white);
+    border: none;
+    padding: 12px;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    font-size: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    transition: background-color 0.2s ease;
+}
+
+.go-live-btn:hover {
+    background-color: #0056b3;
+}
+
+/* Content Area Styling */
+.content-area {
+    flex: 1; /* Takes remaining space */
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.say-hello {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--text-color-grey);
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+.say-hello .dot {
+    width: 8px;
+    height: 8px;
+    background-color: #28a745; /* Green dot */
+    border-radius: 50%;
+}
+
+/* Welcome Banner */
+.welcome-banner {
+    background: linear-gradient(135deg, var(--light-blue-gradient-start) 0%, var(--dark-blue-gradient-end) 100%);
+    color: var(--white);
+    padding: 40px;
+    border-radius: 15px;
+    position: relative;
+    overflow: hidden; /* Ensure circles stay within bounds */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    min-height: 250px;
+}
+
+.banner-get-started {
+    background-color: var(--white);
+    color: var(--primary-blue);
+    border: none;
+    padding: 10px 20px;
+    border-radius: 25px;
+    font-weight: 600;
+    cursor: pointer;
+    margin-bottom: 15px;
+    font-size: 0.95rem;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    transition: transform 0.2s ease;
+}
+
+.banner-get-started:hover {
+    transform: translateY(-2px);
+}
+
+.welcome-banner h2 {
+    font-size: 2.2rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+    line-height: 1.2;
+}
+
+.banner-illustration {
+    position: absolute;
+    right: 40px;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    gap: 20px;
+    /* Use grid or absolute positioning for exact placement as in image */
+    /* For simplicity, let's place them with flex for now and refine if needed */
+}
+
+.illustration-circle {
+    background-color: rgba(255, 255, 255, 0.2); /* Semi-transparent white */
+    backdrop-filter: blur(5px); /* Optional blur effect */
+    border-radius: 50%;
+    width: 120px;
+    height: 120px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-size: 0.8rem;
+    font-weight: 500;
+    color: var(--white);
+    padding: 10px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.illustration-circle img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-bottom: 5px;
+    background-color: var(--white); /* White background for the icon */
+    padding: 8px;
+}
+
+/* Adjust positions for the illustration circles to match the image */
+.banner-illustration {
+    position: absolute;
+    right: 20px; /* Adjust as needed */
+    top: 50%;
+    transform: translateY(-50%);
+    width: 250px; /* Container width for the star-like layout */
+    height: 250px; /* Container height */
+    display: flex; /* Using flexbox for relative positioning */
+    justify-content: center;
+    align-items: center;
+}
+
+.illustration-circle {
+    position: absolute;
+    /* Base positioning for the star-like arrangement */
+}
+
+.circle-1 { /* Share your wins */
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.circle-2 { /* Introduce yourself */
+    bottom: 50px;
+    left: 0;
+    transform: translateY(-50%);
+}
+
+.circle-3 { /* Growth strategies */
+    bottom: 50px;
+    right: 0;
+    transform: translateY(-50%);
+}
+
+
+/* Post Input Section */
+.post-input-section {
+    background-color: var(--white);
+    padding: 15px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+.user-avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    overflow: hidden;
+    flex-shrink: 0;
+}
+
+.user-avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.post-input-section input {
+    flex-grow: 1;
+    border: none;
+    outline: none;
+    padding: 10px 0;
+    font-size: 0.95rem;
+    color: var(--text-color-dark);
+}
+
+.post-input-section input::placeholder {
+    color: var(--text-color-grey);
+}
+
+.add-post-btn {
+    background-color: var(--bg-light-grey);
+    border: none;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    font-size: 1.1rem;
+    color: var(--text-color-light);
+    transition: background-color 0.2s ease;
+}
+
+.add-post-btn:hover {
+    background-color: var(--border-grey);
+}
+
+/* Post Card Styling */
+.post-card {
+    background-color: var(--white);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+.post-header {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 15px;
+}
+
+.post-author-info {
+    flex-grow: 1;
+}
+
+.author-name {
+    font-weight: 600;
+    font-size: 1rem;
+    color: var(--text-color-dark);
+    display: block;
+}
+
+.post-date {
+    font-size: 0.85rem;
+    color: var(--text-color-grey);
+}
+
+.post-options {
+    color: var(--text-color-light);
+    cursor: pointer;
+    font-size: 1.1rem;
+}
+
+.post-content h3 {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+    color: var(--text-color-dark);
+}
+
+.post-content p {
+    font-size: 0.95rem;
+    color: var(--text-color-light);
+    margin-bottom: 10px;
+}
+
+.post-media {
+    margin-top: 15px;
+}
+
+.post-media img {
+    width: 100%;
+    border-radius: 8px;
+    object-fit: cover;
+    max-height: 400px; /* Limit height of post images */
+}
