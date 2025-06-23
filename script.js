@@ -54,8 +54,14 @@ document.addEventListener('DOMContentLoaded', () => {
     handleScroll(); // Initial check on page load
 
     // --- Home Button Navigation ---
-    const homeButton = document.getElementById('homeButton');
+    const homeButton = document.getElementById('wel-explore-btn');
     homeButton.addEventListener('click', function() {
-        window.location.href = 'home.html';
+        window.location.href = 'wel-explore.html';
+    });
+
+    // --- Animated Home Button Navigation ---
+    const animationButton = document.getElementById('wel-explore-animation-btn');
+    animationButton.addEventListener('click', function() {
+        window.location.href = 'wel-explore - Copy.html';
     });
 });

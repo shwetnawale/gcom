@@ -14,64 +14,51 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header>
-        <nav class="navbar">
-            <div class="logo">
-                <h1 class="logo-text">G</h1>
-                <span class="brand">-COM</span>
-            </div>
-            <div class="theam" id="theme-toggle">
-                <!-- Sun Icon (initially hidden in light mode) -->
-                <svg id="sun-icon" style="display: none;" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <circle cx="12" cy="12" r="5" fill="currentColor"/>
-                    <path d="M12 1V3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                    <path d="M12 21V23" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                    <path d="M4.22 4.22L5.64 5.64" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                    <path d="M18.36 18.36L19.78 19.78" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                    <path d="M1 12H3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                    <path d="M21 12H23" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                    <path d="M4.22 19.78L5.64 18.36" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                    <path d="M18.36 5.64L19.78 4.22" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>
-                <!-- Moon Icon (initially visible in light mode) -->
-                <svg id="moon-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79Z" fill="currentColor"/>
-                </svg>
-            </div>
-            <ul class="links">
-                <li><a href="#">Join</a></li>
-                <li><a href="#">Create</a></li>
-                <li><a href="#">Add</a></li>
-                <li><a href="#">About</a></li>
-            </ul>
-        </nav>
-    </header>
-    <main>
-        <section class="welcome-section">
-            <h2 class="welcome-title">Welcome to G-COM</h2>
-            <p class="welcome-description">
-                G-COM is your gateway to innovative solutions and collaborative growth. Join us to create, connect, and achieve more together.
-            </p>
-            <button id="homeButton">Go Home</button>
-        </section>
-        <section class="features-section">
-            <div class="feature-card">
-                <i class="fas fa-bolt"></i>
-                <h3>Fast & Reliable</h3>
-                <p>Experience seamless communication with our high-performance infrastructure.</p>
-            </div>
-            <div class="feature-card">
-                <i class="fas fa-shield-alt"></i>
-                <h3>Secure & Private</h3>
-                <p>Your conversations are end-to-end encrypted. Your privacy is our priority.</p>
-            </div>
-            <div class="feature-card">
-                <i class="fas fa-cloud"></i>
-                <h3>Cloud Synced</h3>
-                <p>Access your chats and files from any device, anywhere in the world.</p>
-            </div>
-        </section>
-    </main>
+    <section class="mainpage">
+
+        <header>
+            <nav class="navbar">
+                <div class="logo">
+                    <h1 class="logo-text">G</h1>
+                    <span class="brand">-COM</span>
+                </div>
+                <div class="theam" id="theme-toggle">
+                    <!-- Sun Icon (initially hidden in light mode) -->
+                    <svg id="sun-icon" style="display: none;" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="12" cy="12" r="5" fill="currentColor"/>
+                        <path d="M12 1V3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M12 21V23" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M4.22 4.22L5.64 5.64" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M18.36 18.36L19.78 19.78" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M1 12H3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M21 12H23" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M4.22 19.78L5.64 18.36" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M18.36 5.64L19.78 4.22" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                    <!-- Moon Icon (initially visible in light mode) -->
+                    <svg id="moon-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79Z" fill="currentColor"/>
+                    </svg>
+                </div>
+                <ul class="links">
+                    <li><a href="#">Join</a></li>
+                    <li><a href="#">Create</a></li>
+                    <li><a href="#">Add</a></li>
+                    <li><a href="#">About</a></li>
+                </ul>
+            </nav>
+        </header>
+        <main>
+            <section class="welcome-section">
+                <h2 class="welcome-title hover-underline">Welcome to G-COM</h2>
+                <p class="welcome-description">
+                    G-COM is your gateway to innovative solutions and collaborative growth. Join us to create, connect, and achieve more together.
+                </p>
+                <button id="wel-explore-btn">Explore Communities</button>
+                <button id="wel-explore-animation-btn">Animated Explore</button>
+           
+        </main>
+    </section>
     <section class="body-sub">
         <header class="header-sub">
             <div class="gradient-overlay"></div>
@@ -90,8 +77,25 @@
                 </ul>
             </nav>
         </header>
+    </section>
         <div class="content">
-            
+            <section class="features-section">
+                <div class="feature-card">
+                    <i class="fas fa-bolt"></i>
+                    <h3>Fast & Reliable</h3>
+                    <p>Experience seamless communication with our high-performance infrastructure.</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-shield-alt"></i>
+                    <h3>Secure & Private</h3>
+                    <p>Your conversations are end-to-end encrypted. Your privacy is our priority.</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-cloud"></i>
+                    <h3>Cloud Synced</h3>
+                    <p>Access your chats and files from any device, anywhere in the world.</p>
+                </div>
+            </section>
             <!-- <section>
                 <button>Get Started</button>
             </section> -->

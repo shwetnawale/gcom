@@ -1,0 +1,240 @@
+/* wel-explore.css */
+
+body {
+    overflow-x: hidden; /* Prevent horizontal scroll */
+    overflow-y: auto;
+}
+
+.explore-container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    width: 100%;
+    background-color: var(--body-bg);
+    color: var(--body-text);
+    padding: 0 2.5rem;
+}
+
+.explore-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0; /* Padding is on container */
+    height: 5rem; /* 80px, same as main header */
+    width: 100%;
+    flex-shrink: 0;
+}
+
+/* Re-using logo styles from style.css */
+.explore-header .logo {
+    display: flex;
+    align-items: center;
+}
+
+.explore-header .logo .logo-text {
+    height: 3.75rem;
+    width: 3.75rem;
+    font-family: "Audiowide", sans-serif;
+    font-size: 2.9375rem;
+    color: var(--brand-textg);
+    background-color: var(--brand-textbg);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.explore-header .logo .brand {
+    font-family: "Audiowide", sans-serif;
+    font-size: 2rem;
+    color: var(--brand-text);
+    letter-spacing: 0.125rem;
+}
+
+.explore-main {
+    flex-grow: 1;
+    text-align: center;
+    padding: 40px 0;
+}
+
+.explore-main h1 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+    font-family: "Audiowide", sans-serif;
+}
+
+.explore-main p {
+    font-size: 1.1rem;
+    color: var(--footer-text);
+    margin-bottom: 40px;
+}
+
+.community-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 25px;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.community-card {
+    background-color: transparent;
+    min-height: 190px;
+    border: 2px solid transparent;
+    border-radius: 15px;
+    perspective: 1000px;
+    cursor: pointer;
+    transition: transform 1s ease, border-color 1s ease;
+}
+
+.card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transition: transform 1s;
+    transform-style: preserve-3d;
+}
+
+.community-card:hover {
+    transform: translateY(-5px);
+}
+
+.community-card:hover .card-inner {
+    transform: rotateY(180deg);
+}
+
+.card-front,
+.card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transition: box-shadow 0.3s ease;
+}
+
+.card-front {
+    background-color: var(--footer-bg);
+    gap: 15px;
+    padding: 30px 20px;
+}
+
+.card-back {
+    background-color: var(--footer-bg);
+    transform: rotateY(180deg);
+    padding: 20px;
+}
+
+.card-back h3 {
+    font-family: "Audiowide", sans-serif;
+    font-size: 1.2rem;
+    color: var(--link-hover-text);
+    margin-bottom: 10px;
+}
+
+.card-back p {
+    font-size: 0.95rem;
+    line-height: 1.4;
+    color: var(--footer-text);
+    margin: 0;
+}
+
+.community-card:hover .card-front,
+.community-card:hover .card-back {
+    box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+}
+
+.community-card.selected {
+    border-width: 3px; /* Make the border visible */
+    border-style: solid; /* Required for border-image to work */
+    border-image: linear-gradient(to right, #ff0000, #00ffff) 1; /* Apply the gradient */
+    transform: translateY(-5px) scale(1.02);
+}
+
+.community-card.selected .card-front,
+.community-card.selected .card-back {
+    box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+}
+
+.card-front i {
+    font-size: 3rem;
+    color: var(--link-hover-text);
+}
+
+.card-front span {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--body-text);
+}
+
+.explore-footer {
+    padding: 30px 0;
+    text-align: center;
+    flex-shrink: 0;
+}
+
+#continue-btn {
+    padding: 15px 60px;
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+#continue-btn:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+    transform: none;
+    color: #666;
+}
+
+/* Dark Theme Overrides */
+body.dark-theme .explore-header .logo .brand {
+    color: var(--brand-text-dark);
+}
+
+body.dark-theme .explore-main p {
+    color: var(--footer-text-dark);
+}
+
+body.dark-theme .card-front,
+body.dark-theme .card-back {
+    background-color: var(--footer-bg-dark);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+}
+
+body.dark-theme .community-card:hover .card-front,
+body.dark-theme .community-card:hover .card-back,
+body.dark-theme .community-card.selected .card-front,
+body.dark-theme .community-card.selected .card-back {
+    box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+}
+
+body.dark-theme .community-card.selected {
+    /* The border-image property already applies the fixed gradient, no dark theme override needed for border-image */
+}
+
+body.dark-theme .card-back h3 {
+    color: var(--link-hover-text-dark);
+}
+
+body.dark-theme .card-back p {
+    color: var(--footer-text-dark);
+}
+
+body.dark-theme .card-front i {
+    color: var(--link-hover-text-dark);
+}
+
+body.dark-theme .card-front span {
+    color: var(--body-text-dark);
+}
+
+body.dark-theme #continue-btn:disabled {
+    background-color: #333;
+    color: #888;
+}
