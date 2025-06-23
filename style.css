@@ -54,6 +54,12 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: "Roboto", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+    font-variation-settings: "wdth" 100;
+    /* General transition for smooth theme changes */
+    transition: background-color 1s ease, color 1s ease, border-color 1s ease, box-shadow 1s ease, opacity 1s ease;
 }
 
 html {
@@ -61,14 +67,9 @@ html {
 }
 
 body {
-    font-family: "Roboto", sans-serif;
-    font-optical-sizing: auto;
-    font-style: normal;
-    font-variation-settings: "wdth" 100;
     background: var(--body-bg);
     color: var(--body-text);
     min-height: 100vh;
-    transition: background-color 0.5s ease, color 0.5s ease; /* Scoped transition to body */
 }
 
 header { /* Main header */
@@ -124,20 +125,12 @@ header > .navbar .brand {
 
 }
 .theam {
-    /* Reset button styles */
-    background: none;
-    border: none;
-    padding: 0;
-    /* General styles */
     cursor: pointer;
     display: flex;
     align-items: center;
     color: var(--icon-color); /* SVG icons will inherit this color */
-    transition: color 0.3s ease, transform 0.3s ease;
 }
-.theam:hover {
-    transform: scale(1.1);
-}
+
 .theam svg {
     width: 24px; /* Ensure consistent size if not set in SVG */
     height: 24px;
@@ -155,7 +148,6 @@ header > .navbar .links a {
     text-decoration: none;
     font-size: 1.1rem;
     font-weight: 500;
-    transition: color 0.3s ease;
 }
 
 header > .navbar .links a:hover {
@@ -247,12 +239,6 @@ main {
     line-height: 1.5;
 }
 
-/* This ensures that when a card is a link, the text inside it doesn't turn blue. */
-.feature-card a {
-    text-decoration: none;
-    color: inherit;
-}
-
 @keyframes fadeInDown {
     from { opacity: 0; transform: translateY(-20px); }
     to { opacity: 1; transform: translateY(0); }
@@ -310,7 +296,7 @@ body.dark-theme .gradient-overlay {
 .header-sub .navbar .links a {
     color: var(--sticky-header-text);
     text-decoration: none; /* For links */
-    transition: color 0.5s ease;
+    /* transition for color change is on '*' or can be specified here */
 }
 .header-sub .navbar .brand {
     font-size: calc(2rem * 0.75); /* 1.5rem (24px) */
@@ -351,7 +337,7 @@ button {
     margin: 4px 2px;
     cursor: pointer;
     border-radius: 50px;
-    transition: transform 0.3s ease, background-color 0.3s ease, color 0.3s ease;
+    transition: transform 0.3s ease, background-color s ease, color 1s ease;
 }
 
 button:hover {
@@ -392,7 +378,6 @@ footer {
     color: var(--footer-link-text);
     text-decoration: none;
     font-size: 1.1rem;
-    transition: color 0.3s ease;
 }
 
 .social-links a:hover {

@@ -23,16 +23,16 @@
                     </div>
                 </a>
                 <div class="sidebar-actions">
-                    <button class="icon-button" aria-label="Communities"><i class="fas fa-users"></i></button>
-                    <button class="icon-button" aria-label="Status"><i class="fas fa-circle-notch"></i></button>
-                    <button class="icon-button" aria-label="New Chat"><i class="fas fa-comment-dots"></i></button>
-                    <button class="icon-button" aria-label="Menu"><i class="fas fa-ellipsis-v"></i></button>
-                    <button class="theam" id="theme-toggle" aria-label="Toggle theme">
+                    <i class="fas fa-users"></i>
+                    <i class="fas fa-circle-notch"></i>
+                    <i class="fas fa-comment-dots"></i>
+                    <i class="fas fa-ellipsis-v"></i>
+                    <div class="theam" id="theme-toggle">
                         <!-- Sun Icon -->
                         <svg id="sun-icon" style="display: none;" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="12" cy="12" r="5" fill="currentColor"/><path d="M12 1V3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M12 21V23" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M4.22 4.22L5.64 5.64" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M18.36 18.36L19.78 19.78" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M1 12H3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M21 12H23" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M4.22 19.78L5.64 18.36" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M18.36 5.64L19.78 4.22" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
                         <!-- Moon Icon -->
                         <svg id="moon-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79Z" fill="currentColor"/></svg>
-                    </button>
+                    </div>
                 </div>
             </header>
             <div class="chat-search">
@@ -42,7 +42,7 @@
             <div class="chat-list">
                 <!-- Sample Chat Item -->
                 <div class="chat-item active">
-                    <img src="https://i.pravatar.cc/50?u=user1" alt="User Avatar" class="avatar" loading="lazy">
+                    <img src="https://i.pravatar.cc/50?u=user1" alt="User Avatar" class="avatar">
                     <div class="chat-info">
                         <div class="chat-name">Jane Doe</div>
                         <div class="last-message">Awesome, see you then!</div>
@@ -59,21 +59,21 @@
         <!-- Right Panel: Conversation -->
         <div class="conversation-view">
             <header class="chat-header">
-                <img src="https://i.pravatar.cc/40?u=user1" alt="User Avatar" class="avatar" loading="lazy">
+                <img src="https://i.pravatar.cc/40?u=user1" alt="User Avatar" class="avatar">
                 <div class="chat-info">
                     <div class="chat-name">Jane Doe</div>
                     <div class="user-status">online</div>
                 </div>
                 <div class="conversation-actions">
-                    <button class="icon-button" aria-label="Video call"><i class="fas fa-video"></i></button>
-                    <button class="icon-button" aria-label="Audio call"><i class="fas fa-phone"></i></button>
-                    <button class="icon-button" aria-label="More options"><i class="fas fa-ellipsis-v"></i></button>
+                    <i class="fas fa-video"></i>
+                    <i class="fas fa-phone"></i>
+                    <i class="fas fa-ellipsis-v"></i>
                 </div>
             </header>
             <div class="message-area"></div>
             <footer class="message-input-area"></footer>
         </div>
     </div>
-    <script src="script.js"></script>
+    <script src="home-script.js"></script>
 </body>
 </html>
