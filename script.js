@@ -64,4 +64,9 @@ document.addEventListener('DOMContentLoaded', () => {
     animationButton.addEventListener('click', function() {
         window.location.href = 'wel-explore - Copy.html';
     });
+
+     const animationButtonn = document.getElementById('home3-animation-btn');
+    animationButtonn.addEventListener('click', function() {
+        window.location.href = 'home3.html';
+    });
 });
