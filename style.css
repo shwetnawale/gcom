@@ -572,7 +572,7 @@ body.dark-theme .animated-button {
 }
 
 .join-now-header-btn:hover {
-    background-image: linear-gradient(to right, #eeff01, #a2ff00); /* Yellow-green gradient */
+    background-image: linear-gradient(to right, #fde405, #a2ff00); /* Yellow-green gradient */
     border-color: transparent; /* Hide border on hover */
     transform: scale(1.05);
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
@@ -586,7 +586,7 @@ body.dark-theme .join-now-header-btn {
 }
 
 body.dark-theme .join-now-header-btn:hover {
-    background-image: linear-gradient(to right, #eeff01, #a2ff00); /* Same gradient for dark theme */
+    background-image: linear-gradient(to right, #19ff04, #5900ff); /* Same gradient for dark theme */
     border-color: transparent; /* Hide border on hover */
     transform: scale(1.05); /* Add transform for consistency */
     box-shadow: 0 8px 20px rgba(255, 255, 255, 0.2);
