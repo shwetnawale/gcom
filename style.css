@@ -571,14 +571,17 @@ body.dark-theme .animated-button {
     border: 1px solid #000000;
 }
 
-.join-now-header-btn {
+.join-now-header-btn{
     transform: scale(1.05);
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
 }
-
+.join-now-header-btn:hover{
+    transform: scale(2.05);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
 /* Dark Theme Styles for the new button */
 body.dark-theme .join-now-header-btn {
-    background-color: #ffffff;
+    background-color: #000000;
     color: #000000;
     border-color: #ffffff; /* Match background so it's not visible */
 }
