@@ -537,8 +537,9 @@ body.dark-theme .underline {
     z-index: -1;
 }
 .join-now-header-btn-container{
+    width: 18vw;
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
     
 }
