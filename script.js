@@ -1,66 +1,104 @@
-// script.js
 document.addEventListener('DOMContentLoaded', () => {
+
+    // --- Theme Toggle Logic ---
     const themeToggle = document.getElementById('theme-toggle');
     const sunIcon = document.getElementById('sun-icon');
     const moonIcon = document.getElementById('moon-icon');
-    const body = document.body;
 
-    // --- Theme Toggle Functionality ---
-    const applyTheme = (theme) => {
-        if (theme === 'dark') {
-            body.classList.add('dark-theme');
-            sunIcon.style.display = 'block';
-            moonIcon.style.display = 'none';
-        } else {
-            body.classList.remove('dark-theme');
-            sunIcon.style.display = 'none';
-            moonIcon.style.display = 'block';
+    const setTheme = (isDark) => {
+        document.body.classList.toggle('dark-theme', isDark);
+        if (sunIcon && moonIcon) {
+            sunIcon.style.display = isDark ? 'block' : 'none';
+            moonIcon.style.display = isDark ? 'none' : 'block';
+        }
+        localStorage.setItem('theme', isDark ? 'dark' : 'light');
+    };
+
+    const savedTheme = localStorage.getItem('theme');
+    const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+    const isDark = savedTheme === 'dark' || (savedTheme === null && prefersDark);
+    setTheme(isDark);
+
+    if (themeToggle) {
+        themeToggle.addEventListener('click', () => {
+            setTheme(!document.body.classList.contains('dark-theme'));
+        });
+    }
+
+    // --- Sticky Header Logic ---
+    const headerSub = document.querySelector('.header-sub');
+    if (headerSub) {
+        const navbar = headerSub.querySelector('.navbar');
+        const gradientOverlay = headerSub.querySelector('.gradient-overlay');
+        
+        window.addEventListener('scroll', () => {
+            const scrollPosition = window.scrollY;
+            const triggerPoint = 200; // Example: activate after scrolling 200px
+
+            if (scrollPosition > triggerPoint) {
+                gradientOverlay.style.opacity = '1';
+                navbar.classList.add('text-on-gradient');
+            } else {
+                gradientOverlay.style.opacity = '0';
+                navbar.classList.remove('text-on-gradient');
+            }
+        });
+    }
+
+    // --- Single-Page Application (SPA) Navigation Logic ---
+    const pageContent = document.getElementById('page-content');
+
+    const fetchPage = async (url) => {
+        try {
+            const response = await fetch(url);
+            if (!response.ok) throw new Error('Page not found');
+            const text = await response.text();
+            const parser = new DOMParser();
+            return parser.parseFromString(text, 'text/html');
+        } catch (error) {
+            console.error('Failed to fetch page:', error);
+            window.location.assign(url); // Fallback to full reload on error
+            return null;
         }
     };
 
-    // Load saved theme from localStorage
-    const savedTheme = localStorage.getItem('gcom-theme');
-    if (savedTheme) {
-        applyTheme(savedTheme);
-    } else {
-        applyTheme('light'); // Default to light theme
-    }
+    const updatePage = (doc) => {
+        if (!doc || !pageContent) return;
 
-    // Event listener for theme toggle button
-    themeToggle.addEventListener('click', () => {
-        const newTheme = body.classList.contains('dark-theme') ? 'light' : 'dark';
-        applyTheme(newTheme);
-        localStorage.setItem('gcom-theme', newTheme);
-    });
+        document.title = doc.title;
+        const newContent = doc.getElementById('page-content');
 
-    // --- Sticky Header Scroll Effect ---
-    // This logic is specific to index.html which has the sticky header
-    const headerSub = document.querySelector('.header-sub');
-    const gradientOverlay = document.querySelector('.header-sub .gradient-overlay');
-    const navbarInHeaderSub = document.querySelector('.header-sub .navbar');
-
-    function handleScroll() {
-        // The elements are guaranteed to exist on index.html
-        if (headerSub.getBoundingClientRect().top <= 0) {
-            gradientOverlay.style.opacity = '1';
-            navbarInHeaderSub.classList.add('text-on-gradient');
-        } else {
-            gradientOverlay.style.opacity = '0';
-            navbarInHeaderSub.classList.remove('text-on-gradient');
+        if (newContent) {
+            pageContent.style.opacity = '0';
+            pageContent.style.transition = 'opacity 0.3s ease-out';
+            pageContent.addEventListener('transitionend', () => {
+                pageContent.innerHTML = newContent.innerHTML;
+                pageContent.style.opacity = '1';
+            }, { once: true });
         }
-    }
+    };
 
-    window.addEventListener('scroll', handleScroll);
-    handleScroll(); // Initial check on page load
+    const handleNav = async (url) => {
+        const doc = await fetchPage(url);
+        if (doc) {
+            history.pushState({ path: url }, '', url);
+            updatePage(doc);
+        }
+    };
 
-    // --- Home Button Navigation ---
-    const homeButton = document.getElementById('homeButton');
-    homeButton.addEventListener('click', function() {
-        window.location.href = 'home.html';
+    document.body.addEventListener('click', (e) => {
+        const link = e.target.closest('a');
+        if (link && link.origin === window.location.origin && !link.hash) {
+            e.preventDefault();
+            if (link.href !== window.location.href) {
+                handleNav(link.href);
+            }
+        }
     });
 
-     const animationButtonn = document.getElementById('home3-animation-btn');
-    animationButtonn.addEventListener('click', function() {
-        window.location.href = 'home3.html';
+    window.addEventListener('popstate', async (e) => {
+        const path = e.state?.path || window.location.pathname;
+        const doc = await fetchPage(path);
+        if (doc) updatePage(doc);
     });
 });
