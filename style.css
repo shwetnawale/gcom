@@ -11,6 +11,7 @@
     --link-text: #000000; /* For .links a in main header */
     --link-hover-text: #0278ff;
     --welcome-title-text: #5f5e5e;
+    --underline-color: #000; /* Black for light theme */
     --welcome-title-gradient-light: linear-gradient(to right, #8a2be2 0%, #ff00dd 50%, #ff4400 100%); /* New gradient for light theme welcome title */
     --welcome-desc-text: #000;
     --sticky-header-bg: #e9e9e9;
@@ -36,6 +37,7 @@
     --link-text-dark: #ffffff;
     --link-hover-text-dark: #64b5f6;
     --welcome-title-text-dark: linear-gradient(to right, #ff4400 0%, #d141a1 50%, #8a2be2 100%);
+    --underline-color-dark: #fff; /* White for dark theme */
     --welcome-desc-text-dark: #e0e0e0;
     --sticky-header-bg-dark: #000000; 
     --sticky-header-text-dark: #000000;
@@ -153,6 +155,13 @@ header > .navbar .links a {
 
 header > .navbar .links a:hover {
     color: var(--link-hover-text);
+}
+
+.underline {
+    width: 100%;
+    height: 0.1px; /* Adjust thickness as needed */
+    background-color: var(--underline-color);
+    transition: background-color 1s ease; /* Smooth transition for theme change */
 }
 
 main {
@@ -485,4 +494,8 @@ body.dark-theme .social-links a {
 
 body.dark-theme .social-links a:hover {
     color: var(--footer-link-hover-text-dark);
+}
+
+body.dark-theme .underline {
+    background-color: var(--underline-color-dark);
 }
