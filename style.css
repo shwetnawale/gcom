@@ -23,6 +23,12 @@
     --footer-text: #888;
     --footer-link-text: #222;
     --footer-link-hover-text: #0077ff;
+    --animated-button-bg: #000000; /* Black button for light theme */
+    --animated-button-text: #ffffff; /* White text for light theme */
+    --animated-button-hover-shadow: rgba(0, 0, 0, 0.3); /* Dark shadow for light button */
+    --modal-image-panel-gradient: linear-gradient(160deg, #d8bcfc 10%, #ffc0f0 75%); /* Light blue-violet to light pink */
+    --link-text-col: #000000; /* Ensure the link color matches the main header links */
+
     --icon-color: #222;
     --gradient-overlay-light: linear-gradient(to right, #ff0000, #fcff31);
 
@@ -48,8 +54,13 @@
     --footer-text-dark: #aaaaaa;
     --footer-link-text-dark: #e0e0e0;
     --footer-link-hover-text-dark: #64b5f6;
+    --animated-button-bg-dark: #ffffff; /* White button for dark theme */
+    --animated-button-text-dark: #000000; /* Black text for dark theme */
+    --animated-button-hover-shadow-dark: rgba(255, 255, 255, 0.3); /* Light shadow for dark button */
+    --modal-image-panel-gradient-dark: linear-gradient(160deg, #4a006e 10%, #80006e 75%); /* Dark blue-violet to dark pink */
     --icon-color-dark: #e0e0e0;
     --gradient-overlay-dark: white;
+    --link-text-col-dark: #ffffff; /* Ensure the link color matches the main header links in dark mode */
 }
 
 * {
@@ -59,7 +70,7 @@
     font-family: "Roboto", sans-serif;
     font-optical-sizing: auto;
     font-style: normal;
-    font-variation-settings: "wdth" 100;
+    font-variation-settings: "width" 100;
     /* General transition for smooth theme changes */
     transition: background-color 1s ease, color 1s ease, border-color 1s ease, box-shadow 1s ease, opacity 1s ease;
 }
@@ -419,7 +430,6 @@ body.dark-theme .logo-text {
 body.dark-theme .theam {
     color: var(--icon-color-dark);
 }
-
 body.dark-theme header > .navbar .links a {
     color: var(--link-text-dark);
 }
@@ -502,9 +512,9 @@ body.dark-theme .underline {
 .animated-button {
     display: inline-block;
     padding: 12px 28px;
-    border-radius: 40px;
-    background: linear-gradient(135deg, #ff0077, #0004ff);
-    color: white;
+    border-radius: 40px; /* Kept for consistency */
+    background: var(--animated-button-bg); /* Use theme-dependent background */
+    color: var(--animated-button-text);
     font-size: 1rem;
     font-weight: 500;
     text-decoration: none;
@@ -533,7 +543,48 @@ body.dark-theme .underline {
 
 .animated-button:hover {
     transform: scale(1.05);
-    box-shadow: 0 8px 20px rgba(111, 0, 255, 0.3);
+    box-shadow: 0 8px 20px var(--animated-button-hover-shadow); /* Use theme-dependent shadow */
+}
+
+/* Dark theme overrides for the animated button */
+body.dark-theme .animated-button {
+    background: var(--animated-button-bg-dark);
+    color: var(--animated-button-text-dark);
+    /* The ::before shimmer effect is currently white. On a white button in dark mode, it might not be visible. Consider adjusting it if needed. */
+}
+
+/* Styles for the new "Join Now" header button */
+.join-now-header-btn {
+    display: inline-block;
+    padding: 12px 28px;
+    border-radius: 40px;
+    font-size: 1rem;
+    font-weight: 500;
+    text-decoration: none;
+    position: relative;
+    z-index: 1;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 1s ease, color 1s ease, border-color 1s ease;
+    
+    /* Light Theme Styles */
+    background-color: #ffffff;
+    color: #000000;
+    border: 1px solid #000000;
+}
+
+.join-now-header-btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Dark Theme Styles for the new button */
+body.dark-theme .join-now-header-btn {
+    background-color: #ffffff;
+    color: #000000;
+    border-color: #ffffff; /* Match background so it's not visible */
+}
+
+body.dark-theme .join-now-header-btn:hover {
+    box-shadow: 0 8px 20px rgba(255, 255, 255, 0.2);
 }
 /* You can add these styles to your existing style.css file. */
 
@@ -548,6 +599,7 @@ body.dark-theme .underline {
     height: 100%; /* Full height */
     overflow: auto; /* Enable scroll if needed */
     background-color: rgba(0,0,0,0.6); /* Black w/ opacity */
+    backdrop-filter: blur(5px); /* Add blur effect to the background */
     justify-content: center;
     align-items: center;
 }
@@ -569,7 +621,7 @@ body.dark-theme .underline {
 
 .modal-image-panel {
     width: 40%;
-    background: linear-gradient(160deg, #ffffff 10%, #000000 75%);
+    background: var(--modal-image-panel-gradient); /* Use theme-dependent gradient */
     color: white;
     display: flex;
     flex-direction: column;
@@ -607,6 +659,15 @@ body.dark-theme .underline {
     position: relative;
     background-color: var(--body-bg);
     color: var(--body-text);
+}
+.abc{
+    color: var(--link-text-col); /* Ensure the link color matches the main header links */
+}
+body.dark-theme .abc {
+    color: var(--link-text-col-dark); /* Ensure the link color matches the main header links in dark mode */
+}
+body.dark-theme .modal-image-panel {
+    background: var(--modal-image-panel-gradient-dark); /* Apply dark theme gradient */
 }
 
 /* Dark mode styles for modal */
