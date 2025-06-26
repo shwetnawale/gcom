@@ -149,8 +149,8 @@ header > .navbar .links {
 header > .navbar .links a {
     color: var(--link-text);
     text-decoration: none;
-    font-size: 0.9rem; /* Decreased font size */
-    font-weight: 300; /* Made font lighter */
+    font-size: 1.1rem;
+    font-weight: 500;
 }
 
 header > .navbar .links a:hover {
@@ -173,7 +173,8 @@ main {
 .welcome-section {
     text-align: center;
     padding: 48px 24px;
-    min-height: calc(80vh - 5rem); /* Adjust height to be less than full viewport */
+    height: 70vh;
+    /* min-height: calc(80vh - 5rem); */
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -315,8 +316,8 @@ body.dark-theme .gradient-overlay {
     letter-spacing: calc(0.125rem * 0.75); /* 0.09375rem (1.5px) */
 }
 .header-sub .navbar .links a { /* Override for links if needed, e.g., font-size */
-    font-size: 0.1rem; /* Kept as is, or could be scaled: calc(1.1rem * 0.75) */
-    font-weight: 300; /* Made font lighter for consistency */
+    font-size: 1.1rem; /* Kept as is, or could be scaled: calc(1.1rem * 0.75) */
+    font-weight: 500;
     font-family: "Roboto", sans-serif; /* Revert to Roboto for links if Oswald is too bold */
     letter-spacing: normal;
 }
@@ -329,7 +330,7 @@ body.dark-theme .gradient-overlay {
 }
 
 .content {
-    min-height: 100vh;
+    /* min-height: 100vh; */
     width: 100%;
     display: flex;
     align-items: center;
@@ -362,9 +363,12 @@ footer {
     padding: 24px 0;
     width: 100%;
 }
-
+.mainn{
+    height: 100vh;
+}
 .footer-content {
     max-width: 1000px;
+    height: 10vh;
     margin: 0 auto;
     display: flex;
     flex-direction: column;
