@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>G-COM</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Audiowide&family=Oswald:wght@400;700&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                <h1 class="logo-text">G</h1>
+                <span class="brand">-COM</span>
+            </div>
+            <div class="theam" id="theme-toggle">
+                <!-- Sun Icon (initially hidden in light mode) -->
+                <svg id="sun-icon" style="display: none;" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="12" cy="12" r="5" fill="currentColor"/>
+                    <path d="M12 1V3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M12 21V23" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M4.22 4.22L5.64 5.64" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M18.36 18.36L19.78 19.78" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M1 12H3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M21 12H23" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M4.22 19.78L5.64 18.36" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M18.36 5.64L19.78 4.22" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                <!-- Moon Icon (initially visible in light mode) -->
+                <svg id="moon-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79Z" fill="currentColor"/>
+                </svg>
+            </div>
+            <ul class="links">
+                <li><a href="index.html">Explore</a></li> <!-- Changed href to index.html -->
+                <li><a href="index.html">Plans</a></li>   <!-- Changed href to index.html -->
+                <li><a href="about.html">About</a></li>
+                <li><a href="index.html">Get Started</a></li> <!-- Changed href to index.html -->
+            </ul>
+        </nav>
+        <ul class="underline"></ul>
+    </header>
+    <div id="page-content">
+        <main>
+            <section class="welcome-section">
+                <h2 class="welcome-title">Welcome to G-COM</h2>
+                <p class="welcome-description">
+                    G-COM is your gateway to innovative solutions and collaborative growth. Join us to create, connect, and achieve more together.
+                </p>
+                <button id="homeButton">Go Home</button>
+            </section>
+            <!-- <section class="features-section">
+                <div class="feature-card">
+                    <i class="fas fa-bolt"></i>
+                    <h3>Fast & Reliable</h3>
+                    <p>Experience seamless communication with our high-performance infrastructure.</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-shield-alt"></i>
+                    <h3>Secure & Private</h3>
+                    <p>Your conversations are end-to-end encrypted. Your privacy is our priority.</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-cloud"></i>
+                    <h3>Cloud Synced</h3>
+                    <p>Access your chats and files from any device, anywhere in the world.</p>
+                </div>
+            </section> -->
+        </main>
+        <section class="body-sub">
+            <header class="header-sub">
+                <div class="gradient-overlay"></div>
+                <nav class="navbar"> <!-- Navbar inside header-sub -->
+                    <div class="logo">
+                        <h1 class="logo-text">G</h1>
+                        <span class="brand">-COM</span>
+                    </div>
+                    <div class="img">
+                    </div>
+                    <ul class="links">
+                        <li><a href="index.html">Join</a></li>    <!-- Changed href to index.html -->
+                        <li><a href="index.html">Create</a></li>  <!-- Changed href to index.html -->
+                        <li><a href="index.html">Add</a></li>     <!-- Changed href to index.html -->
+                        <li><a href="about.html">About</a></li>
+                    </ul>
+                </nav>
+            </header>
+            <div class="content">
+                
+                <!-- <section>
+                    <button>Get Started</button>
+                </section> -->
+            </div>
+            <!-- Add your long content here to enable scrolling -->
+            <div style="height: 2000px; background: transparent;"></div> <!-- Made background transparent for testing -->
+        </section>
+    </div>
+    <div class="underline"></div>
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2023 G-COM. All rights reserved.</p>
+            <ul class="social-links">
+                <li><a href="#">Facebook</a></li>
+                <li><a href="#">Twitter</a></li>
+                <li><a href="#">Instagram</a></li>
+            </ul>
+        </div>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>
