@@ -586,7 +586,7 @@ body.dark-theme .join-now-header-btn {
 }
 
 body.dark-theme .join-now-header-btn:hover {
-    background-image: linear-gradient(to right, #19ff04, #5900ff); /* Same gradient for dark theme */
+    background-image: linear-gradient(to right, #4538ff, #fc2e2e); /* Same gradient for dark theme */
     border-color: transparent; /* Hide border on hover */
     transform: scale(1.05); /* Add transform for consistency */
     box-shadow: 0 8px 20px rgba(255, 255, 255, 0.2);
