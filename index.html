@@ -20,7 +20,6 @@
                 <span class="brand">-COM</span>
             </div>
             <div class="theam" id="theme-toggle">
-                <!-- Sun Icon (initially hidden in light mode) -->
                 <svg id="sun-icon" style="display: none;" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <circle cx="12" cy="12" r="5" fill="currentColor"/>
                     <path d="M12 1V3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
@@ -32,15 +31,13 @@
                     <path d="M4.22 19.78L5.64 18.36" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                     <path d="M18.36 5.64L19.78 4.22" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                 </svg>
-                <!-- Moon Icon (initially visible in light mode) -->
                 <svg id="moon-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79Z" fill="currentColor"/>
                 </svg>
             </div>
             <div class="join-now-header-btn-container">
                 <ul class="links">
-                    <li><a href="index.html">Explore</a></li> <!-- Changed href to index.html -->
-                    <li><a href="plans.html">Plans</a></li>
+                    <li><a href="index.html" class="no-spa">Explore</a></li> <li><a href="plans.html">Plans</a></li>
                     <li><a href="about.html">About</a></li>
                     
                 </ul>
@@ -56,55 +53,43 @@
                 <p class="welcome-description">
                     G-COM is your gateway to innovative solutions and collaborative growth. Join us to create, connect, and achieve more together.
                 </p>
-                <!-- <button id="homeButton">Go Home</button> -->
-            </section>
-            <!-- <section class="features-section">
-                <div class="feature-card">
-                    <i class="fas fa-bolt"></i>
-                    <h3>Fast & Reliable</h3>
-                    <p>Experience seamless communication with our high-performance infrastructure.</p>
-                </div>
-                <div class="feature-card">
-                    <i class="fas fa-shield-alt"></i>
-                    <h3>Secure & Private</h3>
-                    <p>Your conversations are end-to-end encrypted. Your privacy is our priority.</p>
-                </div>
-                <div class="feature-card">
-                    <i class="fas fa-cloud"></i>
-                    <h3>Cloud Synced</h3>
-                    <p>Access your chats and files from any device, anywhere in the world.</p>
-                </div>
-            </section> -->
+                </section>
         </main>
-        <section class="body-sub">
-            <header class="header-sub">
-                <div class="gradient-overlay"></div>
-                <nav class="navbar"> <!-- Navbar inside header-sub -->
-                    <div class="logo">
-                        <h1 class="logo-text">G</h1>
-                        <span class="brand">-COM</span>
-                    </div>
-                    <div class="img">
-                    </div>
-                    <ul class="links">
-                        <li><a href="index.html">Join</a></li>    <!-- Changed href to index.html -->
-                        <li><a href="index.html">Create</a></li>  <!-- Changed href to index.html -->
-                        <li><a href="index.html">Add</a></li>     <!-- Changed href to index.html -->
-                        <li><a href="about.html">About</a></li>
-                    </ul>
-                </nav>
-            </header>
-            <div class="content">
-                
-                <!-- <section>
-                    <button>Get Started</button>
-                </section> -->
-            </div>
-            <!-- Add your long content here to enable scrolling -->
-            <div style="height: 2000px; background: transparent;"></div> <!-- Made background transparent for testing -->
-        </section>
-    </div>
-    <!-- Authentication Modal -->
+        <header class="header-sub">
+            <div class="gradient-overlay"></div>
+            <nav class="navbar"> <div class="logo">
+                    <h1 class="logo-text">G</h1>
+                    <span class="brand">-COM</span>
+                </div>
+                <div class="img">
+                </div>
+                <ul class="links">
+                    <li><a href="index.html">Join</a></li>    <li><a href="index.html">Create</a></li>  <li><a href="index.html">Add</a></li>     <li><a href="about.html">About</a></li>
+                </ul>
+            </nav>
+        </header>
+    <section class="card4">
+        <div class="card" id="card1">
+            <i class="fas fa-rocket"></i>
+            <h3>Blazing Fast</h3>
+            <p>Experience lightning-fast performance for all your needs.</p>
+        </div>
+        <div class="card" id="card2">
+            <i class="fas fa-shield-alt"></i>
+            <h3>Top Security</h3>
+            <p>Your data is protected with state-of-the-art encryption.</p>
+        </div>
+        <div class="card" id="card3">
+            <i class="fas fa-users"></i>
+            <h3>Community Driven</h3>
+            <p>Join a thriving community and collaborate with others.</p>
+        </div>
+        <div class="card" id="card4">
+            <i class="fas fa-mobile-alt"></i>
+            <h3>Mobile Ready</h3>
+            <p>Access G-COM seamlessly on any device, anywhere.</p>
+        </div>
+    </section>
     <div id="auth-modal" class="modal">
         <div class="modal-content">
             <div class="modal-image-panel">
@@ -116,7 +101,6 @@
             </div>
             <div class="modal-form-panel">
                 <span class="close-button">&times;</span>
-                <!-- Sign Up View -->
                 <div id="signup-view">
                     <h2>Join G-COM</h2>
                     <p>Create an account to get started.</p>
@@ -132,7 +116,6 @@
                     </form>
                     <p class="switch-view-text">Already have an account? <a href="#" id="show-login">Log in</a></p>
                 </div>
-                <!-- Login View (initially hidden) -->
                 <div id="login-view" style="display: none;">
                     <h2>Welcome Back!</h2>
                     <p>Log in to your account.</p>
@@ -151,7 +134,6 @@
             </div>
         </div>
     </div>
-    <div class="underline"></div>
     <footer>
         <div class="footer-content">
             <p>&copy; 2023 G-COM. All rights reserved.</p>
@@ -159,6 +141,8 @@
                 <li><a href="#">Facebook</a></li>
                 <li><a href="#">Twitter</a></li>
                 <li><a href="#">Instagram</a></li>
+                44
+                
             </ul>
         </div>
     </footer>

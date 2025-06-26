@@ -86,6 +86,7 @@ body {
     min-height: 100vh;
 }
 
+
 header { /* Main header */
     width: 100%;
     background: var(--header-bg);
@@ -269,11 +270,6 @@ main {
 @keyframes fadeInUp {
     from { opacity: 0; transform: translateY(20px); }
     to { opacity: 1; transform: translateY(0); }
-}
-
-.body-sub {
-    /* height: 100vh; */
-    width: 100%;
 }
 
 .header-sub { /* Sticky header container */
@@ -859,4 +855,141 @@ body.dark-theme #signup-form input, body.dark-theme #login-form input {
         max-width: 450px;
         flex-direction: column;
     }
+}
+
+/* Styles for the new .card4 section and individual .card elements */
+.card4 {
+    display: flex;
+    justify-content: center;
+    height: 100vh;
+    gap: 30px;
+    padding: 80px 24px; /* Increased padding to give more scroll space */
+    flex-wrap: wrap;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.card {
+    background: var(--footer-bg); /* Reusing existing variables for theme consistency */
+    border-radius: 15px;
+    padding: 30px;
+    text-align: center;
+    width: 300px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, opacity 0.8s ease, transform 0.8s ease; /* Added opacity and transform to transition */
+    opacity: 0; /* Initially hidden */
+    transform: translateY(50px); /* Initially moved down */
+}
+
+.card.show {
+    opacity: 1; /* Visible when 'show' class is added */
+    transform: translateY(0); /* Move to original position */
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+}
+
+.card i {
+    font-size: 3rem;
+    margin-bottom: 20px;
+    background-image: var(--welcome-title-gradient-light);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+.card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    color: var(--body-text);
+}
+
+.card p {
+    font-size: 1rem;
+    color: var(--footer-text);
+    line-height: 1.5;
+}
+
+/* Dark theme overrides for the new cards */
+body.dark-theme .card {
+    background: var(--footer-bg-dark);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+}
+
+body.dark-theme .card:hover {
+    box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+}
+
+body.dark-theme .card i {
+    background-image: var(--welcome-title-text-dark);
+}
+
+body.dark-theme .card h3 {
+    color: var(--body-text-dark);
+}
+
+body.dark-theme .card p {
+    color: var(--footer-text-dark);
+}
+/* Scope all styles to #card-stack-scroll */
+#card-stack-scroll {
+    /* These styles were previously on the body.
+       Applying them here ensures they only affect the component. */
+    background-color: #f3f4f6;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+    /* If you want the component to take up the full viewport height when embedded,
+       you might need to add `min-height: 100vh;` here, but be mindful of
+       how it interacts with the `scroll-container`'s height. */
+}
+
+#card-stack-scroll .sticky-container {
+    position: sticky;
+    top: 0;
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+#card-stack-scroll .cards-wrapper {
+    position: relative;
+    width: 90vw;
+    height: 75vh;
+    max-width: 42rem;
+}
+
+#card-stack-scroll .card {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 1rem;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+    padding: 2rem;
+    text-align: center;
+}
+
+#card-stack-scroll .card-1 { background-image: linear-gradient(to bottom, #bbf7d0, #bfdbfe); }
+#card-stack-scroll .card-2 { background-image: linear-gradient(to bottom, #3730a3, #6b21a8); color: white; }
+#card-stack-scroll .card-3 { background-image: linear-gradient(to bottom, #6b21a8, #be185d); color: white; }
+#card-stack-scroll .card-4 { background-image: linear-gradient(to bottom, #bfdbfe, #e0e7ff); color: black; }
+#card-stack-scroll .card-5 { background-image: linear-gradient(to bottom, #fdba74, #f87171); color: white; }
+#card-stack-scroll .card-6 { background-image: linear-gradient(to bottom, #fde047, #86efac); color: #1f2937; }
+#card-stack-scroll .card-7 { background-image: linear-gradient(to bottom, #9ca3af, #64748b); color: white; }
+
+#card-stack-scroll .card h2 {
+    font-size: 2.25rem;
+    font-weight: 700;
+    margin: 0;
+}
+
+#card-stack-scroll .card p {
+    margin-top: 0.5rem;
 }
