@@ -67,6 +67,7 @@ html {
 }
 
 body {
+    font-family: "Audiowide", sans-serif;
     background: var(--body-bg);
     color: var(--body-text);
     min-height: 100vh;
