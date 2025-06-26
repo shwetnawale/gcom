@@ -576,8 +576,7 @@ body.dark-theme .animated-button {
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
 }
 .join-now-header-btn:hover{
-    transform: scale(2.05);
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    background-color: #00fff2;
 }
 /* Dark Theme Styles for the new button */
 body.dark-theme .join-now-header-btn {
