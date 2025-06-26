@@ -88,7 +88,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
     document.body.addEventListener('click', (e) => {
         const link = e.target.closest('a');
-        if (link && link.origin === window.location.origin && !link.hash) {
+        // Exclude modal triggers and links with hashes from SPA navigation
+        if (link && link.origin === window.location.origin && !link.hash && link.id !== 'join-now-btn' && !link.id.includes('show-')) {
             e.preventDefault();
             if (link.href !== window.location.href) {
                 handleNav(link.href);
@@ -101,4 +102,69 @@ document.addEventListener('DOMContentLoaded', () => {
         const doc = await fetchPage(path);
         if (doc) updatePage(doc);
     });
+
+    // --- Authentication Modal Logic ---
+
+    const joinNowBtn = document.getElementById('join-now-btn');
+    const authModal = document.getElementById('auth-modal');
+    
+    if (authModal && joinNowBtn) {
+        const closeModalBtn = authModal.querySelector('.close-button');
+        const showLoginLink = document.getElementById('show-login');
+        const showSignupLink = document.getElementById('show-signup');
+        const signupView = document.getElementById('signup-view');
+        const loginView = document.getElementById('login-view');
+
+        const openModal = () => {
+            authModal.style.display = 'flex';
+            // Reset to signup view every time it opens
+            if (signupView) signupView.style.display = 'block';
+            if (loginView) loginView.style.display = 'none';
+        };
+
+        const closeModal = () => {
+            authModal.style.display = 'none';
+        };
+
+        // Event Listeners for opening and closing the modal
+        joinNowBtn.addEventListener('click', (e) => {
+            e.preventDefault(); // Prevent anchor link from jumping
+            openModal();
+        });
+
+        if (closeModalBtn) {
+            closeModalBtn.addEventListener('click', closeModal);
+        }
+
+        // Close modal if user clicks on the background overlay
+        authModal.addEventListener('click', (e) => {
+            if (e.target === authModal) {
+                closeModal();
+            }
+        });
+
+        // Close modal with the Escape key
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && authModal.style.display === 'flex') {
+                closeModal();
+            }
+        });
+
+        // Event listeners for switching between signup and login views
+        if (showLoginLink) {
+            showLoginLink.addEventListener('click', (e) => {
+                e.preventDefault();
+                signupView.style.display = 'none';
+                loginView.style.display = 'block';
+            });
+        }
+
+        if (showSignupLink) {
+            showSignupLink.addEventListener('click', (e) => {
+                e.preventDefault();
+                loginView.style.display = 'none';
+                signupView.style.display = 'block';
+            });
+        }
+    }
 });
