@@ -156,6 +156,7 @@ header > .navbar .links a:hover {
 
 main {
     /* Main is now a container for sections */
+    height: 100vh;
     width: 100%;
 }
 
@@ -250,6 +251,7 @@ main {
 }
 
 .body-sub {
+    /* height: 100vh; */
     width: 100%;
 }
 
