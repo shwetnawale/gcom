@@ -71,9 +71,7 @@ body {
     color: var(--body-text);
     min-height: 100vh;
 }
-.mainpage {
-    height: 100vh; /* Ensure main page takes full viewport height */
-}
+
 header { /* Main header */
     width: 100%;
     background: var(--header-bg);
@@ -178,7 +176,6 @@ main {
     font-size: 4.5rem;
     text-transform: uppercase;
     background-image: var(--welcome-title-gradient-light); /* Apply light theme gradient */
-    display: inline-block; /* Allows the element to shrink-wrap its content for underline effect */
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent; /* Make text transparent to show gradient */
@@ -190,36 +187,6 @@ main {
     color: var(--welcome-desc-text);
     line-height: 1.6;
     margin-top: 0;
-}
-
-/* Styles for the gradient underline effect */
-.hover-underline {
-    position: relative;
-    /* display: inline-block; is already applied to .welcome-title */
-}
-
-.hover-underline::after,
-.hover-underline::before {
-    content: '';
-    position: absolute;
-    width: 100%;
-    height: 2px;
-    background: var(--welcome-title-gradient-light); /* Use theme gradient for light mode */
-    bottom: -5px;
-    left: 0;
-    transform: scaleX(0);
-    transform-origin: right;
-    transition: transform 0.4s ease-out;
-}
-
-.hover-underline::before {
-    top: -5px;
-    transform-origin: left;
-}
-
-.hover-underline:hover::after,
-.hover-underline:hover::before {
-    transform: scaleX(1);
 }
 
 .features-section {
@@ -377,38 +344,6 @@ button:hover {
     transform: scale(1.1);
 }
 
-/* Styles for the animated line button */
-#wel-explore-animation-btn {
-    background: transparent;
-    color: var(--body-text);
-    border: 2px solid transparent; /* Maintain layout */
-    position: relative;
-    z-index: 1;
-    transition: color 0.4s ease;
-}
-
-#wel-explore-animation-btn:hover {
-    color: var(--link-hover-text);
-}
-
-#wel-explore-animation-btn::before {
-    content: '';
-    position: absolute;
-    top: -2px; /* Offset to align with button's edge */
-    left: -2px;
-    right: -2px;
-    bottom: -2px;
-    border-radius: 50px; /* Match button's border-radius */
-    border: 2px solid var(--link-hover-text);
-    transition: transform 0.4s ease-out;
-    transform: scale(0);
-    z-index: -1;
-}
-
-#wel-explore-animation-btn:hover::before {
-    transform: scale(1);
-}
-
 footer {
     background: var(--footer-bg);
     box-shadow: 0 -2px 8px var(--header-shadow); /* Use same shadow variable for consistency */
@@ -486,11 +421,6 @@ body.dark-theme .welcome-title {
     /* -webkit-background-clip, background-clip, and color: transparent are inherited from .welcome-title base style */
 }
 
-body.dark-theme .hover-underline::after,
-body.dark-theme .hover-underline::before {
-    background: var(--welcome-title-text-dark); /* Use dark theme gradient */
-}
-
 body.dark-theme .feature-card {
     background: var(--footer-bg-dark);
     box-shadow: 0 4px 15px rgba(0,0,0,0.2);
@@ -535,18 +465,6 @@ body.dark-theme .header-sub .navbar.text-on-gradient .links a {
 body.dark-theme button {
     background-color: var(--button-bg-dark);
     color: var(--button-text-dark);
-}
-
-body.dark-theme #wel-explore-animation-btn {
-    color: var(--body-text-dark);
-}
-
-body.dark-theme #wel-explore-animation-btn:hover {
-    color: var(--link-hover-text-dark);
-}
-
-body.dark-theme #wel-explore-animation-btn::before {
-    border-color: var(--link-hover-text-dark);
 }
 
 body.dark-theme footer {
