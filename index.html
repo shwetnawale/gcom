@@ -11,6 +11,37 @@
 <link href="https://fonts.googleapis.com/css2?family=Audiowide&family=Oswald:wght@400;700&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="stylesheet" href="style.css">
+    <style>
+        .welcome-section {
+            position: relative;
+            overflow: hidden; /* Ensures the SVG doesn't bleed out */
+        }
+        .background-animation-svg {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 80%;
+            max-width: 700px;
+            height: auto;
+            z-index: 0; /* Behind text but above background */
+            opacity: 0.1; /* Make it subtle */
+        }
+        .text-path {
+            fill: none;
+            stroke: var(--text-color, #000); /* Use theme variable or fallback to black */
+            stroke-width: 2;
+            stroke-dasharray: 1200; /* Increased for larger text */
+            stroke-dashoffset: 1200;
+            /* Animation: 4s draw, 1s pause, repeat infinitely. Total 5s cycle. */
+            animation: draw 4s ease-in-out 1s infinite;
+        }
+        @keyframes draw {
+            to {
+                stroke-dashoffset: 0;
+            }
+        }
+    </style>
 </head>
 <body>
     <header>
@@ -37,20 +68,28 @@
             </div>
             <div class="join-now-header-btn-container">
                 <ul class="links">
-                    <li><a href="index.html" class="no-spa">Explore</a>
-                    </li> <li><a href="plans.html">Plans</a></li>
-                    </li> <li><a href="home.html">home</a></li>
+                    <li><a href="index.html" class="no-spa">Explore</a></li>
+                    <li><a href="plans.html">Plans</a></li>
+                    <li><a href="home.html">Home</a></li>
                     <li><a href="about.html">About</a></li>
-                    
                 </ul>
                 <a href="#" id="join-now-btn" class="join-now-header-btn abc">Join Now</a>
             </div>
+            <button class="hamburger-menu">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-times"></i>
+            </button>
         </nav>
         <ul class="underline"></ul>
     </header>
     <div id="page-content">
         <main>
             <section class="welcome-section">
+                <svg class="background-animation-svg" viewBox="0 0 800 200" xmlns="http://www.w3.org/2000/svg">
+                    <text font-family="Audiowide, sans-serif" font-size="120" y="50%" x="50%" dominant-baseline="middle" text-anchor="middle">
+                        <tspan class="text-path">G-COM</tspan>
+                    </text>
+                </svg>
                 <h2 class="welcome-title">Welcome to G-COM</h2>
                 <p class="welcome-description">
                     G-COM is your gateway to innovative solutions and collaborative growth. Join us to create, connect, and achieve more together.
@@ -143,8 +182,6 @@
                 <li><a href="#">Facebook</a></li>
                 <li><a href="#">Twitter</a></li>
                 <li><a href="#">Instagram</a></li>
-                44
-                
             </ul>
         </div>
     </footer>

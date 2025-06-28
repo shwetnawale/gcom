@@ -172,6 +172,26 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
+    // --- Hamburger Menu Logic ---
+    const hamburgerMenu = document.querySelector('.hamburger-menu');
+    const navContainer = document.querySelector('.join-now-header-btn-container');
+
+    if (hamburgerMenu && navContainer) {
+        hamburgerMenu.addEventListener('click', () => {
+            navContainer.classList.toggle('active');
+            hamburgerMenu.classList.toggle('active');
+        });
+
+        // Close menu when a link is clicked (for SPA or anchor links)
+        navContainer.addEventListener('click', (e) => {
+            // Check if a link inside the container was clicked
+            if (e.target.closest('a')) {
+                navContainer.classList.remove('active');
+                hamburgerMenu.classList.remove('active');
+            }
+        });
+    }
+
     // --- Scroll Animation for Cards ---
     const cards = document.querySelectorAll('.card');
 

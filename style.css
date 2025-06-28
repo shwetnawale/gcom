@@ -533,11 +533,9 @@ body.dark-theme .underline {
     z-index: -1;
 }
 .join-now-header-btn-container{
-    width: 18vw;
     display: flex;
-    justify-content: space-between;
+    gap: 32px; /* Match link gap for consistent spacing */
     align-items: center;
-    
 }
 .animated-button:hover::before {
     left: 100%;
@@ -933,6 +931,88 @@ body.dark-theme .card h3 {
 
 body.dark-theme .card p {
     color: var(--footer-text-dark);
+}
+
+/* --- Responsive Styles & Hamburger Menu --- */
+
+.hamburger-menu {
+    display: none; /* Hidden by default on larger screens */
+    background: none;
+    border: none;
+    color: var(--icon-color);
+    font-size: 1.5rem;
+    cursor: pointer;
+    z-index: 1001; /* Ensure it's on top of the mobile menu */
+    padding: 0.5rem;
+}
+
+body.dark-theme .hamburger-menu {
+    color: var(--icon-color-dark);
+}
+
+/* Logic to show close (times) icon and hide bars icon when menu is active */
+.hamburger-menu .fa-times {
+    display: none;
+}
+.hamburger-menu.active .fa-bars {
+    display: none;
+}
+.hamburger-menu.active .fa-times {
+    display: block;
+}
+
+
+@media (max-width: 992px) {
+    .navbar {
+        padding: 0 1.5rem; /* Reduce padding on smaller screens */
+    }
+
+    .hamburger-menu {
+        display: block; /* Show hamburger on smaller screens */
+    }
+
+    .join-now-header-btn-container {
+        /* This container becomes the mobile menu overlay */
+        position: fixed;
+        top: 0;
+        right: -100%; /* Start off-screen */
+        width: 100%;
+        height: 100vh;
+        background-color: var(--body-bg);
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 2.5rem;
+        transition: right 0.4s ease-in-out;
+        z-index: 1000; /* Below the hamburger icon */
+    }
+
+    .join-now-header-btn-container.active {
+        right: 0; /* Slide in from the right */
+    }
+
+    .join-now-header-btn-container .links {
+        flex-direction: column;
+        text-align: center;
+        gap: 2rem;
+    }
+
+    .join-now-header-btn-container .links a {
+        font-size: 1.5rem; /* Make links larger for easier tapping */
+    }
+
+    .join-now-header-btn-container .join-now-header-btn {
+        font-size: 1.25rem; /* Make button text larger for mobile */
+        padding: 14px 32px; /* Adjust padding for a better tap area */
+    }
+
+    body.dark-theme .join-now-header-btn-container {
+        background-color: var(--body-bg-dark);
+    }
+
+    .header-sub {
+        display: none; /* Hide the sticky sub-header on mobile for simplicity */
+    }
 }
 /* Scope all styles to #card-stack-scroll */
 #card-stack-scroll {
