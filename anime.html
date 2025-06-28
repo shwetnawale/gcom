@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Text Reveal Animation</title>
+<style>
+    body {
+        background: #fff;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        overflow: hidden;
+    }
+
+    svg {
+        width: 80%;
+        height: auto;
+    }
+
+    .text-path {
+        fill: none;
+        stroke: #000;
+        stroke-width: 2;
+        stroke-dasharray: 500;
+        stroke-dashoffset: 500;
+        animation: draw 4s forwards ease-in-out;
+    }
+
+    @keyframes draw {
+        to {
+            stroke-dashoffset: 0;
+        }
+    }
+</style>
+</head>
+<body>
+
+<svg viewBox="0 0 800 200">
+    <text x="50" y="100" font-size="50" font-family="Arial, sans-serif">
+        <tspan class="text-path">G-Com</tspan>
+    </text>
+</svg>
+<button onclick="restartAnimation()">Replay Animation</button>
+
+<script>
+function restartAnimation() {
+    const textPath = document.querySelector('.text-path');
+    textPath.style.animation = 'none';
+    textPath.offsetHeight; // Trigger reflow
+    textPath.style.animation = null;
+}
+</script>
+
+</body>
+</html>

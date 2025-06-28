@@ -30,7 +30,7 @@
     --link-text-col: #000000; /* Ensure the link color matches the main header links */
 
     --icon-color: #222;
-    --gradient-overlay-light: linear-gradient(to right, #ff0000, #fcff31);
+    --gradient-overlay-light: linear-gradient(to right, #0c0c0c, #000000);
 
     /* Dark Theme */
     --body-bg-dark: #000000;
