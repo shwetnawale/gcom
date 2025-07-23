@@ -80,7 +80,7 @@ html {
 }
 
 body {
-    font-family: "Audiowide", sans-serif;
+    font-family: 'Audiowide', cursive, sans-serif;
     background: var(--body-bg);
     color: var(--body-text);
     min-height: 100vh;
@@ -105,7 +105,6 @@ header { /* Main header */
     display: flex;
     justify-content: center;
     align-items: center;
-    /* gap: 1rem;  */
 }
 
 .logo-text {
@@ -839,6 +838,12 @@ body.dark-theme #signup-form input, body.dark-theme #login-form input {
 }
 
 .switch-view-text a:hover { text-decoration: underline; }
+
+/* Use Audiowide for all headings and logo */
+h1, h2, h3, .logo-text, .brand {
+    font-family: 'Audiowide', cursive, sans-serif;
+    letter-spacing: 0.05em;
+}
 
 @media (max-width: 768px) {
     .modal-image-panel {
