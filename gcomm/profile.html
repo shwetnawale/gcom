@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile Modal - Plain CSS</title>
+    
+    <!-- Google Fonts Import -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        /* CSS Reset and Basic Setup */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            /* A dark background to make the component stand out, like in the screenshot */
+            background-color: #111827;
+            color: #ffffff;
+        }
+
+        /* --- Main Modal Container --- */
+        .profile-modal {
+            position: fixed;
+            top: 20px;  /* roughly equivalent to top-5 */
+            right: 20px; /* roughly equivalent to right-5 */
+            width: 384px; /* roughly equivalent to w-96 */
+            background-color: #1d2125;
+            border-radius: 16px; /* rounded-2xl */
+            padding: 24px; /* p-6 */
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
+        }
+
+        /* --- Close Button --- */
+        .close-button {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: none;
+            border: none;
+            cursor: pointer;
+            color: #6b7280; /* gray-500 */
+            transition: color 0.2s ease-in-out;
+        }
+
+        .close-button:hover {
+            color: #ffffff;
+        }
+        
+        .close-button svg {
+            width: 24px;
+            height: 24px;
+        }
+
+        /* --- Profile Header --- */
+        .profile-header {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 8px;
+            margin-bottom: 24px;
+        }
+
+        .profile-image-wrapper {
+            width: 110px;
+            height: 110px;
+            background-color: #facc15; /* yellow-400 */
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .profile-image-wrapper img {
+            width: 96px; /* w-24 */
+            height: 96px; /* h-24 */
+            border-radius: 50%;
+            object-fit: cover;
+        }
+        
+        .profile-name {
+            font-size: 1.25rem; /* text-xl */
+            font-weight: 700; /* font-bold */
+            margin-top: 16px; /* mt-4 */
+        }
+
+        .profile-socials {
+            font-size: 0.875rem; /* text-sm */
+            color: #9ca3af; /* gray-400 */
+        }
+
+        /* --- List Styles (for both settings and accounts) --- */
+        .list-container {
+            background-color: #2a2f34;
+            border-radius: 12px; /* rounded-xl */
+            margin-bottom: 16px; /* mb-4 */
+        }
+        
+        .list-container:last-child {
+            margin-bottom: 0;
+        }
+        
+        .list-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 16px; /* p-4 */
+            cursor: pointer;
+            transition: background-color 0.2s ease;
+        }
+        
+        .list-item:hover {
+            background-color: rgba(55, 65, 81, 0.5); /* hover:bg-gray-700/50 */
+        }
+        
+        .list-item:first-child {
+            border-top-left-radius: 12px;
+            border-top-right-radius: 12px;
+        }
+        
+        .list-item:last-child {
+             border-bottom-left-radius: 12px;
+            border-bottom-right-radius: 12px;
+        }
+
+        .list-item-text {
+            font-size: 1rem;
+            font-weight: 500;
+            color: #e5e7eb; /* gray-200 */
+        }
+        
+        .list-item-arrow svg {
+            width: 20px;
+            height: 20px;
+            color: #6b7280; /* gray-500 */
+        }
+        
+        .divider {
+            height: 1px;
+            background-color: #374151; /* border-custom-dark-divider */
+            width: 90%;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* --- Linked Accounts Specifics --- */
+        .account-item {
+            padding: 12px; /* p-3 */
+        }
+        
+        .account-info {
+            display: flex;
+            align-items: center;
+            gap: 12px; /* gap-3 */
+        }
+
+        .account-info img {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+        
+        .account-name {
+            font-weight: 600; /* font-semibold */
+            color: #f3f4f6; /* gray-100 */
+        }
+        
+        .account-platform {
+            display: flex;
+            align-items: center;
+            gap: 6px; /* gap-1.5 */
+            font-size: 0.75rem; /* text-xs */
+            color: #9ca3af; /* gray-400 */
+        }
+        
+        .account-platform svg {
+            width: 12px; /* w-3 */
+            height: 12px; /* h-3 */
+            fill: currentColor;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Profile Modal Component -->
+    <div class="profile-modal">
+        
+        <!-- Close Button -->
+        <button class="close-button">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+            </svg>
+        </button>
+
+        <!-- Profile Header Section -->
+        <div class="profile-header">
+            <div class="profile-image-wrapper">
+                <img src="https://i.ibb.co/6PbhW41/profile-pic-shwet.jpg" alt="Shwet Nawale">
+            </div>
+            <h1 class="profile-name">Shwet Nawale</h1>
+            <p class="profile-socials">Instagram, Facebook</p>
+        </div>
+
+        <!-- Settings List -->
+        <div class="list-container">
+            <div class="list-item">
+                <span class="list-item-text">Name</span>
+                <span class="list-item-arrow">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
+                    </svg>
+                </span>
+            </div>
+            <div class="divider"></div>
+            <div class="list-item">
+                <span class="list-item-text">Username</span>
+                <span class="list-item-arrow">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
+                    </svg>
+                </span>
+            </div>
+            <div class="divider"></div>
+            <div class="list-item">
+                <span class="list-item-text">Profile picture</span>
+                 <span class="list-item-arrow">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
+                    </svg>
+                </span>
+            </div>
+            <div class="divider"></div>
+            <div class="list-item">
+                <span class="list-item-text">Avatar</span>
+                <span class="list-item-arrow">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
+                    </svg>
+                </span>
+            </div>
+        </div>
+
+        <!-- Linked Accounts List -->
+        <div class="list-container">
+            <div class="list-item account-item">
+                <div class="account-info">
+                    <img src="https://i.ibb.co/6PbhW41/profile-pic-shwet.jpg" alt="Instagram avatar">
+                    <div>
+                        <p class="account-name">nawaleshwet</p>
+                        <div class="account-platform">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+                                <path d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9 26.3 26.2 58 34.4 93.9 36.2 37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z"/>
+                            </svg>
+                            <p>Instagram</p>
+                        </div>
+                    </div>
+                </div>
+                <span class="list-item-arrow">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
+                    </svg>
+                </span>
+            </div>
+            <div class="divider"></div>
+            <div class="list-item account-item">
+                <div class="account-info">
+                    <img src="https://i.ibb.co/6PbhW41/profile-pic-shwet.jpg" alt="Facebook avatar">
+                    <div>
+                        <p class="account-name">Shwet Nawale</p>
+                        <div class="account-platform">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                                <path d="M504 256C504 119 393 8 256 8S8 119 8 256c0 123.78 90.69 226.38 209.25 245V327.69h-63V256h63v-54.64c0-62.15 37-96.48 93.67-96.48 27.14 0 55.52 4.84 55.52 4.84v61h-31.28c-30.8 0-40.41 19.12-40.41 38.73V256h68.78l-11 71.69h-57.78V501C413.31 482.38 504 379.78 504 256z"/>
+                            </svg>
+                            <p>Facebook</p>
+                        </div>
+                    </div>
+                </div>
+                <span class="list-item-arrow">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
+                    </svg>
+                </span>
+            </div>
+        </div>
+
+    </div>
+
+</body>
+</html>
