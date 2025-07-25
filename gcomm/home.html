@@ -3,15 +3,247 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>G-COM</title>
+    <title>Home</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Audiowide&family=Oswald:wght@400;700&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="stylehome.css">
-    <link rel="stylesheet" href="styleprofile.css"> <!-- Add this line -->
+    <link rel="stylesheet" href="styleprofile.css">
     <style>
+        body {
+            margin: 0;
+            font-family: 'Roboto', Arial, sans-serif;
+            background: #f7f8fa;
+        }
+        .navbar {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background: #eaeaea;
+            padding: 0 32px;
+            height: 64px;
+            border-bottom: 1px solid #ddd;
+        }
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+        .logo-text {
+            font-family: 'Audiowide', cursive;
+            font-size: 2rem;
+            margin-right: 4px;
+        }
+        .brand {
+            font-family: 'Oswald', sans-serif;
+            font-size: 1.3rem;
+            font-weight: 700;
+        }
+        .menu-bar {
+            display: flex;
+            gap: 32px;
+            align-items: center;
+        }
+        .menu-bar a {
+            text-decoration: none;
+            color: #222;
+            font-weight: 500;
+            font-size: 1rem;
+            padding: 8px 16px;
+            border-radius: 6px;
+            transition: background 0.2s;
+        }
+        .menu-bar a:hover {
+            background: #dbeafe;
+        }
+        .profile {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 40px;
+            width: 40px;
+            border-radius: 50%;
+            overflow: hidden;
+            background: #f6f6f6;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+            margin-left: 16px;
+        }
+        .profile-img {
+            width: 36px;
+            height: 36px;
+            object-fit: cover;
+            border-radius: 50%;
+            border: none;
+            display: block;
+            transition: box-shadow 0.2s;
+        }
+        .profile-img:hover {
+            box-shadow: 0 0 0 2px #007bff;
+        }
+        .container {
+            display: flex;
+            height: calc(100vh - 64px);
+            padding: 0;
+        }
+        .sidebar {
+            width: 280px;
+            background: #fff;
+            border-right: 1px solid #e5e7eb;
+            padding: 32px 16px;
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+        }
+        .sidebar .sidebar-menu {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+        .sidebar .sidebar-menu a {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            text-decoration: none;
+            color: #222;
+            font-size: 1.08rem;
+            padding: 12px 16px;
+            border-radius: 8px;
+            transition: background 0.2s;
+        }
+        .sidebar .sidebar-menu a:hover {
+            background: #e0e7ff;
+        }
+        .sidebar .sidebar-title {
+            font-size: 1.1rem;
+            font-weight: 700;
+            margin-bottom: 8px;
+            color: #444;
+        }
+        .main-content {
+            flex: 1;
+            padding: 32px 40px;
+            overflow-y: auto;
+        }
+        .communities-header {
+            display: flex;
+            align-items: center;
+            gap: 24px;
+            margin-bottom: 24px;
+        }
+        .community-tabs {
+            display: flex;
+            gap: 16px;
+        }
+        .community-tab {
+            background: #fff;
+            border: 1px solid #e5e7eb;
+            border-radius: 50%;
+            width: 48px;
+            height: 48px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            cursor: pointer;
+            transition: box-shadow 0.2s;
+        }
+        .community-tab:hover {
+            box-shadow: 0 2px 8px #dbeafe;
+        }
+        .search-bar {
+            flex: 1;
+            max-width: 340px;
+            display: flex;
+            align-items: center;
+            background: #fff;
+            border-radius: 8px;
+            border: 1px solid #e5e7eb;
+            padding: 8px 16px;
+        }
+        .search-bar input {
+            border: none;
+            outline: none;
+            font-size: 1rem;
+            flex: 1;
+            background: transparent;
+        }
+        .search-bar i {
+            color: #888;
+            margin-right: 8px;
+        }
+        .communities-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 32px;
+        }
+        .community-card {
+            background: #fff;
+            border-radius: 16px;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+            padding: 24px;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            border: 1px solid #e5e7eb;
+        }
+        .community-card .community-title {
+            font-size: 1.2rem;
+            font-weight: 700;
+            margin-bottom: 4px;
+        }
+        .community-card .community-desc {
+            font-size: 1rem;
+            color: #555;
+        }
+        .community-card .community-actions {
+            margin-top: 8px;
+            display: flex;
+            gap: 12px;
+        }
+        .community-card .join-btn {
+            background: #2563eb;
+            color: #fff;
+            border: none;
+            border-radius: 6px;
+            padding: 8px 18px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+        .community-card .join-btn:hover {
+            background: #1e40af;
+        }
+        .community-card .brief-btn {
+            background: #e0e7ff;
+            color: #222;
+            border: none;
+            border-radius: 6px;
+            padding: 8px 18px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+        .community-card .brief-btn:hover {
+            background: #c7d2fe;
+        }
+        /* Responsive */
+        @media (max-width: 900px) {
+            .container {
+                flex-direction: column;
+            }
+            .sidebar {
+                width: 100%;
+                border-right: none;
+                border-bottom: 1px solid #e5e7eb;
+                flex-direction: row;
+                gap: 0;
+                padding: 16px 8px;
+            }
+            .main-content {
+                padding: 16px 8px;
+            }
+        }
         .profile {
             display: flex;
             align-items: center;
@@ -94,42 +326,97 @@
                 <h1 class="logo-text">G</h1>
                 <span class="brand">-COM</span>
             </div>
-            <div class="theam" id="theme-toggle">
-                <svg id="sun-icon" style="display: none;" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <circle cx="12" cy="12" r="5" fill="currentColor"/>
-                    <path d="M12 1V3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                    <path d="M12 21V23" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                    <path d="M4.22 4.22L5.64 5.64" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                    <path d="M18.36 18.36L19.78 19.78" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                    <path d="M1 12H3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                    <path d="M21 12H23" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                    <path d="M4.22 19.78L5.64 18.36" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                    <path d="M18.36 5.64L19.78 4.22" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>
-                <svg id="moon-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79Z" fill="currentColor"/>
-                </svg>
+            <div class="menu-bar">
+                <a href="#"><i class="fas fa-users"></i> Communities</a>
+                <a href="#"><i class="fas fa-fire"></i> Trending</a>
+                <a href="#"><i class="fas fa-search"></i> Explore</a>
+                <a href="#"><i class="fas fa-plus"></i> Create</a>
+                <a href="#"><i class="fas fa-info-circle"></i> About</a>
+                <a href="#"><i class="fas fa-question-circle"></i> Help</a>
             </div>
-            <div class="join-now-header-btn-container">
-                <ul class="links">
-                    <li><a href="index.html" class="no-spa">Explore</a></li>
-                    <li><a href="plans.html">Plans</a></li>
-                    <!-- <li><a href="home.html">Home</a></li> -->
-                    <li><a href="about.html">About</a></li>
-                </ul>
-                <div class="profile">
-                    <a href="#" id="open-profile-modal">
-                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRIs1XePP0G1O0AQB8x6uxPkXyY_PvXlYWGLTJWZfpios_3gsrcqX_jZz1dkxjgCZjrC-w&usqp=CAU" alt="User Profile" class="profile-img">
-                    </a>
+            <div class="profile">
+                <a href="#" id="open-profile-modal">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRIs1XePP0G1O0AQB8x6uxPkXyY_PvXlYWGLTJWZfpios_3gsrcqX_jZz1dkxjgCZjrC-w&usqp=CAU" alt="User Profile" class="profile-img">
+                </a>
+            </div>
+        </nav>
+    </header>
+    <div class="container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div>
+                <div class="sidebar-title">Menu</div>
+                <div class="sidebar-menu">
+                    <a href="#"><i class="fas fa-user"></i> Profile</a>
+                    <a href="#"><i class="fas fa-users"></i> My Communities</a>
+                    <a href="#"><i class="fas fa-info-circle"></i> About Us</a>
+                    <a href="#"><i class="fas fa-question-circle"></i> Help</a>
+                    <a href="#"><i class="fas fa-book"></i> Briefs</a>
+                    <a href="#"><i class="fas fa-plus"></i> Join New</a>
                 </div>
             </div>
-            <button class="hamburger-menu">
-                <i class="fas fa-bars"></i>
-                <i class="fas fa-times"></i>
-            </button>
-        </nav>
-        <ul class="underline"></ul>
-    </header>
+        </aside>
+        <!-- Main Content -->
+        <main class="main-content">
+            <div class="communities-header">
+                <div class="community-tabs">
+                    <div class="community-tab" title="All"><i class="fas fa-globe"></i></div>
+                    <div class="community-tab" title="Tech"><i class="fas fa-microchip"></i></div>
+                    <div class="community-tab" title="Art"><i class="fas fa-paint-brush"></i></div>
+                    <div class="community-tab" title="Sports"><i class="fas fa-basketball-ball"></i></div>
+                    <div class="community-tab" title="Music"><i class="fas fa-music"></i></div>
+                </div>
+                <div class="search-bar">
+                    <i class="fas fa-search"></i>
+                    <input type="text" placeholder="Search communities...">
+                </div>
+            </div>
+            <div class="communities-list">
+                <!-- Example Community Cards -->
+                <div class="community-card">
+                    <div class="community-title">Tech Innovators</div>
+                    <div class="community-desc">A place for tech enthusiasts to share, learn, and build together.</div>
+                    <div class="community-actions">
+                        <button class="join-btn">Join</button>
+                        <button class="brief-btn">Brief</button>
+                    </div>
+                </div>
+                <div class="community-card">
+                    <div class="community-title">Art & Creators</div>
+                    <div class="community-desc">Showcase your art, get feedback, and collaborate with other creators.</div>
+                    <div class="community-actions">
+                        <button class="join-btn">Join</button>
+                        <button class="brief-btn">Brief</button>
+                    </div>
+                </div>
+                <div class="community-card">
+                    <div class="community-title">Sports Mania</div>
+                    <div class="community-desc">Discuss matches, join fantasy leagues, and connect with sports fans.</div>
+                    <div class="community-actions">
+                        <button class="join-btn">Join</button>
+                        <button class="brief-btn">Brief</button>
+                    </div>
+                </div>
+                <div class="community-card">
+                    <div class="community-title">Music Lovers</div>
+                    <div class="community-desc">Share playlists, discover new artists, and join music events.</div>
+                    <div class="community-actions">
+                        <button class="join-btn">Join</button>
+                        <button class="brief-btn">Brief</button>
+                    </div>
+                </div>
+                <div class="community-card">
+                    <div class="community-title">Upcoming: Eco Warriors</div>
+                    <div class="community-desc">Join soon to discuss sustainability and green projects!</div>
+                    <div class="community-actions">
+                        <button class="join-btn" disabled>Coming Soon</button>
+                        <button class="brief-btn">Brief</button>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+    <!-- Profile Modal (unchanged, keep your JS for modal logic) -->
     <div id="profile-modal" class="profile-modal">
         <!-- Profile Header Section -->
         <div class="profile-header">
@@ -217,15 +504,13 @@
             </div>
         </div>
     </div>
-
-    <!-- Account Settings Overlay (hidden by default) -->
+    <!-- Account Settings Overlay (unchanged) -->
     <div id="account-settings-overlay" class="account-settings-overlay">
         <div class="account-settings-content" id="account-settings-content">
             <button class="account-settings-close" id="close-account-settings" title="Close">&times;</button>
             <!-- myprofile.html content will be loaded here -->
         </div>
     </div>
-
     <script src="script.js"></script>
     <script>
         document.addEventListener('DOMContentLoaded', () => {
@@ -257,17 +542,14 @@
             manageAccountBtn.addEventListener('click', function(e) {
                 e.preventDefault();
                 closeModal();
-                // Load myprofile.html content via fetch
                 fetch('myprofile.html')
                     .then(res => res.text())
                     .then(html => {
-                        // Extract only the <main>...</main> part for cleaner overlay
                         const mainMatch = html.match(/<main[\s\S]*?<\/main>/i);
                         accountSettingsContent.innerHTML = '<button class="account-settings-close" id="close-account-settings" title="Close">&times;</button>' +
                             (mainMatch ? mainMatch[0] : html);
                         accountSettingsOverlay.classList.add('visible');
                         document.body.classList.add('account-settings-open');
-                        // Re-attach close event (since we replaced innerHTML)
                         document.getElementById('close-account-settings').onclick = closeAccountSettingsOverlay;
                     });
             });
@@ -279,7 +561,6 @@
             }
             closeAccountSettings.onclick = closeAccountSettingsOverlay;
 
-            // Optional: close overlay when clicking outside content
             accountSettingsOverlay.addEventListener('click', function(e) {
                 if (e.target === accountSettingsOverlay) {
                     closeAccountSettingsOverlay();
