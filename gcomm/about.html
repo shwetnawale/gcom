@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About - G-COM</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Audiowide&family=Oswald:wght@400;700&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                <h1 class="logo-text">G</h1>
+                <span class="brand">-COM</span>
+            </div>
+            <div class="theam" id="theme-toggle">
+                <svg id="sun-icon" style="display: none;" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                    <circle cx="12" cy="12" r="5" fill="currentColor"/>
+                    <path d="M12 1V3" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                    <path d="M12 21V23" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                    <path d="M4.22 4.22L5.64 5.64" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                    <path d="M18.36 18.36L19.78 19.78" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                    <path d="M1 12H3" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                    <path d="M21 12H23" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                    <path d="M4.22 19.78L5.64 18.36" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                    <path d="M18.36 5.64L19.78 4.22" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                </svg>
+                <svg id="moon-icon" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                    <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79Z" fill="currentColor"/>
+                </svg>
+            </div>
+            <div class="join-now-header-btn-container">
+                <ul class="links">
+                    <li><a href="index.html">Explore</a></li>
+                    <li><a href="plans.html">Plans</a></li>
+                    <li><a href="about.html" class="no-spa">About</a></li>
+                </ul>
+                <a href="#" id="join-now-btn" class="join-now-header-btn abc">Join Now</a>
+            </div>
+            <button class="hamburger-menu">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-times"></i>
+            </button>
+        </nav>
+        <ul class="underline"></ul>
+    </header>
+
+    <div id="page-content">
+        <main>
+            <section class="welcome-section">
+                <h2 class="welcome-title">About G-COM</h2>
+                <p class="welcome-description">
+                    What is G-COM?<br>
+                    G-COM (Genuine Community) is a curated digital platform designed to connect verified individuals within specific industries. It's not just another social site — it's a professional space built with purpose. At its core, G-COM is about fostering authentic conversations, sharing valuable insights, and building meaningful networks that help members grow personally and professionally. Whether you're from tech, finance, design, or education, G-COM ensures you're connecting with real people who speak your industry's language.
+                    Unlike platforms that prioritize virality over value, G-COM focuses on depth, not noise. Each community within G-COM is carefully moderated and structured around a common professional or technological interest. This makes the platform a go-to hub for professionals seeking insightful discussions, trusted content, and a high-signal environment — free from spam, trolls, or irrelevant content. It's a place where your time spent adds real value to your knowledge and network.
+                    <br><br>
+                    Our mission <br>
+                    Our mission is to provide verified, moderated, and purpose-driven spaces where innovation thrives and voices are heard. Whether you're a developer, designer, artist, or entrepreneur—G-COM gives you the tools and space to thrive.
+                    <br><br>
+                    Our vision <br>
+                    We believe in the power of authenticity, collaboration, and open knowledge. Join us to become a part of a growing ecosystem of passionate individuals shaping the future together.
+                </p>
+            </section>
+        </main>
+    </div>
+    <!-- Authentication Modal -->
+    <div id="auth-modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-image-panel">
+                <div class="logo">
+                    <h1 class="logo-text">G</h1>
+                </div>
+                <h3>Welcome to G-COM</h3>
+                <p>Your gateway to innovative solutions and collaborative growth.</p>
+            </div>
+            <div class="modal-form-panel">
+                <span class="close-button">&times;</span>
+                <!-- Sign Up View -->
+                <div id="signup-view">
+                    <h2>Join G-COM</h2>
+                    <p>Create an account to get started.</p>
+                    <button class="social-btn google-btn"><i class="fab fa-google"></i> Sign up with Google</button>
+                    <button class="social-btn facebook-btn"><i class="fab fa-facebook-f"></i> Sign up with Facebook</button>
+                    <div class="divider">
+                        <span>OR</span>
+                    </div>
+                    <form id="signup-form" onsubmit="event.preventDefault(); alert('Sign-up logic not implemented.');">
+                        <input type="email" name="email" placeholder="Email Address" required>
+                        <input type="password" name="password" placeholder="Password" required>
+                        <button type="submit" class="submit-btn">Sign Up with Email</button>
+                    </form>
+                    <p class="switch-view-text">Already have an account? <a href="#" id="show-login">Log in</a></p>
+                </div>
+                <!-- Login View (initially hidden) -->
+                <div id="login-view" style="display: none;">
+                    <h2>Welcome Back!</h2>
+                    <p>Log in to your account.</p>
+                    <button class="social-btn google-btn"><i class="fab fa-google"></i> Log in with Google</button>
+                    <button class="social-btn facebook-btn"><i class="fab fa-facebook-f"></i> Log in with Facebook</button>
+                    <div class="divider">
+                        <span>OR</span>
+                    </div>
+                    <form id="login-form" onsubmit="event.preventDefault(); alert('Login logic not implemented.');">
+                        <input type="email" name="email" placeholder="Email Address" required>
+                        <input type="password" name="password" placeholder="Password" required>
+                        <button type="submit" class="submit-btn">Log In</button>
+                    </form>
+                    <p class="switch-view-text">Don't have an account? <a href="#" id="show-signup">Sign up</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="underline"></div>
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2023 G-COM. All rights reserved.</p>
+            <ul class="social-links">
+                <li><a href="#">Facebook</a></li>
+                <li><a href="#">Twitter</a></li>
+                <li><a href="#">Instagram</a></li>
+            </ul>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

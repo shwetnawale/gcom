@@ -1,0 +1,213 @@
+.profile {
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            background-color: var(--secondary-color, #e0e0e0);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        .profile i {
+            font-size: 22px;
+            color: var(--text-color, #333);
+        }* {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            /* A dark background to make the component stand out, like in the screenshot */
+            background-color: #111827;
+            color: #ffffff;
+        }
+
+        /* --- Main Modal Container --- */
+        .profile-modal {
+            display: none; /* Hide by default */
+            position: fixed;
+            top: 20px;  /* roughly equivalent to top-5 */
+            right: 20px; /* roughly equivalent to right-5 */
+            width: 384px; /* roughly equivalent to w-96 */
+            background-color: #ffffff; /* Changed to white for a high-contrast look */
+            border-radius: 16px; /* rounded-2xl */
+            padding: 24px; /* p-6 */
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
+            z-index: 1000; /* Ensure it's on top of the overlay */
+            opacity: 0;
+            transform: translateY(-20px) scale(0.95);
+            transition: opacity 0.2s ease-in-out, transform 0.2s ease-in-out;
+        }
+
+        .profile-modal.visible {
+            display: block;
+            opacity: 1;
+            transform: translateY(0) scale(1);
+        }
+
+        /* --- Modal Overlay for Blur Effect --- */
+        .modal-overlay-blur {
+            display: none; /* Hide by default */
+            position: fixed;
+            inset: 0; /* top, right, bottom, left = 0 */
+            backdrop-filter: blur(4px);
+            background-color: rgba(0, 0, 0, 0.3); /* Added overlay for better blur visibility */
+            -webkit-backdrop-filter: blur(4px); /* Safari support */
+            z-index: 999; /* Below the modal */
+        }
+
+        .modal-overlay-blur.visible {
+            display: block;
+        }
+
+        /* --- Profile Header --- */
+        .profile-header {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 8px;
+            margin-bottom: 24px;
+        }
+
+        .profile-image-wrapper {
+            width: 110px;
+            height: 110px;
+            background-color: #ffffff;
+            border: 3px solid #000000; /* Added black border */
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .profile-image-wrapper img {
+            width: 96px; /* w-24 */
+            height: 96px; /* h-24 */
+            border-radius: 50%;
+            object-fit: cover;
+        }
+        
+        .profile-name {
+            font-size: 1.25rem; /* text-xl */
+            font-weight: 700; /* font-bold */
+            margin-top: 16px; /* mt-4 */
+            color: #000000;
+        }
+
+        .profile-socials {
+            font-size: 0.875rem; /* text-sm */
+            color: #000000; /* Changed to black */
+            opacity: 0.7; /* De-emphasize with opacity instead of color */
+        }
+
+        /* --- Manage Account Button --- */
+        .manage-account-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            margin-top: 12px; /* Space from the text above */
+            padding: 8px 20px;
+            background-color: #000000;
+            color: #ffffff;
+            text-decoration: none;
+            font-size: 0.875rem;
+            font-weight: 500;
+            border-radius: 9999px; /* Pill shape */
+            transition: transform 0.2s ease;
+        }
+
+        .manage-account-btn:hover {
+            transform: scale(1.05);
+        }
+
+        /* --- List Styles (for both settings and accounts) --- */
+        .list-container {
+            background-color: #ffffff;
+            border: 1px solid #000000;
+            border-radius: 12px; /* rounded-xl */
+            overflow: hidden; /* This will clip the children's corners for a clean hover effect */
+            margin-bottom: 16px; /* mb-4 */
+        }
+        
+        .list-container:last-child {
+            margin-bottom: 0;
+        }
+        
+        .list-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 4px 16px; /* Reduced vertical padding for a more compact look */
+            cursor: pointer;
+            transition: background-color 0.2s ease, color 0.2s ease;
+        }
+        
+        .list-item:hover {
+            background-color: #000000; /* Invert colors on hover */
+            color: #ffffff;
+        }
+
+        .list-item:hover .list-item-text,
+        .list-item:hover .list-item-arrow svg,
+        .list-item:hover .account-name,
+        .list-item:hover .account-platform {
+            color: #ffffff;
+        }
+
+        .list-item-text {
+            font-size: 1rem;
+            font-weight: 500;
+            color: #000000;
+        }
+        
+        .list-item-arrow svg {
+            width: 20px;
+            height: 20px;
+            color: #000000;
+        }
+        
+        .divider {
+            height: 1px;
+            background-color: #000000;
+            /* Removed width and margin to make it a full divider */
+        }
+
+        /* --- Linked Accounts Specifics --- */
+        .account-item {
+            padding: 12px; /* p-3 */
+        }
+        
+        .account-info {
+            display: flex;
+            align-items: center;
+            gap: 12px; /* gap-3 */
+        }
+
+        .account-info img {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+        
+        .account-name {
+            font-weight: 600; /* font-semibold */
+            color: #f3f4f6; /* gray-100 */
+        }
+        
+        .account-platform {
+            display: flex;
+            align-items: center;
+            gap: 6px; /* gap-1.5 */
+            font-size: 0.75rem; /* text-xs */
+            color: #9ca3af; /* gray-400 */
+        }
+        
+        .account-platform svg {
+            width: 12px; /* w-3 */
+            height: 12px; /* h-3 */
+            fill: currentColor;
+        }

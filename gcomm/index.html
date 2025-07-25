@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>G-COM</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Audiowide&family=Oswald:wght@400;700&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .welcome-section {
+            position: relative;
+            overflow: hidden; /* Ensures the SVG doesn't bleed out */
+        }
+        .background-animation-svg {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 80%;
+            max-width: 700px;
+            height: auto;
+            z-index: 0; /* Behind text but above background */
+            opacity: 0.1; /* Make it subtle */
+        }
+        .text-path {
+            fill: none;
+            stroke: var(--text-color, #000); /* Use theme variable or fallback to black */
+            stroke-width: 2;
+            stroke-dasharray: 1200; /* Increased for larger text */
+            stroke-dashoffset: 1200;
+            /* Animation: 4s draw, 1s pause, repeat infinitely. Total 5s cycle. */
+            animation: draw 4s ease-in-out 1s infinite;
+        }
+        @keyframes draw {
+            to {
+                stroke-dashoffset: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                <h1 class="logo-text">G</h1>
+                <span class="brand">-COM</span>
+            </div>
+            <div class="theam" id="theme-toggle">
+                <svg id="sun-icon" style="display: none;" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="12" cy="12" r="5" fill="currentColor"/>
+                    <path d="M12 1V3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M12 21V23" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M4.22 4.22L5.64 5.64" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M18.36 18.36L19.78 19.78" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M1 12H3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M21 12H23" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M4.22 19.78L5.64 18.36" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M18.36 5.64L19.78 4.22" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                <svg id="moon-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79Z" fill="currentColor"/>
+                </svg>
+            </div>
+            <div class="join-now-header-btn-container">
+                <ul class="links">
+                    <li><a href="index.html" class="no-spa">Explore</a></li>
+                    <li><a href="plans.html">Plans</a></li>
+                    <!-- <li><a href="home.html">Home</a></li> -->
+                    <li><a href="about.html">About</a></li>
+                </ul>
+                <a href="#" id="join-now-btn" class="join-now-header-btn abc">Join Now</a>
+            </div>
+            <button class="hamburger-menu">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-times"></i>
+            </button>
+        </nav>
+        <ul class="underline"></ul>
+    </header>
+    <div id="page-content">
+        <main>
+            <section class="welcome-section">
+                <svg class="background-animation-svg" viewBox="0 0 800 200" xmlns="http://www.w3.org/2000/svg">
+                    <text font-family="Audiowide, sans-serif" font-size="120" y="50%" x="50%" dominant-baseline="middle" text-anchor="middle">
+                        <tspan class="text-path">G-COM</tspan>
+                    </text>
+                </svg>
+                <h2 class="welcome-title">Welcome to G-COM</h2>
+                <p class="welcome-description">
+                    G-COM is your gateway to innovative solutions and collaborative growth. Join us to create, connect, and achieve more together.
+                </p>
+                </section>
+        </main>
+        <header class="header-sub">
+            <div class="gradient-overlay"></div>
+            <nav class="navbar"> <div class="logo">
+                    <h1 class="logo-text">G</h1>
+                    <span class="brand">-COM</span>
+                </div>
+                <div class="img">
+                </div>
+                <ul class="links">
+                    <li><a href="index.html">Join</a></li>    <li><a href="index.html">Create</a></li>  <li><a href="index.html">Add</a></li>     <li><a href="about.html">About</a></li>
+                </ul>
+            </nav>
+        </header>
+    <section class="card4">
+        <div class="card" id="card1">
+            <i class="fas fa-user-check"></i>
+            <h3>Verified Membership</h3>
+            <p>Ensures authenticity, fostering trust and meaningful interactions.</p>
+        </div>
+        <div class="card" id="card2">
+            <i class="fas fa-briefcase"></i>
+            <h3>Industry-Specific Communities</h3>
+            <p>Allows for focused discussions, catering to professionals' specific interests and needs.</p>
+        </div>
+        <div class="card" id="card3">
+            <i class="fas fa-user-shield"></i>
+            <h3>Expert Moderation</h3>
+            <p>Maintains high-quality content and discussions, enhancing user experience.</p>
+        </div>
+        <div class="card" id="card4">
+            <i class="fas fa-gift"></i>
+            <h3>Free Access for Consumers</h3>
+            <p>Encourages widespread adoption among users seeking knowledge and updates.</p>
+        </div>
+    </section>
+    <div id="auth-modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-image-panel">
+                <div class="logo">
+                    <h1 class="logo-text">G</h1>
+                </div>
+                <h3>Welcome to G-COM</h3>
+                <p>Your gateway to innovative solutions and collaborative growth.</p>
+            </div>
+            <div class="modal-form-panel">
+                <span class="close-button">&times;</span>
+                <div id="signup-view">
+                    <h2>Join G-COM</h2>
+                    <p>Create an account to get started.</p>
+                    <button class="social-btn google-btn"><i class="fab fa-google"></i> Sign up with Google</button>
+                    <button class="social-btn facebook-btn"><i class="fab fa-facebook-f"></i> Sign up with Facebook</button>
+                    <div class="divider">
+                        <span>OR</span>
+                    </div>
+                    <form id="signup-form" onsubmit="event.preventDefault(); alert('Sign-up logic not implemented.');">
+                        <input type="email" name="email" placeholder="Email Address" required>
+                        <input type="password" name="password" placeholder="Password" required>
+                        <button type="submit" class="submit-btn">Sign Up with Email</button>
+                    </form>
+                    <p class="switch-view-text">Already have an account? <a href="#" id="show-login">Log in</a></p>
+                </div>
+                <div id="login-view" style="display: none;">
+                    <h2>Welcome Back!</h2>
+                    <p>Log in to your account.</p>
+                    <button class="social-btn google-btn"><i class="fab fa-google"></i> Log in with Google</button>
+                    <button class="social-btn facebook-btn"><i class="fab fa-facebook-f"></i> Log in with Facebook</button>
+                    <div class="divider">
+                        <span>OR</span>
+                    </div>
+                    <form id="login-form" onsubmit="event.preventDefault(); alert('Login logic not implemented.');">
+                        <input type="email" name="email" placeholder="Email Address" required>
+                        <input type="password" name="password" placeholder="Password" required>
+                        <button type="submit" class="submit-btn">Log In</button>
+                    </form>
+                    <p class="switch-view-text">Don't have an account? <a href="#" id="show-signup">Sign up</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2023 G-COM. All rights reserved.</p>
+            <ul class="social-links">
+                <li><a href="#">Facebook</a></li>
+                <li><a href="#">Twitter</a></li>
+                <li><a href="#">Instagram</a></li>
+            </ul>
+        </div>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>

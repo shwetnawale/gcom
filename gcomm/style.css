@@ -1,0 +1,1080 @@
+/* style.css */
+:root {
+    /* Light Theme */
+    --body-bg: #ffffff;
+    --body-text: #222;
+    --header-bg: #ffffff00;
+    --header-shadow: rgba(0,0,0,0.03);
+    --brand-textg: #000000; /* For .logo-text in main header */
+    --brand-textbg: #ffffff; /* For .logo-text in main header */
+    --brand-text: #000000; /* For .brand in main header */
+    --link-text: #000000; /* For .links a in main header */
+    --link-hover-text: #0278ff;
+    --welcome-title-text: #5f5e5e;
+    --underline-color: #000; /* Black for light theme */
+    --welcome-title-gradient-light: linear-gradient(to right, #8a2be2 0%, #ff00dd 50%, #ff4400 100%); /* New gradient for light theme welcome title */
+    --welcome-desc-text: #000;
+    --sticky-header-bg: #e9e9e9;
+    --sticky-header-text: #222; /* For .brand & .links a in .header-sub normally */
+    --sticky-header-text-gradient: #fff; /* For .brand & .links a in .header-sub when gradient active */
+    --button-bg: #4CAF50;
+    --button-text: white;
+    --footer-bg: #fff;
+    --footer-text: #888;
+    --footer-link-text: #222;
+    --footer-link-hover-text: #0077ff;
+    --animated-button-bg: #000000; /* Black button for light theme */
+    --animated-button-text: #ffffff; /* White text for light theme */
+    --animated-button-hover-shadow: rgba(0, 0, 0, 0.3); /* Dark shadow for light button */
+    --modal-image-panel-gradient: linear-gradient(160deg, #d8bcfc 10%, #ffc0f0 75%); /* Light blue-violet to light pink */
+    --link-text-col: #000000; /* Ensure the link color matches the main header links */
+
+    --icon-color: #222;
+    --gradient-overlay-light: linear-gradient(to right, #0c0c0c, #000000);
+
+    /* Dark Theme */
+    --body-bg-dark: #000000;
+    --body-text-dark: #e0e0e0;
+    --header-bg-dark: #ffffff00;
+    --header-shadow-dark: rgba(255,255,255,0.05);
+    --brand-textg-dark: #ffffff; /* For .logo-text in main header */
+    --brand-textbg-dark: #000000;
+    --brand-text-dark: #ffffff;
+    --link-text-dark: #ffffff;
+    --link-hover-text-dark: #64b5f6;
+    --welcome-title-text-dark: linear-gradient(to right, #ff4400 0%, #d141a1 50%, #8a2be2 100%);
+    --underline-color-dark: #fff; /* White for dark theme */
+    --welcome-desc-text-dark: #e0e0e0;
+    --sticky-header-bg-dark: #000000; 
+    --sticky-header-text-dark: #000000;
+    --sticky-header-text-gradient-dark: #000000; /* Changed to black for text on dark mode gradient */
+    --button-bg-dark: #000000; /* Slightly adjusted green for dark mode */
+    --button-text-dark: white;
+    --footer-bg-dark: #222222;
+    --footer-text-dark: #aaaaaa;
+    --footer-link-text-dark: #e0e0e0;
+    --footer-link-hover-text-dark: #64b5f6;
+    --animated-button-bg-dark: #ffffff; /* White button for dark theme */
+    --animated-button-text-dark: #000000; /* Black text for dark theme */
+    --animated-button-hover-shadow-dark: rgba(255, 255, 255, 0.3); /* Light shadow for dark button */
+    --modal-image-panel-gradient-dark: linear-gradient(160deg, #4a006e 10%, #80006e 75%); /* Dark blue-violet to dark pink */
+    --icon-color-dark: #e0e0e0;
+    --gradient-overlay-dark: white;
+    --link-text-col-dark: #ffffff; /* Ensure the link color matches the main header links in dark mode */
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Roboto", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+    font-variation-settings: "width" 100;
+    /* General transition for smooth theme changes */
+    transition: background-color 1s ease, color 1s ease, border-color 1s ease, box-shadow 1s ease, opacity 1s ease;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Audiowide', cursive, sans-serif;
+    background: var(--body-bg);
+    color: var(--body-text);
+    min-height: 100vh;
+}
+
+
+header { /* Main header */
+    width: 100%;
+    background: var(--header-bg);
+    box-shadow: 0 2px 8px var(--header-shadow);
+}
+
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 2.5rem; /* 40px */
+    height: 5rem; /* 80px */
+}
+
+.logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.logo-text {
+    /* height: 60px -> 3.75rem */
+    /* width: 60px -> 3.75rem */
+    /* font-size: 47px -> 2.9375rem */
+    /* margin-top: 2px -> 0.125rem */
+    height: 3.75rem; 
+    width: 3.75rem; 
+    font-family: "Audiowide", sans-serif;
+    font-weight: 400;
+    font-size: 2.9375rem; 
+    font-style: normal;
+    color: var(--brand-textg);
+    background-color: var(--brand-textbg);
+    margin-top: 0.125rem; 
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+/* Styles for .brand in the main header */
+header > .navbar .brand {
+    font-size: 2rem; /* 32px */
+    color: var(--brand-text);
+    letter-spacing: 0.125rem; /* 2px */
+}
+.brand{
+    font-family: "Audiowide", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+
+}
+.theam {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    color: var(--icon-color); /* SVG icons will inherit this color */
+}
+
+.theam svg {
+    width: 24px; /* Ensure consistent size if not set in SVG */
+    height: 24px;
+}
+
+/* Styles for .links a in the main header */
+header > .navbar .links {
+    display: flex;
+    gap: 32px;
+    list-style: none;
+}
+
+header > .navbar .links a {
+    color: var(--link-text);
+    text-decoration: none;
+    font-size: 0.9rem; /* Decreased font size */
+    font-weight: 300; /* Made font lighter */
+}
+
+header > .navbar .links a:hover {
+    color: var(--link-hover-text);
+}
+
+.underline {
+    width: 100%;
+    height: 0.1px; /* Adjust thickness as needed */
+    background-color: var(--underline-color);
+    transition: background-color 1s ease; /* Smooth transition for theme change */
+}
+
+main {
+    /* Main is now a container for sections */
+    height: 100vh;
+    width: 100%;
+}
+
+.welcome-section {
+    text-align: center;
+    padding: 48px 24px;
+    min-height: calc(80vh - 5rem); /* Adjust height to be less than full viewport */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    animation: fadeInDown 1s ease-out;
+}
+
+.welcome-title {
+    letter-spacing: 0.3em;
+    margin-bottom: 20px;
+    font-size: 4.5rem;
+    text-transform: uppercase;
+    background-image: var(--welcome-title-gradient-light); /* Apply light theme gradient */
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent; /* Make text transparent to show gradient */
+}
+
+.welcome-description {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--welcome-desc-text);
+    line-height: 1.6;
+    margin-top: 0;
+}
+
+.features-section {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    padding: 40px 24px 80px;
+    flex-wrap: wrap;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    animation: fadeInUp 1s ease-out 0.2s;
+    opacity: 0;
+    animation-fill-mode: forwards;
+}
+
+.feature-card {
+    background: var(--footer-bg);
+    border-radius: 15px;
+    padding: 30px;
+    text-align: center;
+    width: 300px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.feature-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+}
+
+.feature-card i {
+    font-size: 3rem;
+    margin-bottom: 20px;
+    background-image: var(--welcome-title-gradient-light);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+.feature-card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    color: var(--body-text);
+}
+
+.feature-card p {
+    font-size: 1rem;
+    color: var(--footer-text);
+    line-height: 1.5;
+}
+
+@keyframes fadeInDown {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.header-sub { /* Sticky header container */
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    overflow: hidden; /* To contain the gradient overlay */
+    background: var(--sticky-header-bg);
+    width: 100%;
+}
+
+.gradient-overlay {
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    background: var(--gradient-overlay-light);
+    opacity: 0; opacity: 0;
+    transition: opacity 1s ease; /* Keep original transition for gradient */
+    z-index: 1; /* Below navbar content */
+}
+body.dark-theme .gradient-overlay {
+    background: var(--gradient-overlay-dark);
+}
+.header-sub .navbar { /* Navbar within the sticky header */
+    position: relative;
+    z-index: 2; /* Above gradient overlay */
+    height: 3.75rem; /* 60px (75% of main navbar height 5rem) */
+    background: transparent; /* Ensure it doesn't obscure the gradient or header-sub bg */
+}
+
+/* Scaled down logo for sticky header */
+.header-sub .navbar .logo-text {
+    height: calc(3.75rem * 0.75); /* 2.8125rem (45px) */
+    width: calc(3.75rem * 0.75);  /* 2.8125rem (45px) */
+    font-size: calc(2.9375rem * 0.75); /* 2.203125rem (approx 35.25px) */
+    margin-top: calc(0.125rem * 0.75); /* 0.09375rem (1.5px) */
+}
+
+/* Text color for .brand and .links a inside .header-sub .navbar */
+.header-sub .navbar .brand,
+.header-sub .navbar .links a {
+    color: var(--sticky-header-text);
+    text-decoration: none; /* For links */
+    /* transition for color change is on '*' or can be specified here */
+}
+.header-sub .navbar .brand {
+    font-size: calc(2rem * 0.75); /* 1.5rem (24px) */
+    letter-spacing: calc(0.125rem * 0.75); /* 0.09375rem (1.5px) */
+}
+.header-sub .navbar .links a { /* Override for links if needed, e.g., font-size */
+    font-size: 0.9rem; /* Kept as is, or could be scaled: calc(1.1rem * 0.75) */
+    font-weight: 300; /* Made font lighter for consistency */
+    font-family: "Roboto", sans-serif; /* Revert to Roboto for links if Oswald is too bold */
+    letter-spacing: normal;
+}
+
+
+/* When gradient is active, change text color */
+.header-sub .navbar.text-on-gradient .brand,
+.header-sub .navbar.text-on-gradient .links a {
+    color: var(--sticky-header-text-gradient);
+}
+
+.content {
+    min-height: 100vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* background: var(--body-bg); Ensure content area uses body bg */
+}
+
+button {
+    background-color: var(--button-bg);
+    border: none;
+    color: var(--button-text);
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 50px;
+    transition: transform 0.3s ease, background-color s ease, color 1s ease;
+}
+
+button:hover {
+    transform: scale(1.1);
+}
+
+footer {
+    background: var(--footer-bg);
+    box-shadow: 0 -2px 8px var(--header-shadow); /* Use same shadow variable for consistency */
+    padding: 24px 0;
+    width: 100%;
+}
+
+.footer-content {
+    max-width: 1000px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+}
+
+.footer-content p {
+    color: var(--footer-text);
+    font-size: 1rem;
+    margin: 0;
+}
+
+.social-links {
+    display: flex;
+    gap: 24px;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.social-links a {
+    color: var(--footer-link-text);
+    text-decoration: none;
+    font-size: 1.1rem;
+}
+
+.social-links a:hover {
+    color: var(--footer-link-hover-text);
+}
+
+/* Dark Theme Overrides */
+body.dark-theme {
+    background: var(--body-bg-dark);
+    color: var(--body-text-dark);
+}
+
+body.dark-theme header { /* Main header */
+    background: var(--header-bg-dark);
+    box-shadow: 0 2px 8px var(--header-shadow-dark);
+}
+
+body.dark-theme header > .navbar .brand {
+    color: var(--brand-text-dark);
+}
+
+body.dark-theme .logo-text {
+    color: var(--brand-textg-dark);
+    background-color: var(--brand-textbg-dark);
+}
+
+body.dark-theme .theam {
+    color: var(--icon-color-dark);
+}
+body.dark-theme header > .navbar .links a {
+    color: var(--link-text-dark);
+}
+
+body.dark-theme header > .navbar .links a:hover {
+    color: var(--link-hover-text-dark);
+}
+
+body.dark-theme .welcome-title {
+    background-image: var(--welcome-title-text-dark);
+    /* -webkit-background-clip, background-clip, and color: transparent are inherited from .welcome-title base style */
+}
+
+body.dark-theme .feature-card {
+    background: var(--footer-bg-dark);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+}
+
+body.dark-theme .feature-card:hover {
+    box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+}
+
+body.dark-theme .feature-card i {
+    background-image: var(--welcome-title-text-dark);
+}
+
+body.dark-theme .feature-card h3 {
+    color: var(--body-text-dark);
+}
+
+body.dark-theme .feature-card p {
+    color: var(--footer-text-dark);
+}
+
+body.dark-theme .welcome-description {
+    color: var(--welcome-desc-text-dark);
+}
+
+body.dark-theme .header-sub { /* Sticky header container */
+    background: var(--sticky-header-bg-dark);
+}
+
+/* Text color for .brand and .links a inside .header-sub .navbar in dark mode */
+body.dark-theme .header-sub .navbar .brand,
+body.dark-theme .header-sub .navbar .links a {
+    color: var(--sticky-header-text-dark);
+}
+
+/* When gradient is active in dark mode, change text color */
+body.dark-theme .header-sub .navbar.text-on-gradient .brand,
+body.dark-theme .header-sub .navbar.text-on-gradient .links a {
+    color: var(--sticky-header-text-gradient-dark);
+}
+
+body.dark-theme button {
+    background-color: var(--button-bg-dark);
+    color: var(--button-text-dark);
+}
+
+body.dark-theme footer {
+    background: var(--footer-bg-dark);
+    box-shadow: 0 -2px 8px var(--header-shadow-dark);
+}
+
+body.dark-theme .footer-content p {
+    color: var(--footer-text-dark);
+}
+
+body.dark-theme .social-links a {
+    color: var(--footer-link-text-dark);
+}
+
+body.dark-theme .social-links a:hover {
+    color: var(--footer-link-hover-text-dark);
+}
+
+body.dark-theme .underline {
+    background-color: var(--underline-color-dark);
+}
+.animated-button {
+    display: inline-block;
+    padding: 12px 28px;
+    border-radius: 40px; /* Kept for consistency */
+    background: var(--animated-button-bg); /* Use theme-dependent background */
+    color: var(--animated-button-text);
+    font-size: 1rem;
+    font-weight: 500;
+    text-decoration: none;
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    z-index: 1;
+}
+
+.animated-button::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(120deg, rgba(255,255,255,0.3), rgba(255,255,255,0));
+    transform: skewX(-20deg);
+    transition: left 0.5s ease;
+    z-index: -1;
+}
+.join-now-header-btn-container{
+    display: flex;
+    gap: 32px; /* Match link gap for consistent spacing */
+    align-items: center;
+}
+.animated-button:hover::before {
+    left: 100%;
+}
+
+.animated-button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 20px var(--animated-button-hover-shadow); /* Use theme-dependent shadow */
+}
+
+/* Dark theme overrides for the animated button */
+body.dark-theme .animated-button {
+    background: var(--animated-button-bg-dark);
+    color: var(--animated-button-text-dark);
+    /* The ::before shimmer effect is currently white. On a white button in dark mode, it might not be visible. Consider adjusting it if needed. */
+}
+
+/* Styles for the new "Join Now" header button */
+.join-now-header-btn {
+    display: inline-block;
+    padding: 12px 28px;
+    border-radius: 40px;
+    font-size: 1rem;
+    font-weight: 500;
+    text-decoration: none;
+    position: relative;
+    z-index: 1;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.5s ease, color 0.5s ease, border-color 0.5s ease;
+    
+    /* Light Theme Styles */
+    background-color: #ffffff;
+    color: #000000;
+    border: 1px solid #000000;
+}
+
+.join-now-header-btn:hover {
+    background-image: linear-gradient(to right, #fde405, #a2ff00); /* Yellow-green gradient */
+    border-color: transparent; /* Hide border on hover */
+    transform: scale(1.05);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Dark Theme Styles for the new button */
+body.dark-theme .join-now-header-btn {
+    background-color: #000000; /* Keep background white for black text visibility */
+    color: #000000; /* Keep text black as requested */
+    border-color: #ffffff; /* Match background so border isn't visible */
+}
+
+body.dark-theme .join-now-header-btn:hover {
+    background-image: linear-gradient(to right, #4538ff, #fc2e2e); /* Same gradient for dark theme */
+    border-color: transparent; /* Hide border on hover */
+    transform: scale(1.05); /* Add transform for consistency */
+    box-shadow: 0 8px 20px rgba(255, 255, 255, 0.2);
+}
+/* You can add these styles to your existing style.css file. */
+
+/* Modal Styles */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1000; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgba(0, 0, 0, 0.247); /* Black w/ opacity */
+    backdrop-filter: blur(5px); /* Add blur effect to the background */
+    justify-content: center;
+    align-items: center;
+}
+body.dark-theme .modal {
+    background-color: rgba(190, 190, 190, 0.11); /* Black w/ opacity */
+    backdrop-filter: blur(5px); /* Add blur effect to the background *//* Darker background for dark theme */
+}
+
+.modal-content {
+    margin: auto;
+    padding: 0;
+    border: none;
+    width: 90%;
+    max-width: 850px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    position: relative;
+    animation: fadeIn 0.3s;
+    text-align: left;
+    display: flex;
+    overflow: hidden;
+}
+
+.modal-image-panel {
+    width: 40%;
+    background: var(--modal-image-panel-gradient); /* Use theme-dependent gradient */
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 40px;
+    text-align: center;
+}
+
+.modal-image-panel .logo {
+    margin-bottom: 1rem;
+}
+.modal-image-panel .logo .logo-text {
+    color: white;
+    background-color: transparent;
+    border: 2px solid rgba(255, 255, 255, 0.8);
+}
+
+.modal-image-panel h3 {
+    font-family: 'Oswald', sans-serif;
+    font-size: 1.8rem;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.modal-image-panel p {
+    font-size: 1rem;
+    line-height: 1.5;
+    opacity: 0.9;
+}
+
+.modal-form-panel {
+    width: 60%;
+    padding: 40px;
+    position: relative;
+    background-color: var(--body-bg);
+    color: var(--body-text);
+}
+.abc{
+    color: var(--link-text-col); /* Ensure the link color matches the main header links */
+}
+body.dark-theme .abc {
+    color: var(--link-text-col-dark); /* Ensure the link color matches the main header links in dark mode */
+}
+body.dark-theme .modal-image-panel {
+    background: var(--modal-image-panel-gradient-dark); /* Apply dark theme gradient */
+}
+
+/* Dark mode styles for modal */
+body.dark-theme .modal-form-panel {
+    background-color: #000000;
+    color: #e0e0e0;
+}
+
+@keyframes fadeIn {
+    from {opacity: 0; transform: translateY(-20px);}
+    to {opacity: 1; transform: translateY(0);}
+}
+
+.close-button {
+    color: #aaa;
+    font-size: 28px;
+    font-weight: bold;
+    position: absolute;
+    top: 15px;
+    right: 25px;
+}
+
+.close-button:hover,
+.close-button:focus {
+    color: var(--body-text);
+    text-decoration: none;
+    cursor: pointer;
+}
+
+body.dark-theme .close-button {
+    color: #ccc;
+}
+
+body.dark-theme .close-button:hover,
+body.dark-theme .close-button:focus {
+    color: white;
+}
+
+
+#signup-view h2, #login-view h2 {
+    text-align: center;
+    margin-top: 0;
+    margin-bottom: 10px;
+    font-family: 'Oswald', sans-serif;
+}
+
+#signup-view p, #login-view p {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #666;
+    font-size: 1rem;
+}
+
+body.dark-theme #signup-view p,
+body.dark-theme #login-view p {
+    color: #ccc;
+}
+
+.social-btn {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    background-color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    transition: background-color 0.2s;
+    font-family: 'Roboto', sans-serif;
+}
+
+body.dark-theme .social-btn {
+    background-color: #444;
+    border-color: #666;
+    color: #f1f1f1;
+}
+
+.social-btn:hover {
+    background-color: #f0f0f0;
+}
+
+body.dark-theme .social-btn:hover {
+    background-color: #555;
+}
+
+.social-btn .fab {
+    font-size: 18px;
+}
+
+.google-btn { color: #4285F4; }
+.facebook-btn { color: #1877F2; }
+
+.divider {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    margin: 20px 0;
+    color: #aaa;
+}
+
+.divider::before, .divider::after {
+    content: '';
+    flex: 1;
+    border-bottom: 1px solid #ddd;
+}
+
+body.dark-theme .divider { color: #666; }
+body.dark-theme .divider::before, body.dark-theme .divider::after { border-color: #555; }
+
+.divider span { padding: 0 10px; }
+
+#signup-form, #login-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+#signup-form input, #login-form input {
+    padding: 12px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+    font-family: 'Roboto', sans-serif;
+}
+
+body.dark-theme #signup-form input, body.dark-theme #login-form input {
+    background-color: #333;
+    border-color: #555;
+    color: #f1f1f1;
+}
+
+.submit-btn {
+    padding: 12px;
+    border-radius: 5px;
+    border: none;
+    background-color: #007bff;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.submit-btn:hover { background-color: #0056b3; }
+
+.switch-view-text {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 14px;
+}
+
+.switch-view-text a {
+    color: #007bff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.switch-view-text a:hover { text-decoration: underline; }
+
+/* Use Audiowide for all headings and logo */
+h1, h2, h3, .logo-text, .brand {
+    font-family: 'Audiowide', cursive, sans-serif;
+    letter-spacing: 0.05em;
+}
+
+@media (max-width: 768px) {
+    .modal-image-panel {
+        display: none;
+    }
+
+    .modal-form-panel {
+        width: 100%;
+    }
+
+    .modal-content {
+        max-width: 450px;
+        flex-direction: column;
+    }
+}
+
+/* Styles for the new .card4 section and individual .card elements */
+.card4 {
+    display: flex;
+    justify-content: center;
+    height: 100vh;
+    gap: 30px;
+    padding: 80px 24px; /* Increased padding to give more scroll space */
+    flex-wrap: wrap;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.card {
+    background: var(--footer-bg); /* Reusing existing variables for theme consistency */
+    border-radius: 15px;
+    padding: 30px;
+    text-align: center;
+    width: 300px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, opacity 0.8s ease, transform 0.8s ease; /* Added opacity and transform to transition */
+    opacity: 0; /* Initially hidden */
+    transform: translateY(50px); /* Initially moved down */
+}
+
+.card.show {
+    opacity: 1; /* Visible when 'show' class is added */
+    transform: translateY(0); /* Move to original position */
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+}
+
+.card i {
+    font-size: 3rem;
+    margin-bottom: 20px;
+    background-image: var(--welcome-title-gradient-light);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+.card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    color: var(--body-text);
+}
+
+.card p {
+    font-size: 1rem;
+    color: var(--footer-text);
+    line-height: 1.5;
+}
+
+/* Dark theme overrides for the new cards */
+body.dark-theme .card {
+    background: var(--footer-bg-dark);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+}
+
+body.dark-theme .card:hover {
+    box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+}
+
+body.dark-theme .card i {
+    background-image: var(--welcome-title-text-dark);
+}
+
+body.dark-theme .card h3 {
+    color: var(--body-text-dark);
+}
+
+body.dark-theme .card p {
+    color: var(--footer-text-dark);
+}
+
+/* --- Responsive Styles & Hamburger Menu --- */
+
+.hamburger-menu {
+    display: none; /* Hidden by default on larger screens */
+    background: none;
+    border: none;
+    color: var(--icon-color);
+    font-size: 1.5rem;
+    cursor: pointer;
+    z-index: 1001; /* Ensure it's on top of the mobile menu */
+    padding: 0.5rem;
+}
+
+body.dark-theme .hamburger-menu {
+    color: var(--icon-color-dark);
+}
+
+/* Logic to show close (times) icon and hide bars icon when menu is active */
+.hamburger-menu .fa-times {
+    display: none;
+}
+.hamburger-menu.active .fa-bars {
+    display: none;
+}
+.hamburger-menu.active .fa-times {
+    display: block;
+}
+
+
+@media (max-width: 992px) {
+    .navbar {
+        padding: 0 1.5rem; /* Reduce padding on smaller screens */
+    }
+
+    .hamburger-menu {
+        display: block; /* Show hamburger on smaller screens */
+    }
+
+    .join-now-header-btn-container {
+        /* This container becomes the mobile menu overlay */
+        position: fixed;
+        top: 0;
+        right: -100%; /* Start off-screen */
+        width: 100%;
+        height: 100vh;
+        background-color: var(--body-bg);
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 2.5rem;
+        transition: right 0.4s ease-in-out;
+        z-index: 1000; /* Below the hamburger icon */
+    }
+
+    .join-now-header-btn-container.active {
+        right: 0; /* Slide in from the right */
+    }
+
+    .join-now-header-btn-container .links {
+        flex-direction: column;
+        text-align: center;
+        gap: 2rem;
+    }
+
+    .join-now-header-btn-container .links a {
+        font-size: 1.5rem; /* Make links larger for easier tapping */
+    }
+
+    .join-now-header-btn-container .join-now-header-btn {
+        font-size: 1.25rem; /* Make button text larger for mobile */
+        padding: 14px 32px; /* Adjust padding for a better tap area */
+    }
+
+    body.dark-theme .join-now-header-btn-container {
+        background-color: var(--body-bg-dark);
+    }
+
+    .header-sub {
+        display: none; /* Hide the sticky sub-header on mobile for simplicity */
+    }
+}
+/* Scope all styles to #card-stack-scroll */
+#card-stack-scroll {
+    /* These styles were previously on the body.
+       Applying them here ensures they only affect the component. */
+    background-color: #f3f4f6;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+    /* If you want the component to take up the full viewport height when embedded,
+       you might need to add `min-height: 100vh;` here, but be mindful of
+       how it interacts with the `scroll-container`'s height. */
+}
+
+#card-stack-scroll .sticky-container {
+    position: sticky;
+    top: 0;
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+#card-stack-scroll .cards-wrapper {
+    position: relative;
+    width: 90vw;
+    height: 75vh;
+    max-width: 42rem;
+}
+
+#card-stack-scroll .card {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 1rem;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+    padding: 2rem;
+    text-align: center;
+}
+
+#card-stack-scroll .card-1 { background-image: linear-gradient(to bottom, #bbf7d0, #bfdbfe); }
+#card-stack-scroll .card-2 { background-image: linear-gradient(to bottom, #3730a3, #6b21a8); color: white; }
+#card-stack-scroll .card-3 { background-image: linear-gradient(to bottom, #6b21a8, #be185d); color: white; }
+#card-stack-scroll .card-4 { background-image: linear-gradient(to bottom, #bfdbfe, #e0e7ff); color: black; }
+#card-stack-scroll .card-5 { background-image: linear-gradient(to bottom, #fdba74, #f87171); color: white; }
+#card-stack-scroll .card-6 { background-image: linear-gradient(to bottom, #fde047, #86efac); color: #1f2937; }
+#card-stack-scroll .card-7 { background-image: linear-gradient(to bottom, #9ca3af, #64748b); color: white; }
+
+#card-stack-scroll .card h2 {
+    font-size: 2.25rem;
+    font-weight: 700;
+    margin: 0;
+}
+
+#card-stack-scroll .card p {
+    margin-top: 0.5rem;
+}
