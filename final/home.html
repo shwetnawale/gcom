@@ -1,0 +1,572 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Audiowide&family=Oswald:wght@400;700&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="stylehome.css">
+    <link rel="stylesheet" href="styleprofile.css">
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Roboto', Arial, sans-serif;
+            background: #f7f8fa;
+        }
+        .navbar {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background: #eaeaea;
+            padding: 0 32px;
+            height: 64px;
+            border-bottom: 1px solid #ddd;
+        }
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+        .logo-text {
+            font-family: 'Audiowide', cursive;
+            font-size: 2rem;
+            margin-right: 4px;
+        }
+        .brand {
+            font-family: 'Oswald', sans-serif;
+            font-size: 1.3rem;
+            font-weight: 700;
+        }
+        .menu-bar {
+            display: flex;
+            gap: 32px;
+            align-items: center;
+        }
+        .menu-bar a {
+            text-decoration: none;
+            color: #222;
+            font-weight: 500;
+            font-size: 1rem;
+            padding: 8px 16px;
+            border-radius: 6px;
+            transition: background 0.2s;
+        }
+        .menu-bar a:hover {
+            background: #dbeafe;
+        }
+        .profile {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 40px;
+            width: 40px;
+            border-radius: 50%;
+            overflow: hidden;
+            background: #f6f6f6;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+            margin-left: 16px;
+        }
+        .profile-img {
+            width: 36px;
+            height: 36px;
+            object-fit: cover;
+            border-radius: 50%;
+            border: none;
+            display: block;
+            transition: box-shadow 0.2s;
+        }
+        .profile-img:hover {
+            box-shadow: 0 0 0 2px #007bff;
+        }
+        .container {
+            display: flex;
+            height: calc(100vh - 64px);
+            padding: 0;
+        }
+        .sidebar {
+            width: 280px;
+            background: #fff;
+            border-right: 1px solid #e5e7eb;
+            padding: 32px 16px;
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+        }
+        .sidebar .sidebar-menu {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+        .sidebar .sidebar-menu a {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            text-decoration: none;
+            color: #222;
+            font-size: 1.08rem;
+            padding: 12px 16px;
+            border-radius: 8px;
+            transition: background 0.2s;
+        }
+        .sidebar .sidebar-menu a:hover {
+            background: #e0e7ff;
+        }
+        .sidebar .sidebar-title {
+            font-size: 1.1rem;
+            font-weight: 700;
+            margin-bottom: 8px;
+            color: #444;
+        }
+        .main-content {
+            flex: 1;
+            padding: 32px 40px;
+            overflow-y: auto;
+        }
+        .communities-header {
+            display: flex;
+            align-items: center;
+            gap: 24px;
+            margin-bottom: 24px;
+        }
+        .community-tabs {
+            display: flex;
+            gap: 16px;
+        }
+        .community-tab {
+            background: #fff;
+            border: 1px solid #e5e7eb;
+            border-radius: 50%;
+            width: 48px;
+            height: 48px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            cursor: pointer;
+            transition: box-shadow 0.2s;
+        }
+        .community-tab:hover {
+            box-shadow: 0 2px 8px #dbeafe;
+        }
+        .search-bar {
+            flex: 1;
+            max-width: 340px;
+            display: flex;
+            align-items: center;
+            background: #fff;
+            border-radius: 8px;
+            border: 1px solid #e5e7eb;
+            padding: 8px 16px;
+        }
+        .search-bar input {
+            border: none;
+            outline: none;
+            font-size: 1rem;
+            flex: 1;
+            background: transparent;
+        }
+        .search-bar i {
+            color: #888;
+            margin-right: 8px;
+        }
+        .communities-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 32px;
+        }
+        .community-card {
+            background: #fff;
+            border-radius: 16px;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+            padding: 24px;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            border: 1px solid #e5e7eb;
+        }
+        .community-card .community-title {
+            font-size: 1.2rem;
+            font-weight: 700;
+            margin-bottom: 4px;
+        }
+        .community-card .community-desc {
+            font-size: 1rem;
+            color: #555;
+        }
+        .community-card .community-actions {
+            margin-top: 8px;
+            display: flex;
+            gap: 12px;
+        }
+        .community-card .join-btn {
+            background: #2563eb;
+            color: #fff;
+            border: none;
+            border-radius: 6px;
+            padding: 8px 18px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+        .community-card .join-btn:hover {
+            background: #1e40af;
+        }
+        .community-card .brief-btn {
+            background: #e0e7ff;
+            color: #222;
+            border: none;
+            border-radius: 6px;
+            padding: 8px 18px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+        .community-card .brief-btn:hover {
+            background: #c7d2fe;
+        }
+        /* Responsive */
+        @media (max-width: 900px) {
+            .container {
+                flex-direction: column;
+            }
+            .sidebar {
+                width: 100%;
+                border-right: none;
+                border-bottom: 1px solid #e5e7eb;
+                flex-direction: row;
+                gap: 0;
+                padding: 16px 8px;
+            }
+            .main-content {
+                padding: 16px 8px;
+            }
+        }
+        .profile {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 48px;
+            width: 48px;
+            border-radius: 50%;
+            overflow: hidden;
+            background: #f6f6f6;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+            margin-left: 16px;
+        }
+
+        .profile-img {
+            width: 44px;
+            height: 44px;
+            object-fit: cover;
+            border-radius: 50%;
+            border: none;
+            display: block;
+            transition: box-shadow 0.2s;
+        }
+
+        .profile-img:hover {
+            box-shadow: 0 0 0 2px #007bff;
+        }
+        /* Overlay for account settings */
+        .account-settings-overlay {
+            display: none;
+            position: fixed;
+            inset: 0;
+            z-index: 2000;
+            background: rgba(0,0,0,0.4);
+            backdrop-filter: blur(6px);
+            -webkit-backdrop-filter: blur(6px);
+            overflow: auto;
+        }
+        .account-settings-overlay.visible {
+            display: block;
+        }
+        .account-settings-content {
+            background: #fff;
+            margin: 5%;
+            border-radius: 16px;
+            /* max-width: 900px; */
+            min-height: 80vh;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.18);
+            position: relative;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: stretch;
+        }
+        .account-settings-close {
+            position: absolute;
+            top: 18px;
+            right: 24px;
+            font-size: 2rem;
+            color: #333;
+            background: none;
+            border: none;
+            cursor: pointer;
+            z-index: 10;
+        }
+        /* Blur background when overlay is open */
+        body.account-settings-open > *:not(.account-settings-overlay) {
+            filter: blur(4px) grayscale(0.1);
+            pointer-events: none;
+            user-select: none;
+        }
+    </style>
+</head>
+<body>
+    <!-- Overlay for the modal blur effect -->
+    <div id="modal-overlay" class="modal-overlay-blur"></div>
+
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                <h1 class="logo-text">G</h1>
+                <span class="brand">-COM</span>
+            </div>
+            <div class="menu-bar">
+                <a href="#"><i class="fas fa-users"></i> Communities</a>
+                <a href="#"><i class="fas fa-fire"></i> Trending</a>
+                <a href="#"><i class="fas fa-search"></i> Explore</a>
+                <a href="#"><i class="fas fa-plus"></i> Create</a>
+                <a href="#"><i class="fas fa-info-circle"></i> About</a>
+                <a href="#"><i class="fas fa-question-circle"></i> Help</a>
+            </div>
+            <div class="profile">
+                <a href="#" id="open-profile-modal">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRIs1XePP0G1O0AQB8x6uxPkXyY_PvXlYWGLTJWZfpios_3gsrcqX_jZz1dkxjgCZjrC-w&usqp=CAU" alt="User Profile" class="profile-img">
+                </a>
+            </div>
+        </nav>
+    </header>
+    <div class="container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div>
+                <div class="sidebar-title">Menu</div>
+                <div class="sidebar-menu">
+                    <a href="#"><i class="fas fa-user"></i> Profile</a>
+                    <a href="#"><i class="fas fa-users"></i> My Communities</a>
+                    <a href="#"><i class="fas fa-info-circle"></i> About Us</a>
+                    <a href="#"><i class="fas fa-question-circle"></i> Help</a>
+                    <a href="#"><i class="fas fa-book"></i> Briefs</a>
+                    <a href="#"><i class="fas fa-plus"></i> Join New</a>
+                </div>
+            </div>
+        </aside>
+        <!-- Main Content -->
+        <main class="main-content">
+            <div class="communities-header">
+                <div class="community-tabs">
+                    <div class="community-tab" title="All"><i class="fas fa-globe"></i></div>
+                    <div class="community-tab" title="Tech"><i class="fas fa-microchip"></i></div>
+                    <div class="community-tab" title="Art"><i class="fas fa-paint-brush"></i></div>
+                    <div class="community-tab" title="Sports"><i class="fas fa-basketball-ball"></i></div>
+                    <div class="community-tab" title="Music"><i class="fas fa-music"></i></div>
+                </div>
+                <div class="search-bar">
+                    <i class="fas fa-search"></i>
+                    <input type="text" placeholder="Search communities...">
+                </div>
+            </div>
+            <div class="communities-list">
+                <!-- Example Community Cards -->
+                <div class="community-card">
+                    <div class="community-title">Tech Innovators</div>
+                    <div class="community-desc">A place for tech enthusiasts to share, learn, and build together.</div>
+                    <div class="community-actions">
+                        <button class="join-btn">Join</button>
+                        <button class="brief-btn">Brief</button>
+                    </div>
+                </div>
+                <div class="community-card">
+                    <div class="community-title">Art & Creators</div>
+                    <div class="community-desc">Showcase your art, get feedback, and collaborate with other creators.</div>
+                    <div class="community-actions">
+                        <button class="join-btn">Join</button>
+                        <button class="brief-btn">Brief</button>
+                    </div>
+                </div>
+                <div class="community-card">
+                    <div class="community-title">Sports Mania</div>
+                    <div class="community-desc">Discuss matches, join fantasy leagues, and connect with sports fans.</div>
+                    <div class="community-actions">
+                        <button class="join-btn">Join</button>
+                        <button class="brief-btn">Brief</button>
+                    </div>
+                </div>
+                <div class="community-card">
+                    <div class="community-title">Music Lovers</div>
+                    <div class="community-desc">Share playlists, discover new artists, and join music events.</div>
+                    <div class="community-actions">
+                        <button class="join-btn">Join</button>
+                        <button class="brief-btn">Brief</button>
+                    </div>
+                </div>
+                <div class="community-card">
+                    <div class="community-title">Upcoming: Eco Warriors</div>
+                    <div class="community-desc">Join soon to discuss sustainability and green projects!</div>
+                    <div class="community-actions">
+                        <button class="join-btn" disabled>Coming Soon</button>
+                        <button class="brief-btn">Brief</button>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+    <!-- Profile Modal (unchanged, keep your JS for modal logic) -->
+    <div id="profile-modal" class="profile-modal">
+        <!-- Profile Header Section -->
+        <div class="profile-header">
+            <div class="profile-image-wrapper">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRIs1XePP0G1O0AQB8x6uxPkXyY_PvXlYWGLTJWZfpios_3gsrcqX_jZz1dkxjgCZjrC-w&usqp=CAU" alt="Shwet Nawale">
+            </div>
+            <h1 class="profile-name">Shwet Nawale</h1>
+            <p class="profile-socials">Instagram, Facebook</p>
+            <a href="#" id="manage-account-btn" class="manage-account-btn">Manage Account <i class="fas fa-cog fa-fw"></i></a>
+        </div>
+        <!-- Settings List -->
+        <div class="list-container">
+            <div class="list-item">
+                <span class="list-item-text">Name</span>
+                <span class="list-item-arrow">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
+                    </svg>
+                </span>
+            </div>
+            <div class="list-item">
+                <span class="list-item-text">Username</span>
+                <span class="list-item-arrow">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
+                    </svg>
+                </span>
+            </div>
+            <div class="list-item">
+                <span class="list-item-text">Profile picture</span>
+                 <span class="list-item-arrow">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
+                    </svg>
+                </span>
+            </div>
+            <div class="list-item">
+                <span class="list-item-text">Avatar</span>
+                <span class="list-item-arrow">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
+                    </svg>
+                </span>
+            </div>
+        </div>
+        <!-- Linked Accounts List -->
+        <div class="list-container">
+            <div class="list-item account-item">
+                <div class="account-info">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRIs1XePP0G1O0AQB8x6uxPkXyY_PvXlYWGLTJWZfpios_3gsrcqX_jZz1dkxjgCZjrC-w&usqp=CAU" alt="Instagram avatar">
+                    <div>
+                        <p class="account-name">nawaleshwet</p>
+                        <div class="account-platform">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+                                <path d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9 26.3 26.2 58 34.4 93.9 36.2 37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z"/>
+                            </svg>
+                            <p>Instagram</p>
+                        </div>
+                    </div>
+                </div>
+                <span class="list-item-arrow">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
+                    </svg>
+                </span>
+            </div>
+            <div class="list-item account-item">
+                <div class="account-info">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRIs1XePP0G1O0AQB8x6uxPkXyY_PvXlYWGLTJWZfpios_3gsrcqX_jZz1dkxjgCZjrC-w&usqp=CAU" alt="Facebook avatar">
+                    <div>
+                        <p class="account-name">Shwet Nawale</p>
+                        <div class="account-platform">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                                <path d="M504 256C504 119 393 8 256 8S8 119 8 256c0 123.78 90.69 226.38 209.25 245V327.69h-63V256h63v-54.64c0-62.15 37-96.48 93.67-96.48 27.14 0 55.52 4.84 55.52 4.84v61h-31.28c-30.8 0-40.41 19.12-40.41 38.73V256h68.78l-11 71.69h-57.78V501C413.31 482.38 504 379.78 504 256z"/>
+                            </svg>
+                            <p>Facebook</p>
+                        </div>
+                    </div>
+                </div>
+                <span class="list-item-arrow">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
+                    </svg>
+                </span>
+            </div>
+        </div>
+    </div>
+    <!-- Account Settings Overlay (unchanged) -->
+    <div id="account-settings-overlay" class="account-settings-overlay">
+        <div class="account-settings-content" id="account-settings-content">
+            <button class="account-settings-close" id="close-account-settings" title="Close">&times;</button>
+            <!-- myprofile.html content will be loaded here -->
+        </div>
+    </div>
+    <script src="script.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const openModalBtn = document.getElementById('open-profile-modal');
+            const profileModal = document.getElementById('profile-modal');
+            const overlay = document.getElementById('modal-overlay');
+            const manageAccountBtn = document.getElementById('manage-account-btn');
+            const accountSettingsOverlay = document.getElementById('account-settings-overlay');
+            const accountSettingsContent = document.getElementById('account-settings-content');
+            const closeAccountSettings = document.getElementById('close-account-settings');
+
+            // Open profile modal
+            const openModal = (e) => {
+                e.preventDefault();
+                overlay.classList.add('visible');
+                profileModal.classList.add('visible');
+            };
+
+            // Close profile modal
+            const closeModal = () => {
+                overlay.classList.remove('visible');
+                profileModal.classList.remove('visible');
+            };
+
+            openModalBtn.addEventListener('click', openModal);
+            overlay.addEventListener('click', closeModal);
+
+            // Open account settings overlay
+            manageAccountBtn.addEventListener('click', function(e) {
+                e.preventDefault();
+                closeModal();
+                fetch('myprofile.html')
+                    .then(res => res.text())
+                    .then(html => {
+                        const mainMatch = html.match(/<main[\s\S]*?<\/main>/i);
+                        accountSettingsContent.innerHTML = '<button class="account-settings-close" id="close-account-settings" title="Close">&times;</button>' +
+                            (mainMatch ? mainMatch[0] : html);
+                        accountSettingsOverlay.classList.add('visible');
+                        document.body.classList.add('account-settings-open');
+                        document.getElementById('close-account-settings').onclick = closeAccountSettingsOverlay;
+                    });
+            });
+
+            // Close account settings overlay
+            function closeAccountSettingsOverlay() {
+                accountSettingsOverlay.classList.remove('visible');
+                document.body.classList.remove('account-settings-open');
+            }
+            closeAccountSettings.onclick = closeAccountSettingsOverlay;
+
+            accountSettingsOverlay.addEventListener('click', function(e) {
+                if (e.target === accountSettingsOverlay) {
+                    closeAccountSettingsOverlay();
+                }
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home - G-COM</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Audiowide&family=Oswald:wght@400;700&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <a href="index.html" class="logo" style="text-decoration:none;">
+                <h1 class="logo-text">G</h1>
+                <span class="brand">-COM</span>
+            </a>
+            <div class="join-now-header-btn-container">
+                <ul class="links">
+                    <li><a href="index.html">Explore</a></li>
+                    <li><a href="plans.html">Plans</a></li>
+                    <li><a href="home.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                </ul>
+                 <a href="#" id="open-profile-modal" style="background: none; border: none; padding: 0; cursor: pointer;">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRIs1XePP0G1O0AQB8x6uxPkXyY_PvXlYWGLTJWZfpios_3gsrcqX_jZz1dkxjgCZjrC-w&usqp=CAU" alt="User Profile" style="width: 44px; height: 44px; border-radius: 50%; object-fit: cover; border: 2px solid var(--border-primary);">
+                </a>
+            </div>
+            <div class="theam" id="theme-toggle">
+                <svg id="sun-icon" style="display: none;" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+                <svg id="moon-icon" width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+            </div>
+            <button class="hamburger-menu">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-times"></i>
+            </button>
+        </nav>
+    </header>
+
+    <div id="page-content">
+        <main class="home-container">
+            <aside class="sidebar">
+                <div>
+                    <h3 class="sidebar-title">Menu</h3>
+                    <div class="sidebar-menu">
+                        <a href="#" class="active"><i class="fas fa-home fa-fw"></i> <span>Home</span></a>
+                        <a href="#"><i class="fas fa-compass fa-fw"></i> <span>Discover</span></a>
+                        <a href="#"><i class="fas fa-bell fa-fw"></i> <span>Notifications</span></a>
+                        <a href="#"><i class="fas fa-bookmark fa-fw"></i> <span>Bookmarks</span></a>
+                    </div>
+                </div>
+                 <div>
+                    <h3 class="sidebar-title">Create</h3>
+                    <div class="sidebar-menu">
+                        <a href="create.html"><i class="fas fa-plus-circle fa-fw"></i> <span>New Post</span></a>
+                        <a href="#"><i class="fas fa-users fa-fw"></i> <span>New Community</span></a>
+                    </div>
+                </div>
+            </aside>
+            <section class="home-main-content">
+                <div class="home-header">
+                    <h1>Communities</h1>
+                    <div class="search-bar">
+                        <i class="fas fa-search"></i>
+                        <input type="text" placeholder="Search communities...">
+                    </div>
+                </div>
+
+                <h2 class="section-title">Featured Communities</h2>
+                <div class="communities-list">
+                    <div class="community-card">
+                        <div class="community-title">Tech Innovators</div>
+                        <p class="community-desc">A place for tech enthusiasts to share, learn, and build the future together.</p>
+                        <div class="community-actions">
+                            <button class="card-btn join-btn">Join</button>
+                            <button class="card-btn brief-btn">Brief</button>
+                        </div>
+                    </div>
+                    <div class="community-card">
+                        <div class="community-title">Digital Artists & Creators</div>
+                        <p class="community-desc">Showcase your art, get constructive feedback, and collaborate with other creators.</p>
+                        <div class="community-actions">
+                            <button class="card-btn join-btn">Join</button>
+                            <button class="card-btn brief-btn">Brief</button>
+                        </div>
+                    </div>
+                    <div class="community-card">
+                        <div class="community-title">AI & Machine Learning Hub</div>
+                        <p class="community-desc">Discuss the latest papers, models, and ethical implications of artificial intelligence.</p>
+                        <div class="community-actions">
+                            <button class="card-btn join-btn">Join</button>
+                            <button class="card-btn brief-btn">Brief</button>
+                        </div>
+                    </div>
+                </div>
+
+                <h2 class="section-title">Trending Briefs</h2>
+                <div class="briefs-list">
+                    <div class="brief-item">
+                        <div>
+                            <p class="brief-item-title">The Future of Remote Work: A Four-Day Work Week?</p>
+                            <p class="brief-item-meta">in "Future of Work" by @janedoe</p>
+                        </div>
+                        <a href="#" class="card-btn brief-btn">Read</a>
+                    </div>
+                    <div class="brief-item">
+                        <div>
+                            <p class="brief-item-title">New Javascript Framework 'Inertia.js' gaining traction.</p>
+                            <p class="brief-item-meta">in "Tech Innovators" by @dev_guru</p>
+                        </div>
+                        <a href="#" class="card-btn brief-btn">Read</a>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <!-- Profile Modal -->
+    <div id="modal-overlay" class="modal-overlay-blur"></div>
+    <div id="profile-modal" class="profile-modal">
+        <div class="profile-header">
+            <div class="profile-image-wrapper">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRIs1XePP0G1O0AQB8x6uxPkXyY_PvXlYWGLTJWZfpios_3gsrcqX_jZz1dkxjgCZjrC-w&usqp=CAU" alt="User Profile">
+            </div>
+            <h3 class="profile-name">Shwet Nawale</h3>
+            <p class="profile-socials">@shwetnawale</p>
+        </div>
+        <ul class="profile-links">
+            <li><a href="myprofile.html"><i class="fas fa-user-cog fa-fw"></i> Account Settings</a></li>
+            <li><a href="#"><i class="fas fa-chart-line fa-fw"></i> Activity</a></li>
+            <li><a href="#"><i class="fas fa-question-circle fa-fw"></i> Help Center</a></li>
+        </ul>
+        <div class="profile-footer">
+            <a href="#" id="logout-btn" class="logout-btn">Log Out</a>
+        </div>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>

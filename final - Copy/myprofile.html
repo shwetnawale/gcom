@@ -1,0 +1,58 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile Settings - G-COM</title>
+    <link rel="stylesheet" href="styleprofile.css">
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <main class="main-container">
+        <div class="left">
+            <div class="profile">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRIs1XePP0G1O0AQB8x6uxPkXyY_PvXlYWGLTJWZfpios_3gsrcqX_jZz1dkxjgCZjrC-w&usqp=CAU" alt="User Profile" class="profile-img">
+            </div>
+            <nav class="settings-nav">
+                <ul>
+                    <li><a href="#" class="active"><i class="fas fa-user-cog fa-fw"></i> Account</a></li>
+                    <li><a href="#"><i class="fas fa-shield-alt fa-fw"></i> Privacy & Security</a></li>
+                    <li><a href="#"><i class="fas fa-key fa-fw"></i> Password</a></li>
+                    <li><a href="#"><i class="fas fa-sign-in-alt fa-fw"></i> Login Activity</a></li>
+                </ul>
+            </nav>
+        </div>
+        <div class="right">
+            <div class="settings-content">
+                <h2>Account Settings</h2>
+                
+                <div class="form-group">
+                    <label for="username">Username</label>
+                    <input type="text" id="username" name="username" value="current_username">
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email" name="email" value="user@example.com">
+                </div>
+
+                <h2>Change Password</h2>
+                <div class="form-group">
+                    <label for="current-password">Current Password</label>
+                    <input type="password" id="current-password" name="current-password" placeholder="Enter your current password">
+                </div>
+                <div class="form-group">
+                    <label for="new-password">New Password</label>
+                    <input type="password" id="new-password" name="new-password" placeholder="Enter a new password">
+                </div>
+                <div class="form-group">
+                    <label for="confirm-password">Confirm New Password</label>
+                    <input type="password" id="confirm-password" name="confirm-password" placeholder="Confirm your new password">
+                </div>
+            </div>
+        </div>
+    </main>
+</body>
+</html>
