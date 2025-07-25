@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fitness Dashboard</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Audiowide&family=Oswald:wght@400;700&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="homecopilot.css">
+</head>
+<body class="p-6">
+    <div class="min-h-screen bg-[#1a1a1a] text-[#e0e0e0] rounded-lg shadow-xl p-6">
+        <!-- Top Navigation Bar -->
+        <header class="flex items-center justify-between mb-8 pb-4 border-b border-gray-700">
+            <div class="flex items-center space-x-4">
+                <div class="logo">
+                <h1 class="logo-text">G</h1>
+                <span class="brand">-COM</span>
+                </div>
+                <!-- <div class="flex items-center space-x-2">
+                    <svg class="w-6 h-6 text-purple-500" fill="currentColor" viewBox="0 0 20 20">
+                        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l3 3a1 1 0 001.414-1.414L11 9.586V6z" clip-rule="evenodd"></path>
+                    </svg>
+                    <span class="font-semibold text-xl text-white">full core</span>
+                </div> -->
+                <!-- <div class="flex -space-x-2 overflow-hidden">
+                    <img class="inline-block h-8 w-8 rounded-full ring-2 ring-gray-800" src="https://placehold.co/32x32/7e22ce/ffffff?text=U1" alt="User 1">
+                    <img class="inline-block h-8 w-8 rounded-full ring-2 ring-gray-800" src="https://placehold.co/32x32/db2777/ffffff?text=U2" alt="User 2">
+                    <img class="inline-block h-8 w-8 rounded-full ring-2 ring-gray-800" src="https://placehold.co/32x32/f59e0b/ffffff?text=U3" alt="User 3">
+                </div> -->
+            </div>
+
+            <nav class="flex space-x-6 text-sm font-medium">
+                <a href="#" class="text-purple-400 px-3 py-2 rounded-lg bg-gray-800">Overview</a>
+                <a href="#" class="text-gray-400 hover:text-white px-3 py-2 rounded-lg">Workouts</a>
+                <a href="#" class="text-gray-400 hover:text-white px-3 py-2 rounded-lg">Health</a>
+                <a href="#" class="text-gray-400 hover:text-white px-3 py-2 rounded-lg">Schedule</a>
+            </nav>
+
+            <div class="flex items-center space-x-4">
+                <div class="flex items-center space-x-2 bg-gray-800 rounded-full p-1 pr-3">
+                    <img class="h-8 w-8 rounded-full" src="https://placehold.co/32x32/8b5cf6/ffffff?text=MH" alt="Mark Herbert">
+                    <div class="text-sm">
+                        <div class="font-medium text-white">Mark Herbert</div>
+                        <div class="text-gray-400">m.mark</div>
+                    </div>
+                </div>
+                <button class="p-2 rounded-full bg-gray-800 hover:bg-gray-700">
+                    <svg class="w-5 h-5 text-gray-400" fill="currentColor" viewBox="0 0 20 20">
+                        <path d="M10 2a6 6 0 00-6 6v3.586l-.707.707A1 1 0 004 14h12a1 1 0 00.707-1.707L16 11.586V8a6 6 0 00-6-6zM10 18a3 3 0 01-3-3h6a3 3 0 01-3 3z"></path>
+                    </svg>
+                </button>
+            </div>
+        </header>
+
+        <!-- Main Content Area -->
+        <main>
+            <div class="flex items-center justify-between mb-6">
+                <h1 class="text-3xl font-bold text-white">Preset Workouts</h1>
+                <div class="flex items-center space-x-3">
+                    <div class="flex items-center bg-gray-800 rounded-lg px-4 py-2 text-sm">
+                        <svg class="w-4 h-4 mr-2 text-gray-400" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clip-rule="evenodd"></path>
+                        </svg>
+                        <span>Feb 2 - 9, 2024</span>
+                    </div>
+                    <div class="flex items-center bg-gray-800 rounded-lg px-4 py-2 text-sm">
+                        <svg class="w-4 h-4 mr-2 text-gray-400" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M9 2a1 1 0 000 2h2a1 1 0 100-2H9z"></path>
+                            <path fill-rule="evenodd" d="M4 5a2 2 0 012-2 3 3 0 003 3h2a3 3 0 003-3 2 2 0 012 2v11a2 2 0 01-2 2H6a2 2 0 01-2-2V5zm3 4a1 1 0 000 2h.01a1 1 0 000-2H7zm3 0a1 1 0 000 2h.01a1 1 0 000-2H10zm3 0a1 1 0 000 2h.01a1 1 0 000-2H13zm-3 4a1 1 0 000 2h.01a1 1 0 000-2H10z" clip-rule="evenodd"></path>
+                        </svg>
+                        <span>3 days / week</span>
+                    </div>
+                    <button class="p-2 rounded-full bg-gray-800 hover:bg-gray-700">
+                        <svg class="w-5 h-5 text-gray-400" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M10 6a2 2 1000-4 0 2 2 0 004 0zM10 12a2 2 1000-4 0 2 2 0 004 0zM10 18a2 2 1000-4 0 2 2 0 004 0z"></path>
+                        </svg>
+                    </button>
+                    <button class="p-2 rounded-full bg-gray-800 hover:bg-gray-700">
+                        <svg class="w-5 h-5 text-gray-400" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M10 5a1 1 0 011 1v3h3a1 1 0 110 2h-3v3a1 1 0 11-2 0v-3H6a1 1 0 110-2h3V6a1 1 0 011-1z" clip-rule="evenodd"></path>
+                        </svg>
+                    </button>
+                    <button class="p-2 rounded-full bg-purple-600 hover:bg-purple-700">
+                        <svg class="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M10 5a1 1 0 011 1v3h3a1 1 0 110 2h-3v3a1 1 0 11-2 0v-3H6a1 1 0 110-2h3V6a1 1 0 011-1z" clip-rule="evenodd"></path>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                <!-- Chest Growth Card -->
+                <div class="bg-gray-800 rounded-xl p-6 shadow-lg">
+                    <div class="flex items-center justify-between mb-4">
+                        <h2 class="text-xl font-semibold text-white">Chest Growth</h2>
+                        <div class="flex items-center text-sm text-green-400">
+                            <svg class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M5.293 9.707a1 1 0 010-1.414l4-4a1 1 0 011.414 0l4 4a1 1 0 01-1.414 1.414L11 7.414V15a1 1 0 11-2 0V7.414L6.707 9.707a1 1 0 01-1.414 0z" clip-rule="evenodd"></path>
+                            </svg>
+                            <span>Analysed</span>
+                        </div>
+                    </div>
+                    <div class="flex items-end mb-6">
+                        <p class="text-5xl font-bold text-white mr-4">6.8 <span class="text-3xl">%</span></p>
+                        <div class="text-green-400 text-sm">
+                            <span class="font-medium">+4.7%</span>
+                            <span class="block text-xs text-gray-400">to last week</span>
+                        </div>
+                    </div>
+
+                    <!-- Chart Area (simplified for visual representation) -->
+                    <div class="relative h-48">
+                        <div class="absolute inset-0 flex items-end pb-6">
+                            <!-- Y-axis labels -->
+                            <div class="absolute left-0 bottom-0 text-xs text-gray-500 flex flex-col justify-between h-full py-2">
+                                <span>1.5 MQ</span>
+                                <span>1.0 MQ</span>
+                                <span>0.5 MQ</span>
+                                <span>0 MQ</span>
+                            </div>
+                            <!-- Horizontal lines -->
+                            <div class="absolute left-12 right-0 top-0 bottom-0 flex flex-col justify-between py-2">
+                                <div class="border-t border-dashed border-gray-700 w-full"></div>
+                                <div class="border-t border-dashed border-gray-700 w-full"></div>
+                                <div class="border-t border-dashed border-gray-700 w-full"></div>
+                                <div class="border-t border-dashed border-gray-700 w-full"></div>
+                            </div>
+
+                            <!-- Bars -->
+                            <div class="flex flex-grow justify-around items-end ml-16">
+                                <div class="flex flex-col items-center mx-1">
+                                    <div class="bg-purple-500 rounded-t h-16 w-4"></div>
+                                    <div class="bg-pink-500 rounded-b h-10 w-4"></div>
+                                    <span class="text-xs text-gray-400 mt-2">W 01</span>
+                                </div>
+                                <div class="flex flex-col items-center mx-1">
+                                    <div class="bg-purple-500 rounded-t h-24 w-4"></div>
+                                    <div class="bg-pink-500 rounded-b h-16 w-4"></div>
+                                    <span class="text-xs text-gray-400 mt-2">W 02</span>
+                                </div>
+                                <div class="flex flex-col items-center mx-1">
+                                    <div class="bg-purple-500 rounded-t h-32 w-4"></div>
+                                    <div class="bg-pink-500 rounded-b h-20 w-4"></div>
+                                    <span class="text-xs text-gray-400 mt-2">W 03</span>
+                                </div>
+                                <div class="flex flex-col items-center mx-1">
+                                    <div class="bg-purple-500 rounded-t h-28 w-4"></div>
+                                    <div class="bg-pink-500 rounded-b h-18 w-4"></div>
+                                    <span class="text-xs text-gray-400 mt-2">W 04</span>
+                                </div>
+                                <div class="flex flex-col items-center mx-1">
+                                    <div class="bg-purple-500 rounded-t h-20 w-4"></div>
+                                    <div class="bg-pink-500 rounded-b h-12 w-4"></div>
+                                    <span class="text-xs text-gray-400 mt-2">W 05</span>
+                                </div>
+                                <div class="flex flex-col items-center mx-1">
+                                    <div class="bg-purple-500 rounded-t h-14 w-4"></div>
+                                    <div class="bg-pink-500 rounded-b h-8 w-4"></div>
+                                    <span class="text-xs text-gray-400 mt-2">W 06</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Date range and legend overlay -->
+                        <div class="absolute top-0 left-1/2 -translate-x-1/2 bg-gray-700 rounded-lg p-2 text-xs shadow-md">
+                            <p class="font-medium mb-1">Feb 5 - 11, 2024</p>
+                            <div class="flex items-center mb-1">
+                                <span class="w-2 h-2 bg-purple-500 rounded-full mr-2"></span>
+                                <span>pre training</span>
+                            </div>
+                            <div class="flex items-center">
+                                <span class="w-2 h-2 bg-pink-500 rounded-full mr-2"></span>
+                                <span>post training</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Muscle Group Card -->
+                <div class="bg-gray-800 rounded-xl p-6 shadow-lg">
+                    <div class="flex items-center justify-between mb-4">
+                        <h2 class="text-xl font-semibold text-white">Muscle Group</h2>
+                        <span class="text-sm text-gray-400">Exercises <span class="font-medium text-white">16</span></span>
+                    </div>
+                    <div class="flex items-center space-x-6">
+                        <div class="flex-shrink-0">
+                            <div class="radial-progress">
+                                <div class="radial-progress-inner">
+                                    49.5%
+                                </div>
+                            </div>
+                            <p class="text-center text-sm font-medium text-white mt-2">Biceps</p>
+                        </div>
+                        <div class="flex-grow space-y-3">
+                            <!-- Muscle Group Items -->
+                            <div class="flex items-center justify-between bg-gray-700 rounded-lg p-3">
+                                <div class="flex items-center space-x-3">
+                                    <svg class="w-6 h-6 text-gray-400" fill="currentColor" viewBox="0 0 24 24">
+                                        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm-1-13h2v6h-2zm0 8h2v2h-2z"></path>
+                                    </svg>
+                                    <span class="font-medium text-white">Chest</span>
+                                </div>
+                                <div class="flex items-center space-x-2">
+                                    <div class="w-24 h-2 bg-gray-600 rounded-full">
+                                        <div class="bg-purple-500 h-full rounded-full" style="width: 56%;"></div>
+                                    </div>
+                                    <span class="text-sm text-gray-400">56%</span>
+                                    <button class="p-1 rounded-full hover:bg-gray-600">
+                                        <svg class="w-4 h-4 text-gray-400" fill="currentColor" viewBox="0 0 20 20">
+                                            <path d="M10 6a2 2 1000-4 0 2 2 0 004 0zM10 12a2 2 1000-4 0 2 2 0 004 0zM10 18a2 2 1000-4 0 2 2 0 004 0z"></path>
+                                        </svg>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="flex items-center justify-between bg-gray-700 rounded-lg p-3">
+                                <div class="flex items-center space-x-3">
+                                    <svg class="w-6 h-6 text-gray-400" fill="currentColor" viewBox="0 0 24 24">
+                                        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm-1-13h2v6h-2zm0 8h2v2h-2z"></path>
+                                    </svg>
+                                    <span class="font-medium text-white">Forearm</span>
+                                </div>
+                                <div class="flex items-center space-x-2">
+                                    <div class="w-24 h-2 bg-gray-600 rounded-full">
+                                        <div class="bg-purple-500 h-full rounded-full" style="width: 13%;"></div>
+                                    </div>
+                                    <span class="text-sm text-gray-400">13%</span>
+                                    <button class="p-1 rounded-full hover:bg-gray-600">
+                                        <svg class="w-4 h-4 text-gray-400" fill="currentColor" viewBox="0 0 20 20">
+                                            <path d="M10 6a2 2 1000-4 0 2 2 0 004 0zM10 12a2 2 1000-4 0 2 2 0 004 0zM10 18a2 2 1000-4 0 2 2 0 004 0z"></path>
+                                        </svg>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="flex items-center justify-between bg-gray-700 rounded-lg p-3">
+                                <div class="flex items-center space-x-3">
+                                    <svg class="w-6 h-6 text-gray-400" fill="currentColor" viewBox="0 0 24 24">
+                                        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm-1-13h2v6h-2zm0 8h2v2h-2z"></path>
+                                    </svg>
+                                    <span class="font-medium text-white">Lateral</span>
+                                </div>
+                                <div class="flex items-center space-x-2">
+                                    <div class="w-24 h-2 bg-gray-600 rounded-full">
+                                        <div class="bg-purple-500 h-full rounded-full" style="width: 31%;"></div>
+                                    </div>
+                                    <span class="text-sm text-gray-400">31%</span>
+                                    <button class="p-1 rounded-full hover:bg-gray-600">
+                                        <svg class="w-4 h-4 text-gray-400" fill="currentColor" viewBox="0 0 20 20">
+                                            <path d="M10 6a2 2 1000-4 0 2 2 0 004 0zM10 12a2 2 1000-4 0 2 2 0 004 0zM10 18a2 2 1000-4 0 2 2 0 004 0z"></path>
+                                        </svg>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="flex items-center justify-between bg-gray-700 rounded-lg p-3">
+                                <div class="flex items-center space-x-3">
+                                    <svg class="w-6 h-6 text-gray-400" fill="currentColor" viewBox="0 0 24 24">
+                                        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm-1-13h2v6h-2zm0 8h2v2h-2z"></path>
+                                    </svg>
+                                    <span class="font-medium text-white">Back</span>
+                                </div>
+                                <div class="flex items-center space-x-2">
+                                    <div class="w-24 h-2 bg-gray-600 rounded-full">
+                                        <div class="bg-purple-500 h-full rounded-full" style="width: 38%;"></div>
+                                    </div>
+                                    <span class="text-sm text-gray-400">38%</span>
+                                    <button class="p-1 rounded-full hover:bg-gray-600">
+                                        <svg class="w-4 h-4 text-gray-400" fill="currentColor" viewBox="0 0 20 20">
+                                            <path d="M10 6a2 2 1000-4 0 2 2 0 004 0zM10 12a2 2 1000-4 0 2 2 0 004 0zM10 18a2 2 1000-4 0 2 2 0 004 0z"></path>
+                                        </svg>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Correlation Section -->
+            <div class="bg-gray-800 rounded-xl p-6 shadow-lg">
+                <div class="flex items-center justify-between mb-4">
+                    <h2 class="text-xl font-semibold text-white">Correlation</h2>
+                    <a href="#" class="text-sm text-purple-400 hover:underline">View all</a>
+                </div>
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+                    <div class="flex items-center justify-between bg-gray-700 rounded-lg p-4">
+                        <div class="flex items-center space-x-3">
+                            <svg class="w-6 h-6 text-gray-400" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm-1-13h2v6h-2zm0 8h2v2h-2z"></path>
+                            </svg>
+                            <span class="font-medium text-white">Water</span>
+                        </div>
+                        <div class="flex items-center space-x-2">
+                            <span class="text-lg font-semibold text-white">48%</span>
+                            <button class="p-1 rounded-full hover:bg-gray-600">
+                                <svg class="w-4 h-4 text-gray-400" fill="currentColor" viewBox="0 0 20 20">
+                                    <path d="M10 6a2 2 1000-4 0 2 2 0 004 0zM10 12a2 2 1000-4 0 2 2 0 004 0zM10 18a2 2 1000-4 0 2 2 0 004 0z"></path>
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="flex items-center justify-between bg-gray-700 rounded-lg p-4">
+                        <div class="flex items-center space-x-3">
+                            <svg class="w-6 h-6 text-gray-400" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm-1-13h2v6h-2zm0 8h2v2h-2z"></path>
+                            </svg>
+                            <span class="font-medium text-white">Lactate</span>
+                        </div>
+                        <div class="flex items-center space-x-2">
+                            <span class="text-lg font-semibold text-white">34%</span>
+                            <button class="p-1 rounded-full hover:bg-gray-600">
+                                <svg class="w-4 h-4 text-gray-400" fill="currentColor" viewBox="0 0 20 20">
+                                    <path d="M10 6a2 2 1000-4 0 2 2 0 004 0zM10 12a2 2 1000-4 0 2 2 0 004 0zM10 18a2 2 1000-4 0 2 2 0 004 0z"></path>
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="flex items-center justify-between bg-gray-700 rounded-lg p-4">
+                        <div class="flex items-center space-x-3">
+                            <svg class="w-6 h-6 text-gray-400" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm-1-13h2v6h-2zm0 8h2v2h-2z"></path>
+                            </svg>
+                            <span class="font-medium text-white">Fat</span>
+                        </div>
+                        <div class="flex items-center space-x-2">
+                            <span class="text-lg font-semibold text-white">18%</span>
+                            <button class="p-1 rounded-full hover:bg-gray-600">
+                                <svg class="w-4 h-4 text-gray-400" fill="currentColor" viewBox="0 0 20 20">
+                                    <path d="M10 6a2 2 1000-4 0 2 2 0 004 0zM10 12a2 2 1000-4 0 2 2 0 004 0zM10 18a2 2 1000-4 0 2 2 0 004 0z"></path>
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+</body>
+</html>

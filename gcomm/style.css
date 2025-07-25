@@ -48,7 +48,7 @@
     --sticky-header-bg-dark: #000000; 
     --sticky-header-text-dark: #000000;
     --sticky-header-text-gradient-dark: #000000; /* Changed to black for text on dark mode gradient */
-    --button-bg-dark: #4a9b4a; /* Slightly adjusted green for dark mode */
+    --button-bg-dark: #000000; /* Slightly adjusted green for dark mode */
     --button-text-dark: white;
     --footer-bg-dark: #222222;
     --footer-text-dark: #aaaaaa;
