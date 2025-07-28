@@ -49,64 +49,6 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // --- Single-Page Application (SPA) Navigation Logic ---
-    const pageContent = document.getElementById('page-content');
-
-    const fetchPage = async (url) => {
-        try {
-            const response = await fetch(url);
-            if (!response.ok) throw new Error('Page not found');
-            const text = await response.text();
-            const parser = new DOMParser();
-            return parser.parseFromString(text, 'text/html');
-        } catch (error) {
-            console.error('Failed to fetch page:', error);
-            window.location.assign(url); // Fallback to full reload on error
-            return null;
-        }
-    };
-
-    const updatePage = (doc) => {
-        if (!doc || !pageContent) return;
-
-        document.title = doc.title;
-        const newContent = doc.getElementById('page-content');
-
-        if (newContent) {
-            pageContent.style.opacity = '0';
-            pageContent.style.transition = 'opacity 0.3s ease-out';
-            pageContent.addEventListener('transitionend', () => {
-                pageContent.innerHTML = newContent.innerHTML;
-                pageContent.style.opacity = '1';
-            }, { once: true });
-        }
-    };
-
-    const handleNav = async (url) => {
-        const doc = await fetchPage(url);
-        if (doc) {
-            history.pushState({ path: url }, '', url);
-            updatePage(doc);
-        }
-    };
-
-    document.body.addEventListener('click', (e) => {
-        const link = e.target.closest('a');
-        // Exclude modal triggers and links with hashes from SPA navigation
-        if (link && link.origin === window.location.origin && !link.hash && !link.classList.contains('no-spa') && link.id !== 'join-now-btn' && !link.id.includes('show-')) {
-            e.preventDefault();
-            if (link.href !== window.location.href) {
-                handleNav(link.href);
-            }
-        }
-    });
-
-    window.addEventListener('popstate', async (e) => {
-        const path = e.state?.path || window.location.pathname;
-        const doc = await fetchPage(path);
-        if (doc) updatePage(doc);
-    });
-
     // --- Authentication Modal Logic ---
 
     const joinNowBtn = document.getElementById('join-now-btn');
