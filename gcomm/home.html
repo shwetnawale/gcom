@@ -84,22 +84,36 @@
             transition: background 0.3s, border-color 0.3s;
         }
 
+        /* --- Start of New Logo Code --- */
         .logo {
             display: flex;
             align-items: center;
+            gap: 0.5rem;
+            text-decoration: none;
+        }
+
+        .logo-text, .brand {
+            font-family: 'Audiowide', cursive;
+            letter-spacing: 0.05em;
         }
 
         .logo-text {
-            font-family: 'Audiowide', cursive;
-            font-size: 2rem;
-            margin-right: 4px;
+            height: 3rem;
+            width: 3rem;
+            font-size: 2.25rem;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: var(--text-primary);
+            color: var(--bg-primary); /* Using --bg-primary for a pure white/black contrast */
         }
-
+        
         .brand {
-            font-family: 'Oswald', sans-serif;
-            font-size: 1.3rem;
-            font-weight: 700;
+            font-size: 1.75rem;
+            color: var(--text-primary);
         }
+        /* --- End of New Logo Code --- */
 
         .menu-bar {
             display: flex;
@@ -371,10 +385,10 @@
 
     <header>
         <nav class="navbar">
-            <div class="logo">
+            <a href="#" class="logo">
                 <h1 class="logo-text">G</h1>
                 <span class="brand">-COM</span>
-            </div>
+            </a>
             
             <div class="menu-bar">
                 <a href="#"><i class="fas fa-users"></i> Communities</a>
