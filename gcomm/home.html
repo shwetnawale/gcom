@@ -19,10 +19,37 @@
             color: #e0e0e0;
             transition: background 0.3s, color 0.3s;
         }
+
+        /* Theme toggle SVG colors */
+        .theam {
+            color: #ffffff; /* White in dark theme */
+        }
+        .light-theme .theam {
+            color: #212529; /* Dark in light theme */
+        }
+        
+        /* Ensure all text inherits body color */
+        * {
+            color: inherit;
+            transition: color 0.3s;
+        }
         
         .light-theme {
             background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
             color: #212529;
+        }
+        
+        .light-theme .community-card .community-title,
+        .light-theme .community-card .community-desc {
+            color: inherit;
+        }
+        
+        .light-theme .profile {
+            background: rgba(255, 255, 255, 0.9);
+        }
+        
+        .light-theme .search-bar i {
+            color: #6c757d;
         }
         
         .light-theme .navbar {
@@ -272,6 +299,11 @@
         .community-card .community-desc {
             font-size: 1rem;
             color: #a0a0a0;
+        }
+        
+        .dark-theme .community-card .community-title,
+        .dark-theme .community-card .community-desc {
+            color: #e0e0e0;
         }
         .community-card .community-actions {
             margin-top: 8px;
