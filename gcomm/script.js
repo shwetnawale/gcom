@@ -5,23 +5,23 @@ document.addEventListener('DOMContentLoaded', () => {
     const sunIcon = document.getElementById('sun-icon');
     const moonIcon = document.getElementById('moon-icon');
 
-    const setTheme = (isDark) => {
-        document.body.classList.toggle('dark-theme', isDark);
+    const setTheme = (isLight) => {
+        document.body.classList.toggle('light-theme', isLight);
         if (sunIcon && moonIcon) {
-            sunIcon.style.display = isDark ? 'block' : 'none';
-            moonIcon.style.display = isDark ? 'none' : 'block';
+            sunIcon.style.display = isLight ? 'none' : 'block';
+            moonIcon.style.display = isLight ? 'block' : 'none';
         }
-        localStorage.setItem('theme', isDark ? 'dark' : 'light');
+        localStorage.setItem('theme', isLight ? 'light' : 'dark');
     };
 
     const savedTheme = localStorage.getItem('theme');
     const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
-    const isDark = savedTheme === 'dark' || (savedTheme === null && prefersDark);
-    setTheme(isDark);
+    const isLight = savedTheme === 'light' || (savedTheme === null && !prefersDark);
+    setTheme(isLight);
 
     if (themeToggle) {
         themeToggle.addEventListener('click', () => {
-            setTheme(!document.body.classList.contains('dark-theme'));
+            setTheme(!document.body.classList.contains('light-theme'));
         });
     }
 
